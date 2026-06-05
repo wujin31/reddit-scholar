@@ -1,0 +1,23 @@
+{
+  "name": "scholarsync",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Personal Reddit research reader with citation and export workflows.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @scholarsync/web",
+    "build": "npm run build --workspace @scholarsync/web",
+    "lint": "npm run lint --workspace @scholarsync/web",
+    "test": "npm run test:python",
+    "test:python": "python3 -m unittest discover -s services/worker/tests -p '*_test.py'",
+    "check:docs": "node scripts/check-docs.mjs"
+  },
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10",
+    "python": ">=3.11"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "evt_mock_001",
+  "command": "!ScholarSync",
+  "requestedBy": "u/researcher_local",
+  "threadId": "t3_mockscholar",
+  "subreddit": "AskHistorians",
+  "createdUtc": "2024-11-18T19:00:00.000Z"
+}
