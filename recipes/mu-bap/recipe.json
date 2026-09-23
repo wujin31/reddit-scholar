@@ -174,10 +174,12 @@
   ],
   "notes": "Calibration variables (log together): the water (430 ml, about 0.8:1) and the radish weight. The radish releases a lot of water as it cooks, so if the rice is wet, drop to 400 ml. Quality: use Korean mu, not daikon. It's denser and sweeter, and fall is its season. All the seasoning goes on at the table, so there's nothing in the pot to scorch. Sodium is controlled by how much sauce you spoon on. Meal prep: store the sauce separately.",
   "servings": null,
-  "tags": [],
+  "tags": [
+    "zojirushi"
+  ],
   "chatUrl": null,
   "favorite": false,
   "log": [],
   "createdAt": "2026-09-23T06:03:59.387Z",
-  "updatedAt": "2026-09-23T06:03:59.387Z"
+  "updatedAt": "2026-09-23T06:04:15.041Z"
 }
