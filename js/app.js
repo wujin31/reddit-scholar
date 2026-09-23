@@ -56,6 +56,10 @@ function toast(message, kind = "") {
 }
 
 function errorMessage(e) {
+  if (e.readOnly || (e.status === 403 && /personal access token/i.test(e.detail ?? ""))) {
+    const { owner, repo } = getSettings();
+    return `The token can read but not save. On GitHub, edit the token: Repository access must include ${owner}/${repo}, and Repository permissions → Contents must be “Read and write”.`;
+  }
   if (e.status === 401) return "GitHub rejected the token. Check it in Settings.";
   if (e.status === 403 || e.status === 404) return `GitHub said no (${e.status}${e.detail ? `: ${e.detail}` : ""}). Check the repo and token in Settings.`;
   return e.message || String(e);
@@ -504,7 +508,7 @@ async function viewCook(root, id) {
 
 // ---------- import & edit ----------
 
-function recipeForm({ title, text = "", servings = "", tags = "", chatUrl = "", submitLabel, onSubmit }) {
+function recipeForm({ title, text = "", draftKey = null, servings = "", tags = "", chatUrl = "", submitLabel, onSubmit }) {
   const source = h("textarea", {
     class: "source", rows: 10, value: text, spellcheck: false,
     placeholder: "Paste a Claude recipe card here.\n\nIn Claude: tap the recipe card's copy button (or select all and copy), then come back and tap Paste.",
@@ -517,6 +521,7 @@ function recipeForm({ title, text = "", servings = "", tags = "", chatUrl = "", 
   let parsed = null;
 
   function update() {
+    if (draftKey) saveLocal(draftKey, source.value);
     parsed = null;
     if (!source.value.trim()) { preview.replaceChildren(); submit.disabled = true; return; }
     try {
@@ -581,10 +586,13 @@ function viewImport(root, query) {
     navbar(backButton(), ""),
     recipeForm({
       title: "Add recipe",
-      text: query.get("text") ?? "",
+      // Keep what was pasted if you leave to fix Settings and come back.
+      text: query.get("text") ?? loadLocal("draft:import", ""),
+      draftKey: "draft:import",
       submitLabel: "Save recipe",
       onSubmit: async (parsed, text, extra) => {
         const saved = await createRecipe(parsed, text, extra);
+        saveLocal("draft:import", "");
         toast("Saved");
         location.replace(`#/r/${saved.id}`);
       },

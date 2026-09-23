@@ -82,8 +82,15 @@ async function gh(path, { method = "GET", body, raw = false } = {}) {
 export async function testConnection() {
   const s = getSettings();
   const repo = await gh("");
-  if (!repo.permissions?.push) throw new Error("The token can read the repo but can't write to it. Give it Contents: Read and write.");
   await gh(`/git/ref/heads/${encodeURIComponent(s.branch)}`);
+  // repo.permissions reflects the account, not the token, so prove the token can write by
+  // storing a blob. Nothing references it, so it never shows up in the repo.
+  try {
+    await gh("/git/blobs", { method: "POST", body: { content: "recipe-box connection test\n", encoding: "utf-8" } });
+  } catch (e) {
+    if (e.status === 403 || e.status === 404) e.readOnly = true;
+    throw e;
+  }
   return repo.full_name;
 }
 
