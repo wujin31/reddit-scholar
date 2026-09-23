@@ -163,10 +163,12 @@
   ],
   "notes": "Calibration variable: final consistency. Cook at 1:5.5 and loosen afterward, rather than overfilling the Porridge line. Quality: bone-in thighs make their own broth over the long cycle, which is why this uses plain water. With boneless thighs, swap half the water for chicken stock. Guk-ganjang (soup soy) is saltier and lighter in color than regular soy; it keeps the porridge pale. Serve with kimchi on the side for acid contrast.",
   "servings": null,
-  "tags": [],
+  "tags": [
+    "zojirushi"
+  ],
   "chatUrl": null,
   "favorite": false,
   "log": [],
   "createdAt": "2026-09-23T06:03:18.123Z",
-  "updatedAt": "2026-09-23T06:03:18.123Z"
+  "updatedAt": "2026-09-23T06:03:36.451Z"
 }
