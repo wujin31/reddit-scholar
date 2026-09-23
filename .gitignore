@@ -1,11 +1,2 @@
-node_modules/
-.next/
-dist/
-build/
-.turbo/
-__pycache__/
-*.pyc
-.venv/
-.env
-.env.local
 .DS_Store
+node_modules/

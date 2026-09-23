@@ -19,6 +19,26 @@
       "cookCount": 0
     },
     {
+      "id": "khao-mok-kai",
+      "name": "ข้าวหมกไก่ (Khao Mok Kai) · Thai Chicken Biryani",
+      "englishName": "Thai Chicken Biryani",
+      "nativeName": "ข้าวหมกไก่",
+      "romanized": "Khao Mok Kai",
+      "tags": [
+        "thai",
+        "rice-cooker",
+        "chicken",
+        "dinner"
+      ],
+      "favorite": false,
+      "servings": 4,
+      "items": "bone-in, skin-on chicken thighs (4) · plain yogurt · evaporated milk · Thai curry powder ผงกะหรี่ (phong kari) · ground turmeric · ground coriander seed · ground cumin · ground cinnamon · ground cloves · sugar · kosher salt, divided · jasmine rice ข้าวหอมมะลิ (khao hom mali) (3 rice-cooker cups) · salted butter · garlic cloves, minced · shallots, minced · bay leaves · low-sodium chicken stock · fried shallots หอมเจียว (hom jiao) · white vinegar (for dipping sauce) · sugar (for dipping sauce) · kosher salt (for dipping sauce) · green Thai chilies · mint leaves · Persian cucumbers, sliced",
+      "createdAt": "2026-09-23T05:34:12.397Z",
+      "updatedAt": "2026-09-23T05:34:12.397Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "mu-bap",
       "name": "무밥 (Mu-bap) · Korean Radish Rice with Beef",
       "englishName": "Korean Radish Rice with Beef",
