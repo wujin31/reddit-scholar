@@ -2,7 +2,7 @@ import { parseRecipeText, recipeToText } from "./parser.js";
 import { formatIngredient, UNITS } from "./units.js";
 import {
   listRecipes, getRecipe, createRecipe, updateRecipe, deleteRecipe,
-  getSettings, setSettings, canWrite, testConnection, loadLocal, saveLocal,
+  getSettings, setSettings, canWrite, testConnection, loadLocal, saveLocal, safeUrl,
 } from "./store.js";
 import {
   startTimer, cancelTimer, addTime, getTimers, onTimersChange,
@@ -265,7 +265,7 @@ async function viewRecipe(root, id, query) {
     h("button", { onClick: () => shareRecipe(r) }, "Share…"),
     h("button", { onClick: () => copyText(recipeToText(r)) }, "Copy as text"),
     h("a", { href: `#/r/${id}/edit` }, "Edit"),
-    r.chatUrl ? h("a", { href: r.chatUrl, target: "_blank", rel: "noopener" }, "Open Claude chat") : null,
+    safeUrl(r.chatUrl) ? h("a", { href: safeUrl(r.chatUrl), target: "_blank", rel: "noopener noreferrer" }, "Open Claude chat") : null,
     h("button", { class: "danger", onClick: async () => {
       if (!requireWrite() || !confirm(`Delete “${displayName(r)}”? Its cook log goes too.`)) return;
       try { await deleteRecipe(id); toast("Deleted"); location.hash = "#/"; } catch (e) { toast(errorMessage(e), "error"); }
@@ -349,7 +349,7 @@ async function viewRecipe(root, id, query) {
 
       h("p", { class: "muted small center pad" },
         `Added ${new Date(r.createdAt).toLocaleDateString()}`,
-        r.chatUrl ? [" · ", h("a", { href: r.chatUrl, target: "_blank", rel: "noopener" }, "Claude chat")] : null),
+        safeUrl(r.chatUrl) ? [" · ", h("a", { href: safeUrl(r.chatUrl), target: "_blank", rel: "noopener noreferrer" }, "Claude chat")] : null),
     );
   }
   draw();
@@ -557,12 +557,13 @@ function recipeForm({ title, text = "", draftKey = null, servings = "", tags = "
     onSubmit: async (e) => {
       e.preventDefault();
       if (!parsed || !requireWrite()) return;
+      if (chatIn.value.trim() && !safeUrl(chatIn.value.trim())) { toast("The chat link must start with https://", "error"); return; }
       submit.disabled = true; const label = submit.textContent; submit.textContent = "Saving…";
       try {
         await onSubmit(parsed, source.value, {
           servings: servingsIn.value ? Number(servingsIn.value) : null,
           tags: splitTags(tagsIn.value),
-          chatUrl: chatIn.value.trim() || null,
+          chatUrl: safeUrl(chatIn.value.trim()),
         });
       } catch (err) {
         toast(errorMessage(err), "error");
@@ -724,6 +725,12 @@ async function route() {
   else await viewLibrary(root);
 
   if (scrollMemo.has(key)) window.scrollTo(0, scrollMemo.get(key));
+}
+
+// Refuse to run inside another site's frame (clickjacking); the token lives on this origin.
+if (window.top !== window.self) {
+  document.getElementById("app").textContent = "Open Recipe Box directly, not inside another page.";
+  throw new Error("framed");
 }
 
 window.addEventListener("hashchange", route);

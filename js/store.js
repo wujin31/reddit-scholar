@@ -154,8 +154,23 @@ async function commit(message, build) {
 // ---------- recipes ----------
 
 const INDEX = "recipes/index.json";
-const recipePath = (id) => `recipes/${id}/recipe.json`;
-const sourcePath = (id) => `recipes/${id}/source.txt`;
+
+// Recipe ids come from URLs, so only slug-shaped ids may become file paths.
+export const isRecipeId = (id) => typeof id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id);
+function checkId(id) {
+  if (!isRecipeId(id)) throw new Error(`Not a recipe id: ${id}`);
+  return id;
+}
+const recipePath = (id) => `recipes/${checkId(id)}/recipe.json`;
+const sourcePath = (id) => `recipes/${checkId(id)}/source.txt`;
+
+// Links saved with a recipe must be plain web links (never javascript: and the like).
+export function safeUrl(url) {
+  try {
+    const u = new URL(url);
+    return u.protocol === "https:" || u.protocol === "http:" ? u.href : null;
+  } catch { return null; }
+}
 const json = (v) => JSON.stringify(v, null, 2) + "\n";
 
 export function summarize(r) {
@@ -190,6 +205,7 @@ export async function listRecipes({ fresh = false } = {}) {
 }
 
 export async function getRecipe(id) {
+  if (!isRecipeId(id)) return null;
   const text = await readFile(recipePath(id));
   return text ? JSON.parse(text) : null;
 }

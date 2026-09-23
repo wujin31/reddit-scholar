@@ -8,7 +8,7 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { parseRecipeText, slugify } from "../js/parser.js";
-import { summarize } from "../js/store.js";
+import { summarize, safeUrl } from "../js/store.js";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const DIR = join(ROOT, "recipes");
@@ -43,7 +43,7 @@ if (cmd === "add") {
     id, ...parsed,
     servings: servings ? Number(servings) : null,
     tags: (flag(args, "--tags") ?? "").split(",").map((t) => t.trim().toLowerCase()).filter(Boolean),
-    chatUrl: flag(args, "--chat") ?? null,
+    chatUrl: safeUrl(flag(args, "--chat") ?? ""),
     favorite: false, log: [], createdAt: now, updatedAt: now,
   };
   mkdirSync(join(DIR, id), { recursive: true });

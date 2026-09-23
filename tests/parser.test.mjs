@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { parseRecipeText, recipeToText, slugify, findTimers, parseTitle } from "../js/parser.js";
 import { parseIngredientLine, formatIngredient, formatFraction } from "../js/units.js";
+import { isRecipeId, safeUrl } from "../js/store.js";
 
 const here = (p) => new URL(p, import.meta.url);
 const pasted = readFileSync(here("../recipes/khao-mok-kai/source.txt"), "utf8");
@@ -86,4 +87,13 @@ test("titles", () => {
   assert.deepEqual(parseTitle("Pad Kra Pao Gai · Thai Basil Chicken"), { nativeName: "", romanized: "Pad Kra Pao Gai", englishName: "Thai Basil Chicken" });
   assert.deepEqual(parseTitle("ผัดไทย · Pad Thai"), { nativeName: "ผัดไทย", romanized: "", englishName: "Pad Thai" });
   assert.deepEqual(parseTitle("Weeknight Miso-Glazed Salmon"), { nativeName: "", romanized: "", englishName: "Weeknight Miso-Glazed Salmon" });
+});
+
+test("security: recipe ids and saved links", () => {
+  assert.ok(isRecipeId("khao-mok-kai"));
+  for (const bad of ["../index", "a/b", "..", "", "Khao", "x%2F..", "-x", null]) assert.ok(!isRecipeId(bad), String(bad));
+  assert.equal(safeUrl("https://claude.ai/chat/abc"), "https://claude.ai/chat/abc");
+  for (const bad of ["javascript:alert(1)", "JaVaScRiPt:alert(1)", "data:text/html,x", "  javascript:x", "not a url", ""]) {
+    assert.equal(safeUrl(bad), null, bad);
+  }
 });
