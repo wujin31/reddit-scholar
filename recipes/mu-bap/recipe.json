@@ -1,0 +1,183 @@
+{
+  "id": "mu-bap",
+  "name": "무밥 (Mu-bap) · Korean Radish Rice with Beef",
+  "nativeName": "무밥",
+  "romanized": "Mu-bap",
+  "englishName": "Korean Radish Rice with Beef",
+  "description": "Korean radish and seared beef cooked over rice with kombu, then mixed at the table with yangnyeomjang. Uses the Mixed setting.",
+  "ingredients": [
+    {
+      "text": "540 ml short-grain rice (3 rice-cooker cups)",
+      "qty": 540,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "short-grain rice (3 rice-cooker cups)"
+    },
+    {
+      "text": "150 g beef chuck or ribeye, julienned",
+      "qty": 150,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "beef chuck or ribeye, julienned"
+    },
+    {
+      "text": "15 ml soy sauce (for beef marinade)",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "soy sauce (for beef marinade)"
+    },
+    {
+      "text": "4.9 ml minced garlic (for beef marinade)",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "minced garlic (for beef marinade)"
+    },
+    {
+      "text": "4.9 ml toasted sesame oil 참기름 (chamgireum) (for beef marinade)",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "toasted sesame oil 참기름 (chamgireum) (for beef marinade)"
+    },
+    {
+      "text": "500 g Korean radish 무 (mu), cut into 5 mm matchsticks",
+      "qty": 500,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "Korean radish 무 (mu), cut into 5 mm matchsticks"
+    },
+    {
+      "text": "5 g kombu 다시마 (dasima), about a 5 cm piece",
+      "qty": 5,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "kombu 다시마 (dasima), about a 5 cm piece"
+    },
+    {
+      "text": "59 ml soy sauce (for yangnyeomjang)",
+      "qty": 59,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "soy sauce (for yangnyeomjang)"
+    },
+    {
+      "text": "15 ml gochugaru 고춧가루",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "gochugaru 고춧가루"
+    },
+    {
+      "text": "3 scallions, finely chopped",
+      "qty": 3,
+      "qtyMax": null,
+      "unit": null,
+      "item": "scallions, finely chopped"
+    },
+    {
+      "text": "4.9 ml minced garlic (for yangnyeomjang)",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "minced garlic (for yangnyeomjang)"
+    },
+    {
+      "text": "15 ml toasted sesame oil (for yangnyeomjang)",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "toasted sesame oil (for yangnyeomjang)"
+    },
+    {
+      "text": "15 ml toasted sesame seeds 통깨 (tongkkae), crushed",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "toasted sesame seeds 통깨 (tongkkae), crushed"
+    },
+    {
+      "text": "2.5 ml sugar",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "sugar"
+    },
+    {
+      "text": "1 Cheongyang chili 청양고추 (cheongyang gochu), minced (optional)",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": null,
+      "item": "Cheongyang chili 청양고추 (cheongyang gochu), minced (optional)"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Rinse 540 ml short-grain rice (3 rice-cooker cups), soak it in plain water for 30 minutes, then drain.",
+      "ingredientRefs": [
+        0
+      ],
+      "timers": [
+        {
+          "text": "30 minutes",
+          "seconds": 1800
+        }
+      ]
+    },
+    {
+      "text": "Toss 150 g beef chuck or ribeye, julienned with 15 ml soy sauce (for beef marinade), 4.9 ml minced garlic (for beef marinade), and 4.9 ml toasted sesame oil 참기름 (chamgireum) (for beef marinade) and leave for 10 minutes. Sear in a hot stainless pan for 1–2 minutes, just until browned on the outside.",
+      "ingredientRefs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        },
+        {
+          "text": "1–2 minutes",
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "text": "Put the rice in the inner pan and add water to 430 ml total liquid. Lay 5 g kombu 다시마 (dasima), about a 5 cm piece on the surface, then the beef, then pile 500 g Korean radish 무 (mu), cut into 5 mm matchsticks on top. Select Mixed and start. Don't salt the radish; salt would pull its water out early.",
+      "ingredientRefs": [
+        5,
+        6
+      ],
+      "timers": []
+    },
+    {
+      "text": "While the rice cooks, stir together 59 ml soy sauce (for yangnyeomjang), 15 ml gochugaru 고춧가루, 3 scallions, finely chopped, 4.9 ml minced garlic (for yangnyeomjang), 15 ml toasted sesame oil (for yangnyeomjang), 15 ml toasted sesame seeds 통깨 (tongkkae), crushed, 2.5 ml sugar, and 1 Cheongyang chili 청양고추 (cheongyang gochu), minced (optional).",
+      "ingredientRefs": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "timers": []
+    },
+    {
+      "text": "When the cycle ends, remove the kombu and fold everything together gently. Serve with yangnyeomjang to mix in at the table.",
+      "ingredientRefs": [],
+      "timers": []
+    }
+  ],
+  "notes": "Calibration variables (log together): the water (430 ml, about 0.8:1) and the radish weight. The radish releases a lot of water as it cooks, so if the rice is wet, drop to 400 ml. Quality: use Korean mu, not daikon. It's denser and sweeter, and fall is its season. All the seasoning goes on at the table, so there's nothing in the pot to scorch. Sodium is controlled by how much sauce you spoon on. Meal prep: store the sauce separately.",
+  "servings": null,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-23T06:03:59.387Z",
+  "updatedAt": "2026-09-23T06:03:59.387Z"
+}
