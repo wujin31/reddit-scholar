@@ -1,0 +1,172 @@
+{
+  "id": "dak-juk",
+  "name": "닭죽 (Dak-juk) · Korean Chicken Porridge",
+  "nativeName": "닭죽",
+  "romanized": "Dak-juk",
+  "englishName": "Korean Chicken Porridge",
+  "description": "Soaked rice toasted in sesame oil, cooked on the Porridge setting with bone-in thighs and aromatics, then finished with soup soy, laver, and sesame.",
+  "ingredients": [
+    {
+      "text": "180 ml short-grain rice (1 rice-cooker cup)",
+      "qty": 180,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "short-grain rice (1 rice-cooker cup)"
+    },
+    {
+      "text": "15 ml toasted sesame oil 참기름 (chamgireum)",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "toasted sesame oil 참기름 (chamgireum)"
+    },
+    {
+      "text": "500 g bone-in, skin-on chicken thighs",
+      "qty": 500,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "bone-in, skin-on chicken thighs"
+    },
+    {
+      "text": "6 garlic cloves, whole",
+      "qty": 6,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic cloves, whole"
+    },
+    {
+      "text": "10 g ginger, sliced",
+      "qty": 10,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "ginger, sliced"
+    },
+    {
+      "text": "2 scallion whites (keep the greens for garnish)",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "scallion whites (keep the greens for garnish)"
+    },
+    {
+      "text": "50 g carrot, finely diced (3 mm)",
+      "qty": 50,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "carrot, finely diced (3 mm)"
+    },
+    {
+      "text": "1/2 small onion, finely diced",
+      "qty": 0.5,
+      "qtyMax": null,
+      "unit": null,
+      "item": "small onion, finely diced"
+    },
+    {
+      "text": "990 ml water",
+      "qty": 990,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "water"
+    },
+    {
+      "text": "15 ml soup soy sauce 국간장 (guk-ganjang)",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "soup soy sauce 국간장 (guk-ganjang)"
+    },
+    {
+      "text": "2 g kosher salt, to taste",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "kosher salt, to taste"
+    },
+    {
+      "text": "2 scallion greens, sliced",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "scallion greens, sliced"
+    },
+    {
+      "text": "30 ml crumbled roasted laver 김가루 (gimgaru)",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "crumbled roasted laver 김가루 (gimgaru)"
+    },
+    {
+      "text": "15 ml toasted sesame seeds 깨 (kkae)",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "toasted sesame seeds 깨 (kkae)"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Rinse 180 ml short-grain rice (1 rice-cooker cup) and soak it for 1 hour, then drain well.",
+      "ingredientRefs": [
+        0
+      ],
+      "timers": [
+        {
+          "text": "1 hour",
+          "seconds": 3600
+        }
+      ]
+    },
+    {
+      "text": "Put 15 ml toasted sesame oil 참기름 (chamgireum) in a stainless pan over low heat, add the drained rice, and stir until the grains turn translucent at the edges, about 2 minutes. Toasting the rice in sesame oil is the standard Korean first step for juk.",
+      "ingredientRefs": [
+        1
+      ],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "text": "Scrape the rice into the inner pan and add 50 g carrot, finely diced (3 mm), 1/2 small onion, finely diced, and 990 ml water. Set 500 g bone-in, skin-on chicken thighs on top with 6 garlic cloves, whole, 10 g ginger, sliced, and 2 scallion whites (keep the greens for garnish). Select Porridge and start.",
+      "ingredientRefs": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "timers": []
+    },
+    {
+      "text": "When the cycle ends, lift out the chicken and the aromatics. Shred the meat, discarding the bones and skin, and stir it back in. Season with 15 ml soup soy sauce 국간장 (guk-ganjang) and 2 g kosher salt, to taste. If it's too thick, loosen with boiling water. Cancel Keep Warm.",
+      "ingredientRefs": [
+        9,
+        10
+      ],
+      "timers": []
+    },
+    {
+      "text": "Top each bowl with 2 scallion greens, sliced, 30 ml crumbled roasted laver 김가루 (gimgaru), 15 ml toasted sesame seeds 깨 (kkae), and a thread of sesame oil.",
+      "ingredientRefs": [
+        11,
+        12,
+        13
+      ],
+      "timers": []
+    }
+  ],
+  "notes": "Calibration variable: final consistency. Cook at 1:5.5 and loosen afterward, rather than overfilling the Porridge line. Quality: bone-in thighs make their own broth over the long cycle, which is why this uses plain water. With boneless thighs, swap half the water for chicken stock. Guk-ganjang (soup soy) is saltier and lighter in color than regular soy; it keeps the porridge pale. Serve with kimchi on the side for acid contrast.",
+  "servings": null,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-23T06:03:18.123Z",
+  "updatedAt": "2026-09-23T06:03:18.123Z"
+}
