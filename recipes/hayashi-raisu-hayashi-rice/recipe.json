@@ -210,7 +210,7 @@
     }
   ],
   "notes": "Calibration variable: reduction endpoint (step 6) logged together with final salt. Ketchup, tonkatsu sauce, soy and the consommé cube all concentrate as it reduces, so salt only at the very end. Meal prep: the flavor deepens on day 2, but mushrooms deflate on reheat; for peak texture, hold them back and sauté fresh per reheat.",
-  "servings": null,
+  "servings": 4,
   "tags": [
     "dinner"
   ],
@@ -218,5 +218,5 @@
   "favorite": false,
   "log": [],
   "createdAt": "2026-09-24T00:11:07.250Z",
-  "updatedAt": "2026-09-24T00:11:07.250Z"
+  "updatedAt": "2026-09-24T00:11:21.912Z"
 }
