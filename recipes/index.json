@@ -19,6 +19,23 @@
       "cookCount": 0
     },
     {
+      "id": "hayashi-raisu-hayashi-rice",
+      "name": "ハヤシライス (Hayashi Raisu / Hayashi Rice)",
+      "englishName": "ハヤシライス (Hayashi Raisu / Hayashi Rice)",
+      "nativeName": "",
+      "romanized": "",
+      "tags": [
+        "dinner"
+      ],
+      "favorite": false,
+      "servings": null,
+      "items": "thin-sliced beef short plate, 牛バラ薄切り (gyū bara usugiri), cut bite-size · yellow onion, 1 cm wedges · brown cremini mushrooms, halved · neutral oil · unsalted butter (for browning) · dry red wine (one you'd drink) · ketchup · Bull-Dog とんかつソース (tonkatsu sōsu) · 本みりん (hon mirin) · soy sauce · whole peeled San Marzano tomatoes, with juice · whole milk · consommé bouillon cube · bay leaf · unsalted butter (to finish) · kosher salt, to taste · black pepper · steamed short-grain rice · parsley, minced (optional)",
+      "createdAt": "2026-09-24T00:11:07.250Z",
+      "updatedAt": "2026-09-24T00:11:07.250Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "mu-bap",
       "name": "무밥 (Mu-bap) · Korean Radish Rice with Beef",
       "englishName": "Korean Radish Rice with Beef",
