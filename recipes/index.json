@@ -2,6 +2,21 @@
   "version": 1,
   "recipes": [
     {
+      "id": "creamy-spicy-vodka-penne-with-hot-italian-sausage",
+      "name": "Creamy Spicy Vodka Penne with Hot Italian Sausage",
+      "englishName": "Creamy Spicy Vodka Penne with Hot Italian Sausage",
+      "nativeName": "",
+      "romanized": "",
+      "tags": [],
+      "favorite": false,
+      "servings": 4,
+      "items": "hot Italian sausage, casings removed · penne · Carbone spicy vodka sauce · heavy cream · garlic cloves, thinly sliced · tomato paste · baby spinach · olive oil · Parmesan, finely grated · fresh basil",
+      "createdAt": "2026-09-24T00:16:50.361Z",
+      "updatedAt": "2026-09-24T00:16:50.361Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "dak-juk",
       "name": "닭죽 (Dak-juk) · Korean Chicken Porridge",
       "englishName": "Korean Chicken Porridge",
