@@ -69,6 +69,7 @@ async function gh(path, { method = "GET", body, raw = false } = {}) {
     },
     body: body ? JSON.stringify(body) : undefined,
     cache: "no-store",
+    signal: AbortSignal.timeout?.(20000), // don't leave Save stuck on "Saving…"
   });
   if (!res.ok) {
     const err = new Error(`GitHub ${method} ${path} → ${res.status}`);
@@ -129,6 +130,7 @@ async function commit(message, build) {
     const head = await gh(`/git/ref/heads/${encodeURIComponent(s.branch)}`);
     const parent = await gh(`/git/commits/${head.object.sha}`);
     const files = await build(parent.sha);
+    if (!files) return; // nothing to change
     const tree = await gh("/git/trees", {
       method: "POST",
       body: {
@@ -142,11 +144,18 @@ async function commit(message, build) {
     const next = await gh("/git/commits", { method: "POST", body: { message, tree: tree.sha, parents: [parent.sha] } });
     try {
       await gh(`/git/refs/heads/${encodeURIComponent(s.branch)}`, { method: "PATCH", body: { sha: next.sha } });
-      for (const [path, content] of Object.entries(files)) if (content != null) cachePut(path, content);
-      return;
     } catch (e) {
-      if (e.status !== 422) throw e; // 422 = branch moved; rebuild on the new head
+      // The update may have landed even though the reply was lost (connection dropped).
+      // Check before retrying, so a second tap on Save can't add the recipe twice.
+      const landed = e.status ? false : await gh(`/git/ref/heads/${encodeURIComponent(s.branch)}`)
+        .then((ref) => ref.object.sha === next.sha).catch(() => false);
+      if (!landed) {
+        if (e.status === 422 || e.status === 409) continue; // the branch moved; rebuild on the new head
+        throw e;
+      }
     }
+    for (const [path, content] of Object.entries(files)) if (content != null) cachePut(path, content);
+    return;
   }
   throw new Error("Couldn't save: the repo kept changing. Try again.");
 }
@@ -200,8 +209,27 @@ function parseIndex(text) {
 let indexMemo = null;
 
 export async function listRecipes({ fresh = false } = {}) {
-  if (!indexMemo || fresh) indexMemo = parseIndex(await readFile(INDEX));
+  if (!indexMemo || fresh) {
+    const text = await readFile(INDEX);
+    // No index might mean a new, empty library, or a misspelled repo/branch in Settings.
+    if (text == null && canWrite()) await checkBranch();
+    indexMemo = parseIndex(text);
+  }
   return indexMemo.recipes;
+}
+
+async function checkBranch() {
+  const s = getSettings();
+  try {
+    await gh(`/git/ref/heads/${encodeURIComponent(s.branch)}`);
+  } catch (e) {
+    if (e.status !== 404) return; // offline etc.: the library just shows what's cached
+    let repoExists = true;
+    try { await gh(""); } catch { repoExists = false; }
+    throw new Error(repoExists
+      ? `There's no branch “${s.branch}” in ${s.owner}/${s.repo}. Check Branch in Settings.`
+      : `Couldn't find the repo ${s.owner}/${s.repo}. Check Owner and Repository in Settings.`);
+  }
 }
 
 export async function getRecipe(id) {
@@ -223,12 +251,21 @@ export async function createRecipe(parsed, sourceText, extra = {}) {
     const index = parseIndex(await readFile(INDEX, ref));
     const taken = new Set(index.recipes.map((r) => r.id));
     const base = slugify(parsed);
+    // Saving the same paste twice (e.g. after a save whose reply was lost) reuses the first copy.
+    const source = sourceText.trim() + "\n";
+    for (let n = 1; taken.has(n === 1 ? base : `${base}-${n}`); n++) {
+      const existing = n === 1 ? base : `${base}-${n}`;
+      if ((await readFile(sourcePath(existing), ref)) === source) {
+        saved = JSON.parse(await readFile(recipePath(existing), ref));
+        return null;
+      }
+    }
     let id = base;
     for (let n = 2; taken.has(id); n++) id = `${base}-${n}`;
     saved = { id, ...parsed, ...extra, favorite: false, log: [], createdAt: now, updatedAt: now };
     const next = withSummary(index, saved);
     indexMemo = next;
-    return { [recipePath(id)]: json(saved), [sourcePath(id)]: sourceText.trim() + "\n", [INDEX]: json(next) };
+    return { [recipePath(id)]: json(saved), [sourcePath(id)]: source, [INDEX]: json(next) };
   });
   return saved;
 }

@@ -51,6 +51,19 @@ home-screen app.
 
 A PDF printed from the card also works, since it has the same text, but plain text is cleaner.
 
+### Keeping the card's timers
+
+Copying a card leaves out its timer buttons, so plain copy/paste only finds times that are
+written into a step's sentence ("simmer about 20 minutes"). To keep every timer the card shows:
+
+1. On the Add screen, open **Keep the card's timers** → **Copy prompt for Claude**.
+2. Send that prompt in the same Claude chat as the recipe. Claude replies with the card as JSON,
+   including each step's timers and the servings.
+3. Copy Claude's whole reply and paste it into Recipe Box.
+
+When editing a recipe you can add a timer to any step by ending it with `⏱ 10 min` or
+`[timer 10 min]`. "Copy as text" writes timers the same way, so they survive a round trip.
+
 ## Timers
 
 Tap any time in a step (for example **20 minutes**). Timers run in the app and chime while it's
@@ -102,7 +115,8 @@ device.
 ```sh
 node scripts/recipes.mjs add card.txt --servings 4 --tags thai,dinner   # add a recipe
 node scripts/recipes.mjs reindex                                        # rebuild recipes/index.json
-npm test                                                                 # parser, units, security tests
+node scripts/recipes.mjs refresh                                        # re-run the parser over saved recipes
+npm test                                                                 # parser, units, security tests (fixtures in tests/fixtures)
 python3 -m http.server                                                   # run locally on :8000
 ```
 
@@ -112,7 +126,7 @@ python3 -m http.server                                                   # run l
 
 | File | What it does |
 | --- | --- |
-| `parser.js` | Turns Claude recipe card text into a recipe: title parts, ingredients, steps, notes. Links each step to the ingredients it mentions and finds timers. |
+| `parser.js` | Turns Claude recipe card text, or JSON from the export prompt, into a recipe: title parts, ingredients, steps, notes, servings. Links each step to the ingredients it mentions and finds timers. |
 | `units.js` | Quantities, scaling, fractions, US/metric conversion. |
 | `store.js` | Reads and writes recipe files through the GitHub API, plus the offline cache. |
 | `timers.js` | Kitchen timers, chime, screen wake lock. |

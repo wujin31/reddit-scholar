@@ -270,6 +270,9 @@ export function parseRecipeText(raw) {
   if (!recipe.ingredients.length) {
     throw new Error("Couldn't find an Ingredients list. Paste the whole recipe card, starting from its title.");
   }
+  if (!recipe.steps.length) {
+    throw new Error("Couldn't find any Steps. Paste the whole recipe card, including its steps.");
+  }
   return finishSteps(recipe);
 }
 

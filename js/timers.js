@@ -33,6 +33,9 @@ export function shortDuration(seconds) {
 // rings even when the app is closed.
 export function startTimer(label, seconds) {
   const s = getSettings();
+  // A double tap (or the chip and the big button) shouldn't start the same timer twice.
+  const now = Date.now();
+  if (timers.some((t) => !t.done && t.label === label && t.seconds === seconds && now - (t.endsAt - t.seconds * 1000) < 3000)) return;
   if (s.timerMode === "clock") {
     const url = `shortcuts://run-shortcut?name=${encodeURIComponent(s.clockShortcut)}&input=text&text=${seconds}`;
     location.href = url;
@@ -61,7 +64,11 @@ function unlockAudio() {
   } catch { audio = null; }
 }
 
+// Timers restored after a reload need audio too: unlock it on the first tap anywhere.
+document.addEventListener("pointerdown", unlockAudio, { capture: true, passive: true });
+
 function chime() {
+  if (!audio) unlockAudio();
   if (!audio) return;
   const t0 = audio.currentTime;
   [0, 0.35, 0.7, 1.4, 1.75, 2.1].forEach((offset, i) => {

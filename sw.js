@@ -1,7 +1,7 @@
 // Offline support. The app shell is served from cache and refreshed in the background;
 // recipe data is network-first with the cache as a fallback.
 
-const SHELL = "rb-shell-v2";
+const SHELL = "rb-shell-v3";
 const SHELL_FILES = [
   "./", "index.html", "styles.css", "manifest.webmanifest",
   "js/app.js", "js/parser.js", "js/units.js", "js/store.js", "js/timers.js",

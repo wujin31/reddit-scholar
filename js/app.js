@@ -14,6 +14,7 @@ import {
 function h(tag, props = {}, ...children) {
   const el = document.createElement(tag);
   for (const [k, v] of Object.entries(props ?? {})) {
+    if (v === false && k in el && typeof el[k] === "boolean") { el[k] = false; continue; }
     if (v == null || v === false) continue;
     if (k.startsWith("on")) el.addEventListener(k.slice(2).toLowerCase(), v);
     else if (k === "class") el.className = v;
@@ -61,6 +62,10 @@ function toast(message, kind = "") {
 }
 
 function errorMessage(e) {
+  if (e.name === "TypeError" || e.name === "AbortError") {
+    return navigator.onLine === false ? "You're offline. Try again when you're connected." : "Couldn't reach GitHub. Check your connection and try again.";
+  }
+  if (e.status >= 500) return `GitHub is having trouble (${e.status}). Try again in a moment.`;
   if (e.readOnly || (e.status === 403 && /personal access token/i.test(e.detail ?? ""))) {
     const { owner, repo } = getSettings();
     return `The token can read but not save. On GitHub, edit the token: Repository access must include ${owner}/${repo}, and Repository permissions → Contents must be “Read and write”.`;
@@ -82,7 +87,8 @@ function getView(id) {
   return { factor: 1, units: getSettings().units, checked: [], ...loadLocal(viewKey(id), {}) };
 }
 function setView(id, patch) {
-  saveLocal(viewKey(id), { ...getView(id), ...patch });
+  // Only what was changed here, so defaults (like Settings → Units) still apply to the rest.
+  saveLocal(viewKey(id), { ...loadLocal(viewKey(id), {}), ...patch });
 }
 
 // ---------- rendering helpers ----------
@@ -121,7 +127,12 @@ function renderStep(step, recipe, factor, units, stepLabel) {
   for (const m of marks) {
     out.push(convertTemperatures(text.slice(pos, m.start), units));
     if (m.kind === "ing") out.push(h("span", { class: "ing-ref" }, formatIngredient(m.ing, factor, units)));
-    else out.push(timerChip(m.t, stepLabel, m.t.text));
+    else {
+      // Keep "." or "," after a chip on the chip's line.
+      const tail = text.slice(m.end).match(/^[.,;:!?)]+/)?.[0] ?? "";
+      out.push(h("span", { class: "nowrap" }, timerChip(m.t, stepLabel, m.t.text), tail));
+      m.end += tail.length;
+    }
     pos = m.end;
   }
   out.push(convertTemperatures(text.slice(pos), units));
@@ -195,8 +206,9 @@ async function viewLibrary(root) {
     recipes.forEach((r) => (r.tags ?? []).forEach((t) => counts.set(t, (counts.get(t) ?? 0) + 1)));
     const tags = [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([t]) => t);
     const filters = [["all", "All"], ["fav", "★ Favorites"], ...tags.map((t) => [`tag:${t}`, t])];
+    if (!filters.some(([v]) => v === libraryState.filter)) libraryState.filter = "all"; // its tag is gone
     chips.replaceChildren(...filters.map(([v, l]) => h("button", {
-      class: `chip ${libraryState.filter === v ? "on" : ""}`,
+      class: `chip ${libraryState.filter === v ? "on" : ""}`, "aria-pressed": String(libraryState.filter === v),
       onClick: () => { libraryState.filter = libraryState.filter === v ? "all" : v; draw(); },
     }, l)));
 
@@ -248,7 +260,8 @@ async function loadRecipeOr404(root, id) {
   if (r) r = refreshRecipe(r);
   root.replaceChildren();
   if (!r) {
-    root.append(navbar(backButton(), ""), h("div", { class: "empty" }, h("p", {}, "Recipe not found."), h("a", { class: "button", href: "#/" }, "Back to recipes")));
+    const why = navigator.onLine === false ? "You're offline, and this recipe hasn't been opened on this device yet." : "Recipe not found.";
+    root.append(navbar(backButton(), ""), h("div", { class: "empty" }, h("p", {}, why), h("a", { class: "button", href: "#/" }, "Back to recipes")));
     return null;
   }
   return r;
@@ -256,16 +269,25 @@ async function loadRecipeOr404(root, id) {
 
 async function viewRecipe(root, id, query) {
   let r = await loadRecipeOr404(root, id);
-  if (!r) return;
+  if (!r || !root.isConnected) return; // navigated away while loading
   let view = getView(id);
 
-  const star = iconButton("star", "Favorite", async () => {
+  // Taps flip the wish right away; saves run one at a time and always save the latest wish.
+  let wantFavorite = Boolean(r.favorite);
+  let saving = Promise.resolve();
+  const star = iconButton("star", "Favorite", () => {
     if (!requireWrite()) return;
-    const favorite = !r.favorite;
-    star.classList.toggle("on", favorite);
-    try { r = await updateRecipe(id, `${favorite ? "Favorite" : "Unfavorite"}: ${displayName(r)}`, (cur) => ({ ...cur, favorite })); }
-    catch (e) { star.classList.toggle("on", !favorite); toast(errorMessage(e), "error"); }
+    wantFavorite = !wantFavorite;
+    star.classList.toggle("on", wantFavorite);
+    star.setAttribute("aria-pressed", String(wantFavorite));
+    saving = saving.then(async () => {
+      const favorite = wantFavorite;
+      if (Boolean(r.favorite) === favorite) return;
+      try { r = await updateRecipe(id, `${favorite ? "Favorite" : "Unfavorite"}: ${displayName(r)}`, (cur) => ({ ...cur, favorite })); }
+      catch (e) { wantFavorite = Boolean(r.favorite); star.classList.toggle("on", wantFavorite); toast(errorMessage(e), "error"); }
+    });
   }, r.favorite ? "star on" : "star");
+  star.setAttribute("aria-pressed", String(wantFavorite));
 
   const menu = h("div", { class: "menu", hidden: true },
     h("button", { onClick: () => shareRecipe(r) }, "Share…"),
@@ -286,6 +308,7 @@ async function viewRecipe(root, id, query) {
   function draw() {
     const { factor, units } = view;
     const checked = new Set(view.checked);
+    const isChecked = (ing) => checked.has(ing.text);
     const servingsNow = r.servings ? Math.round(r.servings * factor * 10) / 10 : null;
     const stepFactor = (dir) => {
       if (r.servings) {
@@ -335,9 +358,9 @@ async function viewRecipe(root, id, query) {
           g.name ? h("h3", {}, g.name) : null,
           h("ul", { class: "ingredients" }, g.items.map(([ing, i]) => h("li", {},
             h("button", {
-              class: `check ${checked.has(i) ? "done" : ""}`, role: "checkbox", "aria-checked": String(checked.has(i)),
+              class: `check ${isChecked(ing) ? "done" : ""}`, role: "checkbox", "aria-checked": String(isChecked(ing)),
               onClick: () => {
-                checked.has(i) ? checked.delete(i) : checked.add(i);
+                isChecked(ing) ? checked.delete(ing.text) : checked.add(ing.text);
                 view.checked = [...checked]; setView(id, { checked: view.checked }); draw();
               },
             }, h("span", { class: "box" }, icon("check")), h("span", {}, formatIngredient(ing, factor, units)))))),
@@ -354,7 +377,7 @@ async function viewRecipe(root, id, query) {
       cookLogSection(r, (next) => { r = next; draw(); }),
 
       h("p", { class: "muted small center pad" },
-        `Added ${new Date(r.createdAt).toLocaleDateString()}`,
+        r.createdAt && !isNaN(new Date(r.createdAt)) ? `Added ${new Date(r.createdAt).toLocaleDateString()}` : null,
         safeUrl(r.chatUrl) ? [" · ", h("a", { href: safeUrl(r.chatUrl), target: "_blank", rel: "noopener noreferrer" }, "Claude chat")] : null),
     );
   }
@@ -376,7 +399,8 @@ function cookLogSection(r, onSaved) {
         h("div", { class: "log-head" },
           h("strong", {}, new Date(e.date + "T12:00").toLocaleDateString(undefined, { dateStyle: "medium" })),
           e.rating ? h("span", { class: "stars", "aria-label": `${e.rating} of 5` }, "★".repeat(e.rating) + "☆".repeat(5 - e.rating)) : null,
-          e.scale && e.scale !== 1 ? h("span", { class: "muted small" }, `×${e.scale}`) : null),
+          e.scale && e.scale !== 1 ? h("span", { class: "muted small" },
+            r.servings ? `${Math.round(r.servings * e.scale * 10) / 10} servings` : `×${Math.round(e.scale * 100) / 100}`) : null),
         e.variables ? h("p", {}, h("span", { class: "label" }, "Variables "), e.variables) : null,
         e.notes ? h("p", {}, e.notes) : null)))
       : h("p", { class: "muted" }, "Track what you changed and how it came out, so the next cook is better."),
@@ -389,7 +413,7 @@ function openLogSheet(r, onSaved) {
   let rating = 0;
   const stars = h("div", { class: "star-input" });
   const drawStars = () => stars.replaceChildren(...[1, 2, 3, 4, 5].map((n) =>
-    h("button", { type: "button", class: n <= rating ? "on" : "", "aria-label": `${n} star${n > 1 ? "s" : ""}`, onClick: () => { rating = rating === n ? 0 : n; drawStars(); } }, "★")));
+    h("button", { type: "button", class: n <= rating ? "on" : "", "aria-pressed": String(n <= rating), "aria-label": `${n} star${n > 1 ? "s" : ""}`, onClick: () => { rating = rating === n ? 0 : n; drawStars(); } }, "★")));
   drawStars();
   const date = h("input", { type: "date", value: new Date().toLocaleDateString("en-CA"), required: true });
   const variables = h("textarea", { rows: 2, placeholder: last?.variables ? `Last time: ${last.variables}` : "e.g. liquid 540 ml, bottom scorched slightly" });
@@ -402,7 +426,7 @@ function openLogSheet(r, onSaved) {
       onSubmit: async (e) => {
         e.preventDefault();
         save.disabled = true; save.textContent = "Saving…";
-        const entry = { date: date.value, rating, variables: variables.value.trim(), notes: notes.value.trim(), scale: getView(r.id).factor };
+        const entry = { date: date.value, rating, variables: variables.value.trim(), notes: notes.value.trim(), scale: Math.round(getView(r.id).factor * 1000) / 1000 };
         try {
           const next = await updateRecipe(r.id, `Log cook: ${displayName(r)}`, (cur) => ({ ...cur, log: [...(cur.log ?? []), entry] }));
           dialog.close(); toast("Logged"); onSaved(next);
@@ -444,9 +468,15 @@ function requireWrite() {
 
 async function viewCook(root, id) {
   const r = await loadRecipeOr404(root, id);
-  if (!r) return;
+  if (!r || !root.isConnected) return; // navigated away while loading
+  if (!r.steps.length) {
+    root.append(navbar(backButton(`#/r/${id}`), ""), h("div", { class: "empty" }, h("p", {}, "This recipe has no steps to cook through."), h("a", { class: "button", href: `#/r/${id}` }, "Back to the recipe")));
+    return;
+  }
   const { factor, units } = getView(id);
-  let i = Math.min(loadLocal(`step:${id}`, 0), r.steps.length - 1);
+  // Pick up where you left off, unless that was more than 12 hours ago.
+  const resume = loadLocal(`step:${id}`, null);
+  let i = resume && Date.now() - resume.at < 12 * 3600e3 ? Math.min(resume.i, r.steps.length - 1) : 0;
   keepAwake(true);
   onLeave(() => keepAwake(false));
   document.body.classList.add("cooking");
@@ -468,14 +498,14 @@ async function viewCook(root, id) {
 
   function go(n) {
     i = Math.max(0, Math.min(r.steps.length - 1, n));
-    saveLocal(`step:${id}`, i);
+    saveLocal(`step:${id}`, { i, at: Date.now() });
     draw();
     window.scrollTo(0, 0);
   }
 
   function finish() {
-    saveLocal(`step:${id}`, 0);
-    location.hash = `#/r/${id}?log=1`;
+    saveLocal(`step:${id}`, null);
+    location.replace(`#/r/${id}?log=1`); // Back from the recipe shouldn't land in cooking mode again
   }
 
   function draw() {
@@ -625,7 +655,7 @@ function viewImport(root, query) {
 
 async function viewEdit(root, id) {
   const r = await loadRecipeOr404(root, id);
-  if (!r) return;
+  if (!r || !root.isConnected) return; // navigated away while loading
   root.append(
     navbar(backButton(`#/r/${id}`), ""),
     recipeForm({
@@ -638,6 +668,7 @@ async function viewEdit(root, id) {
       submitLabel: "Save changes",
       onSubmit: async (parsed, _text, extra) => {
         await updateRecipe(id, `Edit recipe: ${displayName(parsed)}`, (cur) => ({ ...cur, ...parsed, ...extra }));
+        if ((extra.servings ?? null) !== (r.servings ?? null)) setView(id, { factor: 1 }); // new base amount
         toast("Saved");
         location.replace(`#/r/${id}`);
       },
@@ -713,6 +744,10 @@ function mountTimerTray() {
   };
   onTimersChange(draw);
   draw(getTimers());
+  // Pages pad their bottom by the tray's height so nothing ends up underneath it.
+  const measure = () => document.documentElement.style.setProperty("--tray-h", `${tray.hidden ? 0 : tray.offsetHeight + 12}px`);
+  new ResizeObserver(measure).observe(tray);
+  onTimersChange(measure);
 }
 
 // ---------- router ----------
@@ -732,15 +767,19 @@ async function route() {
   const [path, qs] = (location.hash.slice(1) || "/").split("?");
   const query = new URLSearchParams(qs);
   const parts = path.split("/").filter(Boolean);
-  const root = document.getElementById("app");
-  root.replaceChildren();
+  // Each route renders into its own element. A view still loading when you navigate away
+  // finds its element detached and stops, instead of drawing over the new page.
+  const root = h("div");
+  document.getElementById("app").replaceChildren(root);
   window.scrollTo(0, 0);
 
   const key = location.hash || "#/";
-  onLeave(() => scrollMemo.set(key, window.scrollY));
+  const isLibrary = !parts.length;
+  if (isLibrary) onLeave(() => scrollMemo.set(key, window.scrollY));
 
   if (parts[0] === "r" && parts[1]) {
-    const id = decodeURIComponent(parts[1]);
+    let id = "";
+    try { id = decodeURIComponent(parts[1]); } catch { /* malformed: shows "not found" */ }
     if (parts[2] === "cook") await viewCook(root, id);
     else if (parts[2] === "edit") await viewEdit(root, id);
     else await viewRecipe(root, id, query);
@@ -748,7 +787,7 @@ async function route() {
   else if (parts[0] === "settings") viewSettings(root);
   else await viewLibrary(root);
 
-  if (scrollMemo.has(key)) window.scrollTo(0, scrollMemo.get(key));
+  if (isLibrary && root.isConnected && scrollMemo.has(key)) window.scrollTo(0, scrollMemo.get(key));
 }
 
 // Refuse to run inside another site's frame (clickjacking); the token lives on this origin.
