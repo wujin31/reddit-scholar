@@ -116,6 +116,32 @@ function formatQty(qty, unit, style) {
   return formatDecimal(qty);
 }
 
+const SPOONS = [
+  [0.25, "tsp"], [0.5, "tsp"], [0.75, "tsp"], [1, "tsp"], [1.5, "tsp"], [2, "tsp"],
+  [1, "tbsp"], [1.5, "tbsp"], [2, "tbsp"], [3, "tbsp"],
+];
+
+// 4.9 ml -> 1 tsp, 2.5 ml -> 1/2 tsp, 30 ml -> 2 tbsp. Only close matches under 50 ml.
+function spoonFor(ml) {
+  if (ml > 50) return null;
+  for (const [qty, unit] of SPOONS) {
+    const exact = qty * UNITS[unit].toBase;
+    if (Math.abs(ml - exact) / exact < 0.04) return { qty, unit };
+  }
+  return null;
+}
+
+// Rewrite temperatures in step text for a unit system: "160°F" -> "71°C" in metric.
+export function convertTemperatures(text, system) {
+  if (system !== "us" && system !== "metric") return text;
+  return text.replace(/(\d+(?:\.\d+)?)\s*°\s*([CF])\b/g, (all, n, scale) => {
+    const t = Number(n);
+    if (system === "metric" && scale === "F") return `${Math.round((t - 32) * 5 / 9)}°C`;
+    if (system === "us" && scale === "C") return `${Math.round((t * 9 / 5 + 32) / 5) * 5}°F`;
+    return all;
+  });
+}
+
 // Convert a quantity to the requested system. Returns { qty, unit }.
 export function convert(qty, unit, system) {
   const u = UNITS[unit];
@@ -124,6 +150,8 @@ export function convert(qty, unit, system) {
   if (system === "metric") {
     // Spoons are used in metric kitchens too; 2 tsp reads better than 9.9 ml.
     if (unit === "tsp" || unit === "tbsp") return { qty, unit };
+    // Claude's metric cards turn spoons into ml (1 tsp -> 4.9 ml); turn them back.
+    if (unit === "ml") { const spoon = spoonFor(qty); if (spoon) return spoon; }
     if (u.kind === "mass") return base >= 1000 ? { qty: base / 1000, unit: "kg" } : { qty: base, unit: "g" };
     return base >= 1000 ? { qty: base / 1000, unit: "l" } : { qty: base, unit: "ml" };
   }
@@ -132,8 +160,9 @@ export function convert(qty, unit, system) {
     const oz = base / UNITS.oz.toBase;
     return oz >= 16 ? { qty: oz / 16, unit: "lb" } : { qty: oz, unit: "oz" };
   }
-  if (base < UNITS.tbsp.toBase) return { qty: base / UNITS.tsp.toBase, unit: "tsp" };
-  if (base < UNITS.cup.toBase / 4) return { qty: base / UNITS.tbsp.toBase, unit: "tbsp" };
+  // 3% slack so 59 ml reads as 1/4 cup, not 4 tbsp.
+  if (base < UNITS.tbsp.toBase * 0.97) return { qty: base / UNITS.tsp.toBase, unit: "tsp" };
+  if (base < (UNITS.cup.toBase / 4) * 0.97) return { qty: base / UNITS.tbsp.toBase, unit: "tbsp" };
   return { qty: base / UNITS.cup.toBase, unit: "cup" };
 }
 
@@ -143,6 +172,8 @@ export function formatIngredient(ing, factor = 1, system = "original") {
   if (ing.qty == null) return ing.text;
   if (factor === 1 && system === "original") return ing.text;
   const { qty, unit } = convert(ing.qty * factor, ing.unit, system);
+  // Already in the requested units and not scaled: show it exactly as written.
+  if (factor === 1 && unit === ing.unit) return ing.text;
   const max = ing.qtyMax != null ? convert(ing.qtyMax * factor, ing.unit, system).qty : null;
   const style = unit && METRIC.has(unit) ? "decimal" : "fraction";
   let amount = formatQty(qty, unit, style);

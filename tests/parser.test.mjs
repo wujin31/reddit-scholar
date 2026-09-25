@@ -6,8 +6,8 @@ import { parseIngredientLine, formatIngredient, formatFraction } from "../js/uni
 import { isRecipeId, safeUrl } from "../js/store.js";
 
 const here = (p) => new URL(p, import.meta.url);
-const pasted = readFileSync(here("../recipes/khao-mok-kai/source.txt"), "utf8");
-const pdfText = readFileSync(here("./khao-mok-kai.pdf.txt"), "utf8");
+const pasted = readFileSync(here("./fixtures/khao-mok-kai.txt"), "utf8");
+const pdfText = readFileSync(here("./fixtures/khao-mok-kai.pdf.txt"), "utf8");
 
 test("parses the copy/paste card", () => {
   const r = parseRecipeText(pasted);

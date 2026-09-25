@@ -115,6 +115,8 @@ p { margin: 0 0 8px; }
 .card.ok { border-color: color-mix(in srgb, var(--ok) 40%, var(--line)); }
 .card.warn { background: var(--warn-soft); border-color: transparent; color: var(--warn); }
 .hint { color: var(--warn); margin-top: 6px; }
+.helper summary { font-weight: 600; color: var(--accent-text); cursor: pointer; }
+.helper p { margin: 8px 0 10px; }
 
 /* library */
 .search-row { display: flex; gap: 8px; align-items: center; }

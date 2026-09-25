@@ -4,10 +4,11 @@
 //   node scripts/recipes.mjs add card.txt [--servings 4] [--tags thai,rice] [--chat <url>]
 //   node scripts/recipes.mjs reindex          rebuild recipes/index.json from recipe files
 //   node scripts/recipes.mjs reindex --check  fail if recipes/index.json is out of date (CI)
+//   node scripts/recipes.mjs refresh          re-run the parser over saved recipes (new timer rules etc.)
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { parseRecipeText, slugify } from "../js/parser.js";
+import { parseRecipeInput, refreshRecipe, slugify } from "../js/parser.js";
 import { summarize, safeUrl } from "../js/store.js";
 
 const ROOT = new URL("..", import.meta.url).pathname;
@@ -34,14 +35,14 @@ if (cmd === "add") {
   const file = args[0];
   if (!file) throw new Error("usage: add <card.txt> [--servings N] [--tags a,b] [--chat url]");
   const text = readFileSync(file, "utf8");
-  const parsed = parseRecipeText(text);
+  const parsed = parseRecipeInput(text);
   let id = slugify(parsed);
   for (let n = 2; existsSync(join(DIR, id)); n++) id = `${slugify(parsed)}-${n}`;
   const now = new Date().toISOString();
   const servings = flag(args, "--servings");
   const recipe = {
     id, ...parsed,
-    servings: servings ? Number(servings) : null,
+    servings: servings ? Number(servings) : parsed.servings ?? null,
     tags: (flag(args, "--tags") ?? "").split(",").map((t) => t.trim().toLowerCase()).filter(Boolean),
     chatUrl: safeUrl(flag(args, "--chat") ?? ""),
     favorite: false, log: [], createdAt: now, updatedAt: now,
@@ -51,6 +52,15 @@ if (cmd === "add") {
   writeFileSync(join(DIR, id, "source.txt"), text.trim() + "\n");
   writeFileSync(INDEX, buildIndex());
   console.log(`Added recipes/${id}`);
+} else if (cmd === "refresh") {
+  for (const d of readdirSync(DIR, { withFileTypes: true })) {
+    const file = join(DIR, d.name, "recipe.json");
+    if (!d.isDirectory() || !existsSync(file)) continue;
+    const before = readFileSync(file, "utf8");
+    const after = json(refreshRecipe(JSON.parse(before)));
+    if (after !== before) { writeFileSync(file, after); console.log(`Refreshed recipes/${d.name}`); }
+  }
+  writeFileSync(INDEX, buildIndex());
 } else if (cmd === "reindex") {
   const next = buildIndex();
   if (args.includes("--check")) {
@@ -65,6 +75,6 @@ if (cmd === "add") {
     console.log("Rebuilt recipes/index.json");
   }
 } else {
-  console.error("usage: recipes.mjs add <file> [--servings N] [--tags a,b] [--chat url] | reindex [--check]");
+  console.error("usage: recipes.mjs add <file> [--servings N] [--tags a,b] [--chat url] | reindex [--check] | refresh");
   process.exit(1);
 }

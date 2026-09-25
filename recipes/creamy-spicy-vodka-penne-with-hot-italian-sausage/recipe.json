@@ -144,7 +144,12 @@
         1,
         8
       ],
-      "timers": []
+      "timers": [
+        {
+          "text": "a minute",
+          "seconds": 60
+        }
+      ]
     },
     {
       "text": "Plate and finish with the remaining 40 g Parmesan, finely grated and torn 1 pinch fresh basil.",

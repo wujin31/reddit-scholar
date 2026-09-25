@@ -1,5 +1,5 @@
-import { parseRecipeText, recipeToText } from "./parser.js";
-import { formatIngredient, UNITS } from "./units.js";
+import { parseRecipeInput, recipeToText, refreshRecipe, EXPORT_PROMPT } from "./parser.js";
+import { formatIngredient, convertTemperatures, UNITS } from "./units.js";
 import {
   listRecipes, getRecipe, createRecipe, updateRecipe, deleteRecipe,
   getSettings, setSettings, canWrite, testConnection, loadLocal, saveLocal, safeUrl,
@@ -26,6 +26,11 @@ function h(tag, props = {}, ...children) {
     el.append(c instanceof Node ? c : document.createTextNode(String(c)));
   }
   return el;
+}
+
+// replaceChildren/append turn null into the text "null"; skip empty slots like h() does.
+function fill(el, ...kids) {
+  el.replaceChildren(...kids.flat(Infinity).filter((k) => k != null && k !== false));
 }
 
 const ICONS = {
@@ -105,7 +110,7 @@ function renderStep(step, recipe, factor, units, stepLabel) {
   }
   const unplaced = [];
   for (const t of step.timers ?? []) {
-    const at = text.indexOf(t.text);
+    const at = t.text ? text.indexOf(t.text) : -1;
     if (at >= 0 && !overlaps(at, at + t.text.length)) marks.push({ start: at, end: at + t.text.length, kind: "timer", t });
     else unplaced.push(t);
   }
@@ -114,12 +119,12 @@ function renderStep(step, recipe, factor, units, stepLabel) {
   const out = [];
   let pos = 0;
   for (const m of marks) {
-    out.push(text.slice(pos, m.start));
+    out.push(convertTemperatures(text.slice(pos, m.start), units));
     if (m.kind === "ing") out.push(h("span", { class: "ing-ref" }, formatIngredient(m.ing, factor, units)));
     else out.push(timerChip(m.t, stepLabel, m.t.text));
     pos = m.end;
   }
-  out.push(text.slice(pos));
+  out.push(convertTemperatures(text.slice(pos), units));
   for (const t of unplaced) out.push(" ", timerChip(t, stepLabel));
   return out;
 }
@@ -240,6 +245,7 @@ async function loadRecipeOr404(root, id) {
   root.append(navbar(backButton(), ""), h("p", { class: "muted pad" }, "Loading…"));
   let r;
   try { r = await getRecipe(id); } catch (e) { r = null; toast(errorMessage(e), "error"); }
+  if (r) r = refreshRecipe(r);
   root.replaceChildren();
   if (!r) {
     root.append(navbar(backButton(), ""), h("div", { class: "empty" }, h("p", {}, "Recipe not found."), h("a", { class: "button", href: "#/" }, "Back to recipes")));
@@ -300,7 +306,7 @@ async function viewRecipe(root, id, query) {
       groups[groups.length - 1].items.push([ing, i]);
     });
 
-    body.replaceChildren(
+    fill(body,
       h("h1", { class: "recipe-title" }, displayName(r)),
       subName(r) ? h("p", { class: "recipe-sub" }, subName(r)) : null,
       r.description ? h("p", { class: "description" }, r.description) : null,
@@ -424,8 +430,8 @@ async function shareRecipe(r) {
   } else copyText(text);
 }
 
-async function copyText(text) {
-  try { await navigator.clipboard.writeText(text); toast("Copied"); } catch { toast("Couldn't copy", "error"); }
+async function copyText(text, done = "Copied") {
+  try { await navigator.clipboard.writeText(text); toast(done); } catch { toast("Couldn't copy", "error"); }
 }
 
 function requireWrite() {
@@ -479,7 +485,7 @@ async function viewCook(root, id) {
     prev.disabled = i === 0;
     next.textContent = i === r.steps.length - 1 ? "Done" : "Next";
     const refs = step.ingredientRefs ?? [];
-    stage.replaceChildren(
+    fill(stage,
       h("p", { class: "cook-step" }, renderStep(step, r, factor, units, `${displayName(r)} · step ${i + 1}`)),
       refs.length ? h("div", { class: "cook-ings card" },
         h("h3", {}, "For this step"),
@@ -508,13 +514,19 @@ async function viewCook(root, id) {
 
 // ---------- import & edit ----------
 
-function recipeForm({ title, text = "", draftKey = null, servings = "", tags = "", chatUrl = "", submitLabel, onSubmit }) {
+function recipeForm({ title, text = "", draftKey = null, editing = false, servings = "", tags = "", chatUrl = "", submitLabel, onSubmit }) {
   const source = h("textarea", {
     class: "source", rows: 10, value: text, spellcheck: false,
     placeholder: "Paste a Claude recipe card here.\n\nIn Claude: tap the recipe card's copy button (or select all and copy), then come back and tap Paste.",
   });
+  // Copying a card drops its timer chips; the export prompt gets Claude to send them as JSON.
+  const exportHelp = editing ? null : h("details", { class: "card helper" },
+    h("summary", {}, "Keep the card's timers"),
+    h("p", { class: "small" }, "Copying a card leaves out its timer buttons. To keep them, send this prompt to Claude in the same chat as the recipe, then copy Claude's whole reply and paste it here."),
+    h("button", { type: "button", class: "button small", onClick: () => copyText(EXPORT_PROMPT, "Prompt copied. Send it to Claude.") }, "Copy prompt for Claude"));
   const preview = h("div", { class: "preview" });
-  const servingsIn = h("input", { type: "number", inputmode: "decimal", min: "0", step: "any", value: servings, placeholder: "e.g. 4" });
+  let servingsTouched = Boolean(servings);
+  const servingsIn = h("input", { type: "number", inputmode: "decimal", min: "0", step: "any", value: servings, placeholder: "e.g. 4", onInput: () => { servingsTouched = true; } });
   const tagsIn = h("input", { type: "text", value: tags, placeholder: "e.g. thai, rice cooker, dinner", autocapitalize: "off" });
   const chatIn = h("input", { type: "url", value: chatUrl, placeholder: "https://claude.ai/chat/…", autocapitalize: "off" });
   const submit = h("button", { class: "button primary big", type: "submit" }, submitLabel);
@@ -525,17 +537,22 @@ function recipeForm({ title, text = "", draftKey = null, servings = "", tags = "
     parsed = null;
     if (!source.value.trim()) { preview.replaceChildren(); submit.disabled = true; return; }
     try {
-      parsed = parseRecipeText(source.value);
+      parsed = parseRecipeInput(source.value);
+      if (parsed.servings && !servingsTouched) servingsIn.value = parsed.servings;
       const timers = parsed.steps.reduce((n, s) => n + s.timers.length, 0);
+      const fromJson = /^\s*(```|[[{])/.test(source.value);
       const noQty = parsed.ingredients.filter((i) => i.qty == null).length;
       const us = parsed.ingredients.filter((i) => ["oz", "lb", "cup", "tbsp", "tsp", "fl oz"].includes(i.unit)).length;
       const metric = parsed.ingredients.filter((i) => ["g", "kg", "ml", "l"].includes(i.unit)).length;
-      preview.replaceChildren(h("div", { class: "card ok" },
+      fill(preview, h("div", { class: "card ok" },
         h("strong", {}, displayName(parsed)),
         subName(parsed) ? h("div", { class: "muted" }, subName(parsed)) : null,
         h("div", { class: "small" }, `${parsed.ingredients.length} ingredients · ${parsed.steps.length} steps · ${timers} timer${timers === 1 ? "" : "s"}`),
         noQty ? h("div", { class: "small muted" }, `${noQty} ingredient${noQty === 1 ? "" : "s"} without an amount (won't scale)`) : null,
-        us > metric ? h("div", { class: "small hint" }, "Tip: switch the card to Metric in Claude before copying. Grams are exact; the ounce conversions are rounded.") : null));
+        us > metric ? h("div", { class: "small hint" }, "Tip: switch the card to Metric in Claude before copying. Grams are exact; the ounce conversions are rounded.") : null,
+        exportHelp && !fromJson && timers < parsed.steps.length / 3
+          ? h("div", { class: "small hint" }, "Few or no timers found in the text. If the card showed timers, use “Keep the card's timers” above.")
+          : null));
       submit.disabled = false;
     } catch (e) {
       preview.replaceChildren(h("div", { class: "card warn small" }, e.message));
@@ -572,8 +589,11 @@ function recipeForm({ title, text = "", draftKey = null, servings = "", tags = "
     },
   },
   h("div", { class: "section-head" }, h("h1", { class: "large-title flush" }, title), paste),
-  source, preview,
-  h("label", {}, "Servings", servingsIn, h("span", { class: "help" }, "The card doesn't include servings; set it so the amounts scale by servings.")),
+  exportHelp,
+  source,
+  editing ? h("p", { class: "help small muted" }, "To add a timer to a step, end it with ⏱ 10 min or [timer 10 min].") : null,
+  preview,
+  h("label", {}, "Servings", servingsIn, h("span", { class: "help" }, "Copied card text doesn't include servings; set it so the amounts scale by servings.")),
   h("label", {}, "Tags", tagsIn),
   h("label", {}, "Claude chat link (optional)", chatIn),
   canWrite() ? null : h("p", { class: "card warn small" }, "GitHub isn't connected yet, so this can't be saved. ", h("a", { href: "#/settings" }, "Open Settings")),
@@ -607,7 +627,8 @@ async function viewEdit(root, id) {
     navbar(backButton(`#/r/${id}`), ""),
     recipeForm({
       title: "Edit recipe",
-      text: recipeToText(r),
+      text: recipeToText(r, { servings: false }),
+      editing: true,
       servings: r.servings ?? "",
       tags: (r.tags ?? []).join(", "),
       chatUrl: r.chatUrl ?? "",
