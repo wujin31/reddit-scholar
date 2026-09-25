@@ -5,19 +5,20 @@ const UNICODE_FRACTIONS = {
   "⅕": "1/5", "⅖": "2/5", "⅗": "3/5", "⅘": "4/5", "⅙": "1/6", "⅚": "5/6",
   "⅛": "1/8", "⅜": "3/8", "⅝": "5/8", "⅞": "7/8",
 };
+const FRACTION_CHARS = Object.keys(UNICODE_FRACTIONS).join("");
 
-// Canonical unit -> { kind, factor to base (g or ml), label }
+// Canonical unit -> { kind, factor to base (g or ml) }
 export const UNITS = {
-  g: { kind: "mass", toBase: 1, label: "g" },
-  kg: { kind: "mass", toBase: 1000, label: "kg" },
-  oz: { kind: "mass", toBase: 28.3495, label: "oz" },
-  lb: { kind: "mass", toBase: 453.592, label: "lb" },
-  ml: { kind: "volume", toBase: 1, label: "ml" },
-  l: { kind: "volume", toBase: 1000, label: "l" },
-  tsp: { kind: "volume", toBase: 4.92892, label: "tsp" },
-  tbsp: { kind: "volume", toBase: 14.7868, label: "tbsp" },
-  "fl oz": { kind: "volume", toBase: 29.5735, label: "fl oz" },
-  cup: { kind: "volume", toBase: 236.588, label: "cup" },
+  g: { kind: "mass", toBase: 1 },
+  kg: { kind: "mass", toBase: 1000 },
+  oz: { kind: "mass", toBase: 28.3495 },
+  lb: { kind: "mass", toBase: 453.592 },
+  ml: { kind: "volume", toBase: 1 },
+  l: { kind: "volume", toBase: 1000 },
+  tsp: { kind: "volume", toBase: 4.92892 },
+  tbsp: { kind: "volume", toBase: 14.7868 },
+  "fl oz": { kind: "volume", toBase: 29.5735 },
+  cup: { kind: "volume", toBase: 236.588 },
 };
 
 const UNIT_ALIASES = {
@@ -33,17 +34,21 @@ const UNIT_ALIASES = {
   cup: "cup", cups: "cup", c: "cup",
 };
 
-// Non-convertible units that still scale.
-const COUNT_UNITS = ["pinch", "pinches", "dash", "dashes", "can", "cans", "stick", "sticks", "sprig", "sprigs", "slice", "slices", "bunch", "bunches", "handful", "handfuls", "piece", "pieces", "clove", "cloves"];
+// Units that scale but don't convert: canonical singular -> plural.
+const COUNT_UNITS = {
+  pinch: "pinches", dash: "dashes", can: "cans", stick: "sticks", sprig: "sprigs", slice: "slices",
+  bunch: "bunches", handful: "handfuls", piece: "pieces", clove: "cloves",
+};
+const COUNT_SINGULAR = Object.fromEntries(Object.entries(COUNT_UNITS).flatMap(([one, many]) => [[one, one], [many, one]]));
 
 export function normalizeFractions(s) {
-  return s.replace(/(\d)?([½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞])/g, (_, d, f) => (d ? d + " " : "") + UNICODE_FRACTIONS[f])
+  return s.replace(new RegExp(`(\\d)?([${FRACTION_CHARS}])`, "g"), (_, d, f) => (d ? d + " " : "") + UNICODE_FRACTIONS[f])
     .replace(/⁄/g, "/");
 }
 
-// "2 1/4" | "1/3" | "2.8" | "3" -> number
+// "2 1/4" | "1/3" | "2.8" | "3" | "1½" -> number
 export function parseNumber(s) {
-  s = s.trim();
+  s = normalizeFractions(String(s)).trim();
   let total = 0;
   for (const part of s.split(/\s+/)) {
     if (part.includes("/")) {
@@ -55,45 +60,63 @@ export function parseNumber(s) {
   return total;
 }
 
-export const NUMBER_RE = String.raw`(?:\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?)`;
-const UNIT_RE = String.raw`(fl\.?\s?oz|${Object.keys(UNIT_ALIASES).filter((u) => !u.includes(" ")).sort((a, b) => b.length - a.length).join("|")}|${COUNT_UNITS.join("|")})\.?`;
-const QTY_RE = new RegExp(String.raw`^(${NUMBER_RE})(?:\s*(?:-|–|to)\s*(${NUMBER_RE}))?\s*(?:${UNIT_RE}(?=\s|$))?\s*(.*)$`, "i");
+// A number, as written: "2 1/4", "1/3", "2.8", "1½", "½". Never starts inside another number.
+export const NUMBER_RE = String.raw`(?<![\d.,/])(?:\d+\s?[${FRACTION_CHARS}]|[${FRACTION_CHARS}]|\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?)`;
+const RANGE_SEP = String.raw`\s*(?:-|–|—|to)\s*`;
+const UNIT_RE = String.raw`(fl\.?\s?oz|${[...Object.keys(UNIT_ALIASES).filter((u) => !u.includes(" ")), ...Object.keys(COUNT_SINGULAR)].sort((a, b) => b.length - a.length).join("|")})\.?`;
+const QTY_RE = new RegExp(String.raw`^(${NUMBER_RE})(?:${RANGE_SEP}(${NUMBER_RE}))?\s*(?:${UNIT_RE}(?=\s|$))?\s*(.*)$`, "i");
 
 // Parse one ingredient line into { text, qty, qtyMax, unit, item }.
 export function parseIngredientLine(line) {
-  const text = line.trim();
-  const m = normalizeFractions(text).match(QTY_RE);
-  if (!m) return { text, qty: null, qtyMax: null, unit: null, item: text };
+  const text = line.replace(/[​-‍﻿]/g, "").trim();
+  const none = { text, qty: null, qtyMax: null, unit: null, item: text };
+  let s = normalizeFractions(text.replace(/[０-９]/g, (d) => String.fromCharCode(d.charCodeAt(0) - 0xFEE0)))
+    .replace(/^(\d+)-(\d+\/\d+)(?=\s)/, "$1 $2") //            "1-1/2 cups" is 1 1/2, not a range
+    .replace(/^(\d+),(\d+)(?=\s*[a-z])/i, "$1.$2") //          "1,5 kg"
+    .replace(/^\.(\d)/, "0.$1"); //                            ".5 tsp"
+  // "2-inch piece ginger", "5 cm piece kombu": a size, not an amount to scale.
+  if (/^\d+(?:\.\d+)?\s*-?\s*(?:inch|inches|in\.|cm|mm)\b/i.test(s)) return none;
+  const m = s.match(QTY_RE);
+  if (!m) return none;
   let unit = m[3] ? m[3].toLowerCase().replace(/\.$/, "") : null;
   if (unit && /^fl\.?\s?oz$/.test(unit)) unit = "fl oz";
   else if (unit && UNIT_ALIASES[unit]) unit = UNIT_ALIASES[unit];
-  return {
-    text,
-    qty: parseNumber(m[1]),
-    qtyMax: m[2] ? parseNumber(m[2]) : null,
-    unit,
-    item: m[4].trim(),
-  };
+  else if (unit && COUNT_SINGULAR[unit]) unit = COUNT_SINGULAR[unit];
+  const qty = parseNumber(m[1]);
+  let qtyMax = m[2] ? parseNumber(m[2]) : null;
+  if (qtyMax != null && qtyMax <= qty) qtyMax = null;
+  return { text, qty, qtyMax, unit, item: m[4].trim() };
 }
 
 // ---------- formatting ----------
 
-const NICE_FRACTIONS = [
-  [0, ""], [1 / 8, "1/8"], [1 / 4, "1/4"], [1 / 3, "1/3"], [3 / 8, "3/8"], [1 / 2, "1/2"],
-  [5 / 8, "5/8"], [2 / 3, "2/3"], [3 / 4, "3/4"], [7 / 8, "7/8"], [1, ""],
-];
+// Fractions a cook can actually measure, per unit.
+const FRACTIONS = {
+  default: [[1 / 4, "1/4"], [1 / 3, "1/3"], [1 / 2, "1/2"], [2 / 3, "2/3"], [3 / 4, "3/4"]],
+  spoon: [[1 / 8, "1/8"], [1 / 4, "1/4"], [1 / 3, "1/3"], [1 / 2, "1/2"], [2 / 3, "2/3"], [3 / 4, "3/4"]],
+  fine: [[1 / 8, "1/8"], [1 / 4, "1/4"], [3 / 8, "3/8"], [1 / 2, "1/2"], [5 / 8, "5/8"], [3 / 4, "3/4"], [7 / 8, "7/8"]],
+  quarters: [[1 / 4, "1/4"], [1 / 2, "1/2"], [3 / 4, "3/4"]],
+};
 
-export function formatFraction(x) {
+function fractionsFor(unit, x) {
+  if (unit === "tsp" || unit === "tbsp") return FRACTIONS.spoon;
+  if (unit === "oz") return x < 4 ? FRACTIONS.fine : FRACTIONS.quarters;
+  if (unit === "lb") return FRACTIONS.quarters;
+  return FRACTIONS.default;
+}
+
+export function formatFraction(x, fractions = FRACTIONS.fine) {
   if (x <= 0) return "0";
+  const options = [[0, ""], ...fractions, [1, ""]];
   let whole = Math.floor(x);
   const frac = x - whole;
-  let best = NICE_FRACTIONS[0], err = Infinity;
-  for (const f of NICE_FRACTIONS) {
+  let best = options[0], err = Infinity;
+  for (const f of options) {
     const e = Math.abs(frac - f[0]);
     if (e < err) { err = e; best = f; }
   }
-  if (best[0] === 1) { whole += 1; best = NICE_FRACTIONS[0]; }
-  if (whole === 0 && best[1] === "") return formatDecimal(x); // too small for 1/8 steps
+  if (best[0] === 1) { whole += 1; best = options[0]; }
+  if (whole === 0 && best[1] === "") return formatDecimal(x); // smaller than any fraction
   return [whole || "", best[1]].filter(Boolean).join(" ");
 }
 
@@ -106,14 +129,16 @@ export function formatDecimal(x) {
 
 const METRIC = new Set(["g", "kg", "ml", "l"]);
 
-function pluralize(unit, qty) {
-  if (unit === "cup" && qty > 1) return "cups";
-  return unit;
+function formatAmount(qty, unit) {
+  return METRIC.has(unit) ? formatDecimal(qty) : formatFraction(qty, fractionsFor(unit, qty));
 }
 
-function formatQty(qty, unit, style) {
-  if (style === "fraction") return formatFraction(qty);
-  return formatDecimal(qty);
+// Unit label for the amount as displayed ("1 cup", "1 1/2 cups", "1 clove", "2 cloves").
+function unitLabel(unit, shown) {
+  const many = parseNumber(shown.split("–").pop()) > 1;
+  if (unit === "cup") return many ? "cups" : "cup";
+  if (COUNT_UNITS[unit]) return many ? COUNT_UNITS[unit] : unit;
+  return unit;
 }
 
 const SPOONS = [
@@ -142,28 +167,42 @@ export function convertTemperatures(text, system) {
   });
 }
 
-// Convert a quantity to the requested system. Returns { qty, unit }.
-export function convert(qty, unit, system) {
+// Which unit a quantity should be shown in for a unit system.
+function targetUnit(qty, unit, system) {
   const u = UNITS[unit];
-  if (!u || system === "original") return { qty, unit };
+  if (!u || system === "original") return unit;
   const base = qty * u.toBase;
   if (system === "metric") {
-    // Spoons are used in metric kitchens too; 2 tsp reads better than 9.9 ml.
-    if (unit === "tsp" || unit === "tbsp") return { qty, unit };
-    // Claude's metric cards turn spoons into ml (1 tsp -> 4.9 ml); turn them back.
-    if (unit === "ml") { const spoon = spoonFor(qty); if (spoon) return spoon; }
-    if (u.kind === "mass") return base >= 1000 ? { qty: base / 1000, unit: "kg" } : { qty: base, unit: "g" };
-    return base >= 1000 ? { qty: base / 1000, unit: "l" } : { qty: base, unit: "ml" };
+    // Spoons are used in metric kitchens too; 2 tsp reads better than 9.9 ml. Big ones go to ml.
+    if ((unit === "tsp" || unit === "tbsp") && base <= 60) return unit;
+    if (u.kind === "mass") return base >= 1000 ? "kg" : "g";
+    return base >= 1000 ? "l" : "ml";
   }
   // US
   if (u.kind === "mass") {
+    if (METRIC.has(unit) && base < 14) return unit; // a few grams of salt: 1/8 oz would be 3x off
     const oz = base / UNITS.oz.toBase;
-    return oz >= 16 ? { qty: oz / 16, unit: "lb" } : { qty: oz, unit: "oz" };
+    return oz >= 16 ? "lb" : "oz";
   }
+  // Teaspoons stay teaspoons below 2 tbsp (4 tsp, not 1 1/3 tbsp).
+  if (unit === "tsp" && base < UNITS.tbsp.toBase * 2 * 0.97) return "tsp";
   // 3% slack so 59 ml reads as 1/4 cup, not 4 tbsp.
-  if (base < UNITS.tbsp.toBase * 0.97) return { qty: base / UNITS.tsp.toBase, unit: "tsp" };
-  if (base < (UNITS.cup.toBase / 4) * 0.97) return { qty: base / UNITS.tbsp.toBase, unit: "tbsp" };
-  return { qty: base / UNITS.cup.toBase, unit: "cup" };
+  if (base < UNITS.tbsp.toBase * 0.97) return "tsp";
+  if (base < (UNITS.cup.toBase / 4) * 0.97) return "tbsp";
+  return "cup";
+}
+
+const convertTo = (qty, from, to) => (from === to || !UNITS[from] ? qty : (qty * UNITS[from].toBase) / UNITS[to].toBase);
+
+// Convert a quantity to the requested system. Returns { qty, unit }.
+export function convert(qty, unit, system) {
+  if (system === "metric" && unit === "ml") {
+    // Claude's metric cards turn spoons into ml (1 tsp -> 4.9 ml); turn them back.
+    const spoon = spoonFor(qty);
+    if (spoon) return spoon;
+  }
+  const to = targetUnit(qty, unit, system);
+  return { qty: convertTo(qty, unit, to), unit: to };
 }
 
 // Render an ingredient at a scale factor and unit system.
@@ -171,13 +210,17 @@ export function convert(qty, unit, system) {
 export function formatIngredient(ing, factor = 1, system = "original") {
   if (ing.qty == null) return ing.text;
   if (factor === 1 && system === "original") return ing.text;
-  const { qty, unit } = convert(ing.qty * factor, ing.unit, system);
+  // Both ends of a range share the unit picked for the smaller end, so "800–1200 g" never
+  // becomes "800–1.2 g" and "30–60 ml" reads "2–4 tbsp", not "1/4–1/4 cup".
+  let { qty, unit } = convert(ing.qty * factor, ing.unit, system);
+  // Under 1/4 cup, cup fractions get coarse (1/3 cup halved is not 1/4 cup): use tablespoons.
+  if (unit === "cup" && qty < 0.24 && ing.qtyMax == null) { qty = convertTo(qty, "cup", "tbsp"); unit = "tbsp"; }
+  const qtyMax = ing.qtyMax != null ? convertTo(ing.qtyMax * factor, ing.unit, unit) : null;
   // Already in the requested units and not scaled: show it exactly as written.
   if (factor === 1 && unit === ing.unit) return ing.text;
-  const max = ing.qtyMax != null ? convert(ing.qtyMax * factor, ing.unit, system).qty : null;
-  const style = unit && METRIC.has(unit) ? "decimal" : "fraction";
-  let amount = formatQty(qty, unit, style);
-  if (max != null) amount += "–" + formatQty(max, unit, style);
-  const u = unit ? " " + pluralize(unit, Math.max(qty, max ?? 0)) : "";
-  return `${amount}${u} ${ing.item}`.trim();
+  if (unit === "tsp" && ing.qtyMax == null && qty < 0.1) return `pinch ${ing.item}`.trim();
+  let amount = formatAmount(qty, unit);
+  if (qtyMax != null) amount += "–" + formatAmount(qtyMax, unit);
+  const label = unit ? " " + unitLabel(unit, amount) : "";
+  return `${amount}${label} ${ing.item}`.trim();
 }

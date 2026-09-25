@@ -17,22 +17,38 @@
 
 import { parseIngredientLine, normalizeFractions, NUMBER_RE, parseNumber } from "./units.js";
 
-const SECTIONS = {
-  ingredients: "ingredients",
-  steps: "steps", instructions: "steps", directions: "steps", method: "steps",
-  notes: "notes", "chef's notes": "notes", tips: "notes",
-};
+const SECTION_WORDS = [
+  ["ingredients", "ingredients"],
+  ["steps", "steps"], ["instructions", "steps"], ["directions", "steps"], ["method", "steps"], ["preparation", "steps"],
+  ["notes", "notes"], ["note", "notes"], ["chef's notes", "notes"], ["tips", "notes"],
+];
 
+// "Ingredients", "## Steps", "**Method:**", "Ingredients (makes 16)", "Chef’s Notes".
+// Returns { section, servings } or null.
 function sectionOf(line) {
-  const key = line.replace(/^#+\s*/, "").replace(/[:*]/g, "").trim().toLowerCase();
-  return SECTIONS[key] ?? null;
+  const plain = line.replace(/^#+\s*/, "").replace(/\*\*|__/g, "").replace(/’/g, "'").trim();
+  const m = plain.match(/^([a-z' ]+?)\s*(?:\(([^)]*)\))?\s*:?$/i);
+  if (!m) return null;
+  const hit = SECTION_WORDS.find(([word]) => word === m[1].toLowerCase());
+  if (!hit) return null;
+  const serves = m[2]?.match(/(?:serves|makes|for)\s+(\d+)/i);
+  return { section: hit[1], servings: serves ? Number(serves[1]) : null };
 }
 
-const BULLET_RE = /^\s*(?:[•●◦▪\-*–]\s+)/;
-const STEP_NUM_RE = /^\s*(?:step\s*)?(\d+)[.)]\s+/i;
+const BULLET_RE = /^\s*(?:[•●◦▪·▢☐○]\s*|[-*–]\s+)/;
+const STEP_NUM_RE = /^\s*(?:step\s*)?(\d+)\s*[.):]\s*/i;
+const NUMBERED_ITEM_RE = /^\s*\d+[.)]\s+(?=\S)/; // "1. 2 eggs" in an ingredient list
 const SERVES_RE = /^(?:serves|servings|yield|yields|makes)\s*:?\s*(\d+(?:\.\d+)?)\b/i;
+const PAGE_FOOTER_RE = /^(?:page\s+)?\d+\s*(?:of|\/)\s*\d+$/i;
 
-// Join a wrapped line onto the previous one ("low-" + "sodium" -> "low-sodium").
+// "For the sauce:", "For the filling", "**For the glaze**": a sub-heading, not an ingredient.
+function groupHeading(text) {
+  const plain = text.replace(/\*\*|__/g, "").trim();
+  if (/\d/.test(plain)) return null;
+  if (/:$/.test(plain) || /^for\s+(?:the\s+)?\S/i.test(plain)) return plain.replace(/:$/, "").trim();
+  return null;
+}
+
 function joinWrapped(prev, next) {
   return /[-–]$/.test(prev) ? prev + next : prev + " " + next;
 }
@@ -42,6 +58,7 @@ const isLatin = (s) => /^[\p{Script=Latin}\p{N}\p{P}\p{S}\s]+$/u.test(s);
 // "ข้าวหมกไก่ (Khao Mok Kai) · Thai Chicken Biryani" | "ハヤシライス (Hayashi Raisu / Hayashi Rice)"
 // | "Pad Kra Pao · Thai Basil Chicken" | "Pancakes"
 export function parseTitle(title) {
+  if (title.length > 200) return { nativeName: "", romanized: "", englishName: title.trim() }; // not a real title
   const m = title.match(/^(.*?)\s*\(([^)]+)\)\s*[·•|—–]\s*(.+)$/);
   if (m) return { nativeName: m[1].trim(), romanized: m[2].trim(), englishName: m[3].trim() };
   const paren = title.match(/^(.+?)\s*\(([^)]+)\)$/);
@@ -129,11 +146,26 @@ function mergeTimers(found, extra) {
   return out;
 }
 
-// Find which ingredients a step mentions verbatim (the card pastes full ingredient text into steps).
+// Find which ingredients a step mentions verbatim (the card pastes full ingredient text into
+// steps). Longer texts claim their span first, so "5 ml sesame oil" isn't found inside
+// "15 ml sesame oil (for the sauce)", and a match can't start in the middle of a number.
 export function findIngredientRefs(stepText, ingredients) {
-  return ingredients
-    .map((ing, i) => (ing.text && stepText.includes(ing.text) ? i : -1))
-    .filter((i) => i >= 0);
+  const order = ingredients.map((ing, i) => i).filter((i) => ingredients[i].text)
+    .sort((a, b) => ingredients[b].text.length - ingredients[a].text.length);
+  const taken = [];
+  const refs = new Set();
+  for (const i of order) {
+    const needle = ingredients[i].text;
+    for (let at = stepText.indexOf(needle); at >= 0; at = stepText.indexOf(needle, at + 1)) {
+      const end = at + needle.length;
+      if (/[\d.,/]/.test(stepText[at - 1] ?? "") && /^\d/.test(needle)) continue;
+      if (/\w/.test(stepText[end] ?? "") && /\w$/.test(needle)) continue;
+      if (taken.some(([s, e]) => at < e && end > s)) continue;
+      taken.push([at, end]);
+      refs.add(i);
+    }
+  }
+  return [...refs].sort((a, b) => a - b);
 }
 
 function finishSteps(recipe) {
@@ -160,11 +192,15 @@ export function refreshRecipe(r) {
 // ---------- card text ----------
 
 export function parseRecipeText(raw) {
-  const lines = raw.replace(/\r\n?/g, "\n").split("\n").map((l) => l.trim());
+  const lines = String(raw ?? "").replace(/\r\n?/g, "\n").replace(/[​-‍﻿]/g, "")
+    .split("\n").map((l) => l.replace(/ /g, " ").trim())
+    .filter((l) => !PAGE_FOOTER_RE.test(l));
   const first = lines.findIndex((l) => l);
   if (first < 0) throw new Error("Nothing to import — the text is empty.");
 
-  const title = lines[first].replace(/^#+\s*/, "");
+  // A paste that starts at "Ingredients" has no title line.
+  const startsWithSection = sectionOf(lines[first]);
+  const title = startsWithSection ? "Untitled recipe" : lines[first].replace(/^#+\s*/, "").replace(/\*\*|__/g, "").trim();
   const recipe = {
     name: title,
     ...parseTitle(title),
@@ -176,38 +212,63 @@ export function parseRecipeText(raw) {
 
   let section = null;
   let group = null;
-  for (const line of lines.slice(first + 1)) {
-    if (!line) continue;
-    const s = sectionOf(line);
-    if (s) { section = s; group = null; continue; }
+  let blank = false;
+  let numberedSteps = false;
+  let prevLength = 0;
+  for (const line of lines.slice(startsWithSection ? first : first + 1)) {
+    if (!line) { blank = true; continue; }
+    const afterBlank = blank;
+    const wrapped = prevLength >= 60; // the previous line was long enough to have been wrapped
+    blank = false;
+    prevLength = line.length;
+    const heading = sectionOf(line);
+    if (heading) {
+      section = heading.section;
+      group = null;
+      if (heading.servings && !recipe.servings) recipe.servings = heading.servings;
+      continue;
+    }
 
     if (section === null) {
       const serves = line.match(SERVES_RE);
       if (serves) recipe.servings = Number(serves[1]);
-      else recipe.description = recipe.description ? joinWrapped(recipe.description, line) : line;
+      else recipe.description = !recipe.description ? line : afterBlank ? `${recipe.description}\n\n${line}` : joinWrapped(recipe.description, line);
     } else if (section === "ingredients") {
       const bulleted = BULLET_RE.test(line);
-      const text = line.replace(BULLET_RE, "");
-      // A short unbulleted line ending in ":" is a sub-heading ("For the sauce:").
-      if (!bulleted && /:$/.test(text)) { group = text.replace(/:$/, ""); continue; }
+      const text = line.replace(BULLET_RE, "").replace(NUMBERED_ITEM_RE, "");
+      const sub = groupHeading(text);
+      if (sub) { group = sub; continue; }
+      const prev = recipe.ingredients[recipe.ingredients.length - 1];
+      // A PDF line break inside an ingredient: a long line, then one starting lowercase, no bullet.
+      if (!bulleted && !afterBlank && wrapped && prev && /^[a-z(]/.test(text)) {
+        Object.assign(prev, parseIngredientLine(joinWrapped(prev.text, text)));
+        continue;
+      }
       const ing = parseIngredientLine(text);
       if (group) ing.group = group;
       recipe.ingredients.push(ing);
     } else if (section === "steps") {
-      const m = line.match(STEP_NUM_RE);
-      if (m || recipe.steps.length === 0) {
-        recipe.steps.push({ text: line.replace(STEP_NUM_RE, "") });
+      const numbered = STEP_NUM_RE.test(line);
+      const bulleted = BULLET_RE.test(line);
+      if (numbered) numberedSteps = true;
+      const text = line.replace(numbered ? STEP_NUM_RE : BULLET_RE, "");
+      // New step: a number, a bullet, or (in steps written without numbers) a new paragraph.
+      if (numbered || bulleted || !recipe.steps.length || (afterBlank && !numberedSteps)) {
+        recipe.steps.push({ text });
       } else {
         const last = recipe.steps[recipe.steps.length - 1];
-        last.text = joinWrapped(last.text, line);
+        last.text = joinWrapped(last.text, text);
       }
     } else if (section === "notes") {
-      recipe.notes = recipe.notes ? joinWrapped(recipe.notes, line) : line;
+      const text = BULLET_RE.test(line) ? `• ${line.replace(BULLET_RE, "")}` : line;
+      if (!recipe.notes) recipe.notes = text;
+      else if (afterBlank || text.startsWith("• ")) recipe.notes += (afterBlank ? "\n\n" : "\n") + text;
+      else recipe.notes = joinWrapped(recipe.notes, text);
     }
   }
 
-  if (!recipe.ingredients.length && !recipe.steps.length) {
-    throw new Error("Couldn't find an Ingredients or Steps section. Paste the whole recipe card.");
+  if (!recipe.ingredients.length) {
+    throw new Error("Couldn't find an Ingredients list. Paste the whole recipe card, starting from its title.");
   }
   return finishSteps(recipe);
 }
@@ -309,6 +370,7 @@ export function parseRecipeJson(data) {
 
 // Card text, PDF text, or JSON (optionally in a ```json code block, as Claude replies).
 export function parseRecipeInput(raw) {
+  raw = String(raw ?? "");
   // A code block, or the start of one when the copy cut off before the closing fence.
   const fenced = raw.match(/```(?:json)?\s*\n([\s\S]*?)(?:\n\s*```|$)/i);
   const candidate = (fenced ? fenced[1] : raw).trim();

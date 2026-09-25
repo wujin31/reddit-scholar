@@ -559,7 +559,8 @@ function recipeForm({ title, text = "", draftKey = null, editing = false, servin
       submit.disabled = true;
     }
   }
-  source.addEventListener("input", update);
+  let pending = null;
+  source.addEventListener("input", () => { clearTimeout(pending); pending = setTimeout(update, 150); });
 
   const paste = h("button", { type: "button", class: "button", onClick: async () => {
     try {
@@ -573,6 +574,8 @@ function recipeForm({ title, text = "", draftKey = null, editing = false, servin
     class: "form",
     onSubmit: async (e) => {
       e.preventDefault();
+      clearTimeout(pending);
+      update(); // the preview may be a keystroke behind
       if (!parsed || !requireWrite()) return;
       if (chatIn.value.trim() && !safeUrl(chatIn.value.trim())) { toast("The chat link must start with https://", "error"); return; }
       submit.disabled = true; const label = submit.textContent; submit.textContent = "Saving…";
