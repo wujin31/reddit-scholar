@@ -145,6 +145,21 @@
       "updatedAt": "2026-09-26T04:36:37.251Z",
       "lastCooked": null,
       "cookCount": 0
+    },
+    {
+      "id": "ximending-spam-qisi-dan-bing",
+      "name": "西門町 Spam 起司蛋餅 (Xīméndīng Spam Qǐsī Dàn Bǐng)",
+      "englishName": "Xīméndīng Spam Qǐsī Dàn Bǐng",
+      "nativeName": "西門町 Spam 起司蛋餅",
+      "romanized": "Xīméndīng Spam Qǐsī Dàn Bǐng",
+      "tags": [],
+      "favorite": false,
+      "servings": 2,
+      "items": "frozen scallion pancakes (蔥抓餅 / cōng zhuā bǐng) · Spam slices, cut ~5 mm thick · large eggs · water · MSG · white pepper · scallion, thinly sliced · Kraft Singles · 肉鬆 (ròusōng, pork floss) — optional, one roll only",
+      "createdAt": "2026-09-26T04:42:41.312Z",
+      "updatedAt": "2026-09-26T04:42:41.312Z",
+      "lastCooked": null,
+      "cookCount": 0
     }
   ]
 }
