@@ -47,6 +47,21 @@
       "cookCount": 0
     },
     {
+      "id": "chicken-thigh-fettuccine-alfredo-bloomed-pepper",
+      "name": "Chicken Thigh Fettuccine Alfredo, Bloomed Pepper",
+      "englishName": "Chicken Thigh Fettuccine Alfredo, Bloomed Pepper",
+      "nativeName": "",
+      "romanized": "",
+      "tags": [],
+      "favorite": false,
+      "servings": 2,
+      "items": "fresh egg fettuccine · boneless skin-on chicken thighs · Diamond Crystal kosher salt (halve if Morton) · black pepper, finely ground (for the chicken) · neutral oil or olive oil · unsalted butter · black peppercorns, coarsely cracked · garlic cloves, finely minced · dry unoaked white wine · heavy cream · Parmigiano-Reggiano, finely grated · flat-leaf parsley, chopped",
+      "createdAt": "2026-09-26T05:06:46.963Z",
+      "updatedAt": "2026-09-26T05:06:46.963Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "dak-juk",
       "name": "닭죽 (Dak-juk) · Korean Chicken Porridge",
       "englishName": "Korean Chicken Porridge",

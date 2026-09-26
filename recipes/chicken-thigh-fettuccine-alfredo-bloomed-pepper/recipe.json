@@ -1,0 +1,291 @@
+{
+  "id": "chicken-thigh-fettuccine-alfredo-bloomed-pepper",
+  "name": "Chicken Thigh Fettuccine Alfredo, Bloomed Pepper",
+  "nativeName": "",
+  "romanized": "",
+  "englishName": "Chicken Thigh Fettuccine Alfredo, Bloomed Pepper",
+  "description": "Dry-brined, crisp-skinned chicken thighs over fresh egg fettuccine in a parmesan cream sauce built on deglazed fond and butter-bloomed black pepper.",
+  "ingredients": [
+    {
+      "text": "250 g fresh egg fettuccine",
+      "qty": 250,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "fresh egg fettuccine"
+    },
+    {
+      "text": "400 g boneless skin-on chicken thighs",
+      "qty": 400,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "boneless skin-on chicken thighs"
+    },
+    {
+      "text": "6.2 ml Diamond Crystal kosher salt (halve if Morton)",
+      "qty": 6.2,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "Diamond Crystal kosher salt (halve if Morton)"
+    },
+    {
+      "text": "1.2 ml black pepper, finely ground (for the chicken)",
+      "qty": 1.2,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "black pepper, finely ground (for the chicken)"
+    },
+    {
+      "text": "15 ml neutral oil or olive oil",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "neutral oil or olive oil"
+    },
+    {
+      "text": "40 g unsalted butter",
+      "qty": 40,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "unsalted butter"
+    },
+    {
+      "text": "4.9 ml black peppercorns, coarsely cracked",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "black peppercorns, coarsely cracked"
+    },
+    {
+      "text": "3 garlic cloves, finely minced",
+      "qty": 3,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic cloves, finely minced"
+    },
+    {
+      "text": "60 ml dry unoaked white wine",
+      "qty": 60,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "dry unoaked white wine"
+    },
+    {
+      "text": "200 ml heavy cream",
+      "qty": 200,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "heavy cream"
+    },
+    {
+      "text": "70 g Parmigiano-Reggiano, finely grated",
+      "qty": 70,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "Parmigiano-Reggiano, finely grated"
+    },
+    {
+      "text": "30 ml flat-leaf parsley, chopped",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "flat-leaf parsley, chopped"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Pat the 400 g boneless skin-on chicken thighs dry and season all over with 6.2 ml Diamond Crystal kosher salt (halve if Morton) and 1.2 ml black pepper, finely ground (for the chicken). Refrigerate skin-side up and uncovered on a rack for at least 1 hour, or up to 24 hours.",
+      "ingredientRefs": [
+        1,
+        2,
+        3
+      ],
+      "timers": [
+        {
+          "text": "1 hour",
+          "seconds": 3600
+        },
+        {
+          "text": "24 hours",
+          "seconds": 86400
+        }
+      ]
+    },
+    {
+      "text": "Take the thighs out of the fridge 20 minutes before cooking. Blot the skin dry again right before searing.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "20 minutes",
+          "seconds": 1200
+        }
+      ]
+    },
+    {
+      "text": "Bring a large pot of water to a boil and salt it generously. Keep it at a simmer until the pasta step.",
+      "ingredientRefs": [],
+      "timers": []
+    },
+    {
+      "text": "Heat a dry 12-inch stainless pan over medium until a drop of water beads and skates, about 3 minutes. Add 15 ml neutral oil or olive oil; it should shimmer within 30 seconds.",
+      "ingredientRefs": [
+        4
+      ],
+      "timers": [
+        {
+          "text": "3 minutes",
+          "seconds": 180
+        },
+        {
+          "text": "30 seconds",
+          "seconds": 30
+        }
+      ]
+    },
+    {
+      "text": "Lay the thighs skin-side down and press flat with a spatula for 30 seconds. Then leave them untouched until the skin is deep golden and releases on its own, about 10–12 minutes. If the fond goes past amber toward dark brown, turn the heat down slightly.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "30 seconds",
+          "seconds": 30
+        },
+        {
+          "text": "10–12 minutes",
+          "seconds": 720
+        }
+      ]
+    },
+    {
+      "text": "Flip the thighs and cook until the thickest part reads 175–185°F (79–85°C), about 4 minutes.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "4 minutes",
+          "seconds": 240
+        }
+      ]
+    },
+    {
+      "text": "Move the thighs skin-side up to a rack and rest at least 5 minutes while you make the sauce. Don't slice them yet.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "5 minutes",
+          "seconds": 300
+        }
+      ]
+    },
+    {
+      "text": "Pour off all but about 1 tbsp of fat, keeping every bit of fond, and set the extra fat aside. Take the pan off the heat for 30 seconds so the butter won't scorch.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "30 seconds",
+          "seconds": 30
+        }
+      ]
+    },
+    {
+      "text": "Return the pan to medium-low and add 40 g unsalted butter. When the butter is about half melted, add 4.9 ml black peppercorns, coarsely cracked and swirl for 45 seconds, until fragrant with fine bubbles around the pepper and no smoke.",
+      "ingredientRefs": [
+        5,
+        6
+      ],
+      "timers": [
+        {
+          "text": "45 seconds",
+          "seconds": 45
+        }
+      ]
+    },
+    {
+      "text": "Add 3 garlic cloves, finely minced and stir for 30 seconds, just until fragrant and not colored.",
+      "ingredientRefs": [
+        7
+      ],
+      "timers": [
+        {
+          "text": "30 seconds",
+          "seconds": 30
+        }
+      ]
+    },
+    {
+      "text": "Pour in 60 ml dry unoaked white wine and scrape up all the fond with a wooden spoon. Reduce until the pan is nearly dry, about 1–2 minutes.",
+      "ingredientRefs": [
+        8
+      ],
+      "timers": [
+        {
+          "text": "1–2 minutes",
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "text": "Add 200 ml heavy cream and simmer gently until it lightly coats a spoon, about 3 minutes. Take the pan off the heat and hold it there.",
+      "ingredientRefs": [
+        9
+      ],
+      "timers": [
+        {
+          "text": "3 minutes",
+          "seconds": 180
+        }
+      ]
+    },
+    {
+      "text": "Cook the 250 g fresh egg fettuccine in the boiling water for 2–3 minutes, until just tender with a slight bite. Scoop out 1 cup of pasta water before draining. (If using dried bronze-die fettuccine, start it back at the pour-off step and cook it 2 minutes less than the package says.)",
+      "ingredientRefs": [
+        0
+      ],
+      "timers": [
+        {
+          "text": "2–3 minutes",
+          "seconds": 180
+        },
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "text": "Return the sauce pan to low heat, move the pasta in with tongs, and toss for 30 seconds to coat.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "30 seconds",
+          "seconds": 30
+        }
+      ]
+    },
+    {
+      "text": "Pull the pan off the heat. Add 70 g Parmigiano-Reggiano, finely grated in 3 additions, tossing constantly and adding splashes of pasta water until the sauce is glossy and loose, about 1 minute total. Taste and adjust the salt.",
+      "ingredientRefs": [
+        10
+      ],
+      "timers": [
+        {
+          "text": "1 minute",
+          "seconds": 60
+        }
+      ]
+    },
+    {
+      "text": "Slice the thighs against the grain. Twirl the pasta into warm bowls, lay the chicken on top skin-side up, and finish with 30 ml flat-leaf parsley, chopped. Don't add more pepper; the sauce already carries it.",
+      "ingredientRefs": [
+        11
+      ],
+      "timers": []
+    }
+  ],
+  "notes": "UNTESTED. Two things to watch the first time: the color of the fond during the sear (you want amber, not dark brown), and the pepper bloom (it should taste warm, not harsh). Harsh pepper means the pan was too hot or the bloom went too long.\n\nPan readiness: use the water-bead test rather than an infrared thermometer, which reads too low on polished stainless.\n\nBoneless skin-on thighs are hard to find in stores. Buying bone-in skin-on and deboning them yourself usually gets you better chicken than the pre-cut packs.\n\nPepper does two jobs here. The fine grind seasons the chicken during the brine. The coarse crack goes into the butter, because its flavor dissolves in fat and spreads through the whole sauce. Coarse pieces toast instead of burning.\n\nThe cheese goes in off the heat because Parmigiano clumps when the pan is too hot. Pasta water is what holds the sauce together. Fresh egg pasta gives off less starch than dried, so use it generously.\n\nOptional extras: stir in about 1 tsp of the reserved chicken fat along with the cheese for more roasted flavor, or grate a little nutmeg into the cream.\n\nNo wine: use 60 ml chicken stock plus a scant ½ tsp white wine vinegar, adding the vinegar off the heat.",
+  "servings": 2,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T05:06:46.963Z",
+  "updatedAt": "2026-09-26T05:06:46.963Z"
+}
