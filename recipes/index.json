@@ -75,12 +75,14 @@
       "englishName": "Taiwanese Beef Rice, v2",
       "nativeName": "牛肉燥飯",
       "romanized": "niúròu zào fàn",
-      "tags": [],
+      "tags": [
+        "dinner"
+      ],
       "favorite": false,
       "servings": 3,
       "items": "ground beef, 80/20 chuck · beef tallow 牛油 (niúyóu), for frying shallots · fresh shallots 紅蔥頭 (hóngcōngtóu), sliced thin · dried shiitake 乾香菇 (gān xiānggū) · hot water, for soaking shiitake · pork skin 豬皮 (zhūpí), ~3×5cm piece · eggs · small onion, fine dice · garlic, minced · soy sauce 醬油 (jiàngyóu) · oyster sauce 蠣油 (háoyóu) · Taiwanese rice wine 米酒 (mǐjiǔ) · raw brown sugar 二砂 (èrshā) or palm sugar · five-spice 五香粉 (wǔxiāng fěn) · bay leaf 月桂葉 (yuèguì yè) · black peppercorns, whole · water (plus the shiitake soaking liquid) · scallions, sliced thin · cooked short-grain rice, to serve",
       "createdAt": "2026-09-26T04:24:16.704Z",
-      "updatedAt": "2026-09-26T04:24:16.704Z",
+      "updatedAt": "2026-09-26T04:27:46.619Z",
       "lastCooked": null,
       "cookCount": 0
     }
