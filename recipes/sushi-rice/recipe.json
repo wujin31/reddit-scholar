@@ -1,0 +1,173 @@
+{
+  "id": "sushi-rice",
+  "name": "Sumeshi 酢飯 (Sushi Rice)",
+  "nativeName": "Sumeshi 酢飯",
+  "romanized": "Sushi Rice",
+  "englishName": "Sushi Rice",
+  "description": "Household-standard sushi rice for chirashi, temaki and nigiri. Kombu-cooked, dressed hot at 10% vinegar by cooked weight.",
+  "ingredients": [
+    {
+      "text": "450 g short-grain Japanese rice (Koshihikari), 3 gō",
+      "qty": 450,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "short-grain Japanese rice (Koshihikari), 3 gō"
+    },
+    {
+      "text": "525 ml water (or fill to the 3-cup Sushi line)",
+      "qty": 525,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "water (or fill to the 3-cup Sushi line)"
+    },
+    {
+      "text": "15 ml sake",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "sake"
+    },
+    {
+      "text": "5 g kombu (昆布 / konbu), about 5 cm square",
+      "qty": 5,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "kombu (昆布 / konbu), about 5 cm square"
+    },
+    {
+      "text": "75 ml pure rice vinegar (純米酢 / junmai-su, e.g. Chidori-su)",
+      "qty": 75,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "pure rice vinegar (純米酢 / junmai-su, e.g. Chidori-su)"
+    },
+    {
+      "text": "20 g sugar",
+      "qty": 20,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "sugar"
+    },
+    {
+      "text": "8 g sea salt (粗塩 / arajio)",
+      "qty": 8,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "sea salt (粗塩 / arajio)"
+    }
+  ],
+  "steps": [
+    {
+      "text": "If using a wooden hangiri, fill it with water and let it soak for 30 minutes, then drain and wipe it with a damp cloth. With a bowl or sheet pan, skip this step.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "30 minutes",
+          "seconds": 1800
+        }
+      ]
+    },
+    {
+      "text": "Wash 450 g short-grain Japanese rice (Koshihikari), 3 gō, pouring off the first water within 10 seconds, then rinse 3–4 more times until the water is mostly clear. Drain in a sieve for 30 minutes.",
+      "ingredientRefs": [
+        0
+      ],
+      "timers": [
+        {
+          "text": "10 seconds",
+          "seconds": 10
+        },
+        {
+          "text": "30 minutes",
+          "seconds": 1800
+        }
+      ]
+    },
+    {
+      "text": "Wipe 5 g kombu (昆布 / konbu), about 5 cm square with a damp cloth. Put the rice, 525 ml water (or fill to the 3-cup Sushi line), 15 ml sake and the kombu in the inner pot and let rest for 10 minutes.",
+      "ingredientRefs": [
+        1,
+        2,
+        3
+      ],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        }
+      ]
+    },
+    {
+      "text": "Select White/Sushi and start (about 50–60 minutes, including the built-in steaming).",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "50–60 minutes",
+          "seconds": 3600
+        }
+      ]
+    },
+    {
+      "text": "While the rice cooks, combine 75 ml pure rice vinegar (純米酢 / junmai-su, e.g. Chidori-su), 20 g sugar and 8 g sea salt (粗塩 / arajio) in a heatproof cup. Microwave uncovered for 30 seconds, then stir until dissolved. Do not boil it.",
+      "ingredientRefs": [
+        4,
+        5,
+        6
+      ],
+      "timers": [
+        {
+          "text": "30 seconds",
+          "seconds": 30
+        }
+      ]
+    },
+    {
+      "text": "At the end beep, cancel Keep Warm immediately and discard the kombu. Turn the rice into the hangiri in a mound. Pour the awasezu over it along the paddle, then let it sit for 1 minute.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "1 minute",
+          "seconds": 60
+        }
+      ]
+    },
+    {
+      "text": "Mix with horizontal slicing strokes, folding up from the bottom, for about 2 minutes until every grain is glossy. Don't press or stir.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "text": "Spread the rice flat. Fan it, flipping sections occasionally, until it reaches skin temperature (about 37°C), about 5–10 minutes.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "5–10 minutes",
+          "seconds": 600
+        }
+      ]
+    },
+    {
+      "text": "Gather the rice to one side and cover with a tightly wrung damp cloth. Rest for 10 minutes before shaping or serving.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        }
+      ]
+    }
+  ],
+  "notes": "Calibration: log the water level and the vinegar amount together on your first cook. If your cooker's Sushi line differs from 525 ml + 15 ml sake, follow the line and don't reduce it further. Sweetness: 12 g sugar for nigiri, 30 g for chirashi or inari. Your IR thermometer reads rice accurately because it isn't shiny. Hold at room temperature and use the same day; freeze any extra, never refrigerate. Unverified: the NS-ZCC White/Sushi cycle time is an estimate, so check it against your unit's display.",
+  "servings": 4,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T04:36:37.251Z",
+  "updatedAt": "2026-09-26T04:36:37.251Z"
+}
