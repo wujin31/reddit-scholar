@@ -1,0 +1,432 @@
+{
+  "id": "ribeye-with-garlic-butter-pan-sauce-roasted-yukon-golds-blis",
+  "name": "Ribeye with Garlic Butter Pan Sauce, Roasted Yukon Golds & Blistered Green Beans",
+  "nativeName": "",
+  "romanized": "",
+  "englishName": "Ribeye with Garlic Butter Pan Sauce, Roasted Yukon Golds & Blistered Green Beans",
+  "description": "Sear + oven-finished ribeye with a garlic–lemon butter pan sauce built on the fond, crispy parboiled potatoes, and garlicky blistered green beans.",
+  "ingredients": [
+    {
+      "text": "624 g boneless ribeye, 1.5–1.75\" thick (one steak)",
+      "qty": 624,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "boneless ribeye, 1.5–1.75\" thick (one steak)"
+    },
+    {
+      "text": "7.4 ml kosher salt (steak dry brine)",
+      "qty": 7.4,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "kosher salt (steak dry brine)"
+    },
+    {
+      "text": "4.9 ml coarse black pepper",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "coarse black pepper"
+    },
+    {
+      "text": "15 ml neutral oil for searing (grapeseed, avocado, canola)",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "neutral oil for searing (grapeseed, avocado, canola)"
+    },
+    {
+      "text": "567 g Yukon Gold potatoes, cut into 1.5–2\" chunks",
+      "qty": 567,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "Yukon Gold potatoes, cut into 1.5–2\" chunks"
+    },
+    {
+      "text": "22 ml kosher salt (potato boiling water)",
+      "qty": 22,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "kosher salt (potato boiling water)"
+    },
+    {
+      "text": "2.5 ml baking soda",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "baking soda"
+    },
+    {
+      "text": "44 ml neutral oil or rendered beef fat (potatoes)",
+      "qty": 44,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "neutral oil or rendered beef fat (potatoes)"
+    },
+    {
+      "text": "3.7 ml kosher salt (potatoes, roasting)",
+      "qty": 3.7,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "kosher salt (potatoes, roasting)"
+    },
+    {
+      "text": "4.9 ml flaky salt, to finish",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "flaky salt, to finish"
+    },
+    {
+      "text": "340 g green beans, trimmed",
+      "qty": 340,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "green beans, trimmed"
+    },
+    {
+      "text": "22 ml neutral oil (green beans)",
+      "qty": 22,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "neutral oil (green beans)"
+    },
+    {
+      "text": "3 garlic cloves, sliced thin (green beans)",
+      "qty": 3,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic cloves, sliced thin (green beans)"
+    },
+    {
+      "text": "30 ml water",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "water"
+    },
+    {
+      "text": "2.5 ml kosher salt (green beans)",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "kosher salt (green beans)"
+    },
+    {
+      "text": "15 ml lemon juice (green beans)",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "lemon juice (green beans)"
+    },
+    {
+      "text": "30 ml shallot, minced (optional)",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "shallot, minced (optional)"
+    },
+    {
+      "text": "6 garlic cloves, minced fine (sauce)",
+      "qty": 6,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic cloves, minced fine (sauce)"
+    },
+    {
+      "text": "118 ml low-sodium chicken stock",
+      "qty": 118,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "low-sodium chicken stock"
+    },
+    {
+      "text": "2.5 ml lemon juice (into the reduction)",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "lemon juice (into the reduction)"
+    },
+    {
+      "text": "74 ml cold unsalted butter, cubed",
+      "qty": 74,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "cold unsalted butter, cubed"
+    },
+    {
+      "text": "2.5 ml lemon zest, finely grated",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "lemon zest, finely grated"
+    },
+    {
+      "text": "4.9 ml lemon juice (sauce finish)",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "lemon juice (sauce finish)"
+    },
+    {
+      "text": "1.2 ml kosher salt (sauce, starting amount)",
+      "qty": 1.2,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "kosher salt (sauce, starting amount)"
+    }
+  ],
+  "steps": [
+    {
+      "text": "If using beef fat for the potatoes, trim about 1 oz of hard fat from the steak's edge now and render it in a small pan over low heat for 12 minutes, then strain. Season 624 g boneless ribeye, 1.5–1.75\" thick (one steak) on all sides with 7.4 ml kosher salt (steak dry brine). Set it on a rack over a plate and refrigerate uncovered for 40 minutes.",
+      "ingredientRefs": [
+        0,
+        1
+      ],
+      "timers": [
+        {
+          "text": "12 minutes",
+          "seconds": 720
+        },
+        {
+          "text": "40 minutes",
+          "seconds": 2400
+        }
+      ]
+    },
+    {
+      "text": "Preheat the oven to 400°F now. Put 567 g Yukon Gold potatoes, cut into 1.5–2\" chunks in a pot with cold water to cover by 1\", plus 22 ml kosher salt (potato boiling water) and 2.5 ml baking soda. Bring to a boil over high heat, about 8 minutes.",
+      "ingredientRefs": [
+        4,
+        5,
+        6
+      ],
+      "timers": [
+        {
+          "text": "8 minutes",
+          "seconds": 480
+        }
+      ]
+    },
+    {
+      "text": "Simmer the potatoes for 10–12 minutes, until the edges look ragged and a knife enters with light resistance at the center. Do not cook them fully tender.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "10–12 minutes",
+          "seconds": 720
+        }
+      ]
+    },
+    {
+      "text": "Drain the potatoes and let them steam-dry in the colander for 3 minutes. Return them to the dry pot with 44 ml neutral oil or rendered beef fat (potatoes) and 3.7 ml kosher salt (potatoes, roasting), put the lid on, and shake hard 3–4 times until the outsides look fuzzy and pasty.",
+      "ingredientRefs": [
+        7,
+        8
+      ],
+      "timers": [
+        {
+          "text": "3 minutes",
+          "seconds": 180
+        }
+      ]
+    },
+    {
+      "text": "Spread the potatoes on a sheet pan, spaced apart, cut faces down where possible. Roast on the upper-middle rack at 400°F for 25 minutes.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "25 minutes",
+          "seconds": 1500
+        }
+      ]
+    },
+    {
+      "text": "While the potatoes roast: trim 340 g green beans, trimmed, slice 3 garlic cloves, sliced thin (green beans), mince 30 ml shallot, minced (optional) and 6 garlic cloves, minced fine (sauce). Zest the lemon for 2.5 ml lemon zest, finely grated before juicing it for 15 ml lemon juice (green beans), 2.5 ml lemon juice (into the reduction), and 4.9 ml lemon juice (sauce finish). Cube 74 ml cold unsalted butter, cubed and return it to the fridge so it stays cold.",
+      "ingredientRefs": [
+        10,
+        12,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22
+      ],
+      "timers": []
+    },
+    {
+      "text": "Take the steak out of the fridge (40 minutes after salting) and pat it bone dry with paper towels. Season with 4.9 ml coarse black pepper. Leave it on the rack at room temperature for 20 minutes.",
+      "ingredientRefs": [
+        2
+      ],
+      "timers": [
+        {
+          "text": "40 minutes",
+          "seconds": 2400
+        },
+        {
+          "text": "20 minutes",
+          "seconds": 1200
+        }
+      ]
+    },
+    {
+      "text": "Flip the potatoes and roast for another 25 minutes, for about 50 minutes total. They stay in while the steak joins them.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "25 minutes",
+          "seconds": 1500
+        },
+        {
+          "text": "50 minutes",
+          "seconds": 3000
+        }
+      ]
+    },
+    {
+      "text": "Heat a stainless skillet over high heat for 3–4 minutes, until a water droplet rides the surface as a single bead (Leidenfrost). Ignore the IR thermometer on polished stainless; it reads low.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "3–4 minutes",
+          "seconds": 240
+        }
+      ]
+    },
+    {
+      "text": "Add 15 ml neutral oil for searing (grapeseed, avocado, canola), then the steak. Sear undisturbed for 2 minutes 30 seconds. Flip and sear the second side for 2 minutes 30 seconds. Hold the fat cap against the pan with tongs for 45 seconds.",
+      "ingredientRefs": [
+        3
+      ],
+      "timers": [
+        {
+          "text": "2 minutes 30 seconds",
+          "seconds": 150
+        },
+        {
+          "text": "2 minutes 30 seconds",
+          "seconds": 150
+        },
+        {
+          "text": "45 seconds",
+          "seconds": 45
+        }
+      ]
+    },
+    {
+      "text": "Move the skillet to the lower rack, below the potatoes. Roast until the center reads 120°F, about 5–8 minutes. The thermometer decides, not the clock. Start the beans as soon as the skillet goes in.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "5–8 minutes",
+          "seconds": 480
+        }
+      ]
+    },
+    {
+      "text": "Heat a second pan over medium-high for 2 minutes, then add 22 ml neutral oil (green beans) and 340 g green beans, trimmed with 2.5 ml kosher salt (green beans). Blister with minimal stirring until spotted brown-black, about 5 minutes.",
+      "ingredientRefs": [
+        10,
+        11,
+        14
+      ],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        },
+        {
+          "text": "5 minutes",
+          "seconds": 300
+        }
+      ]
+    },
+    {
+      "text": "Add 30 ml water and cover for 2 minutes to steam through. Uncover, add 3 garlic cloves, sliced thin (green beans), and cook for 45 seconds until fragrant and just golden. Pull the pan off the heat and hold.",
+      "ingredientRefs": [
+        12,
+        13
+      ],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        },
+        {
+          "text": "45 seconds",
+          "seconds": 45
+        }
+      ]
+    },
+    {
+      "text": "When the steak hits 120°F, move it to a board and rest it for 10 minutes. It will carry over to about 128–132°F. Towel on the skillet handle: it's 400°F.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        }
+      ]
+    },
+    {
+      "text": "Pour off all but 1 tbsp of fat, keeping the fond. Let the skillet sit off the burner for 1 minute to shed oven heat. Set it over medium-low and cook 30 ml shallot, minced (optional) for 1 minute. Add 6 garlic cloves, minced fine (sauce) and stir constantly for 1 minute, until fragrant and barely blond, never browned.",
+      "ingredientRefs": [
+        16,
+        17
+      ],
+      "timers": [
+        {
+          "text": "1 minute",
+          "seconds": 60
+        },
+        {
+          "text": "1 minute",
+          "seconds": 60
+        },
+        {
+          "text": "1 minute",
+          "seconds": 60
+        }
+      ]
+    },
+    {
+      "text": "Add 118 ml low-sodium chicken stock and 2.5 ml lemon juice (into the reduction), scrape up the fond, and reduce by about a third, about 2 minutes. Take the pan fully off the burner and wait 30 seconds. Whisk in 74 ml cold unsalted butter, cubed one cube at a time, letting each disappear before the next. Stir in 2.5 ml lemon zest, finely grated and 4.9 ml lemon juice (sauce finish), then season with 1.2 ml kosher salt (sauce, starting amount) to taste.",
+      "ingredientRefs": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        },
+        {
+          "text": "30 seconds",
+          "seconds": 30
+        }
+      ]
+    },
+    {
+      "text": "Pull the potatoes from the oven and finish with some of 4.9 ml flaky salt, to finish. Toss the beans with 15 ml lemon juice (green beans). Slice the steak against the grain into 1/2\" slices, sprinkle the cut faces with the rest of 4.9 ml flaky salt, to finish, and serve the sauce underneath so the crust stays crisp.",
+      "ingredientRefs": [
+        9,
+        15
+      ],
+      "timers": []
+    }
+  ],
+  "notes": "Pull temperature is the primary variable to calibrate: start at 120°F, and drop to 116°F if the steak lands past medium-rare. The skillet's stored heat pushes carryover higher than a bare rack would. The second variable is parboil timing. If the shake turns the potatoes to mash, shorten the simmer next time and toss gently instead of shaking hard. Lemon zest goes only in the sauce and juice only on the beans, which keeps the two components distinct. If the potatoes underwhelm at 400°F, raise the oven to 450°F while the steak rests. Record three things: time from oven-in to 120°F at your steak's thickness, the final rested temperature, and whether the emulsion held.",
+  "servings": 2,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T04:53:06.397Z",
+  "updatedAt": "2026-09-26T04:53:06.397Z"
+}
