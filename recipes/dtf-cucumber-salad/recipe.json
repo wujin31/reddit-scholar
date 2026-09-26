@@ -1,0 +1,131 @@
+{
+  "id": "dtf-cucumber-salad",
+  "name": "DTF Cucumber Salad — Farmer Method (UNTESTED)",
+  "nativeName": "",
+  "romanized": "DTF Cucumber Salad",
+  "englishName": "Farmer Method (UNTESTED)",
+  "description": "Jason Farmer's reverse-engineered version, built from DTF's allergen guide and training materials. No soy sauce, no vinegar. Seasoning happens inside the cucumber via dry brine; the dressing is oil only. UNTESTED.",
+  "ingredients": [
+    {
+      "text": "1 lb Persian cucumbers",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": "lb",
+      "item": "Persian cucumbers"
+    },
+    {
+      "text": "1 1/2 tsp kosher salt",
+      "qty": 1.5,
+      "qtyMax": null,
+      "unit": "tsp",
+      "item": "kosher salt"
+    },
+    {
+      "text": "1/2 tsp granulated sugar",
+      "qty": 0.5,
+      "qtyMax": null,
+      "unit": "tsp",
+      "item": "granulated sugar"
+    },
+    {
+      "text": "1/2 tsp Totole mushroom bouillon powder",
+      "qty": 0.5,
+      "qtyMax": null,
+      "unit": "tsp",
+      "item": "Totole mushroom bouillon powder"
+    },
+    {
+      "text": "3 tbsp house blend oil (5:1 canola to olive)",
+      "qty": 3,
+      "qtyMax": null,
+      "unit": "tbsp",
+      "item": "house blend oil (5:1 canola to olive)"
+    },
+    {
+      "text": "1 1/2 tsp toasted sesame oil",
+      "qty": 1.5,
+      "qtyMax": null,
+      "unit": "tsp",
+      "item": "toasted sesame oil"
+    },
+    {
+      "text": "3 tbsp clear chili oil, from the top of the jar (see notes)",
+      "qty": 3,
+      "qtyMax": null,
+      "unit": "tbsp",
+      "item": "clear chili oil, from the top of the jar (see notes)"
+    },
+    {
+      "text": "3 thin slices fresh raw garlic, for topping",
+      "qty": 3,
+      "qtyMax": null,
+      "unit": null,
+      "item": "thin slices fresh raw garlic, for topping"
+    },
+    {
+      "text": "3 thin slices Fresno chili, for topping",
+      "qty": 3,
+      "qtyMax": null,
+      "unit": null,
+      "item": "thin slices Fresno chili, for topping"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Slice 1 lb Persian cucumbers into 1/2-inch coins. No smashing — clean cuts only for the stacking.",
+      "ingredientRefs": [
+        0
+      ],
+      "timers": []
+    },
+    {
+      "text": "Toss the coins with 1 1/2 tsp kosher salt, 1/2 tsp granulated sugar, and 1/2 tsp Totole mushroom bouillon powder until evenly coated. The bouillon and sugar go in the brine, not the dressing — this is what seasons the cucumber from the inside.",
+      "ingredientRefs": [
+        1,
+        2,
+        3
+      ],
+      "timers": []
+    },
+    {
+      "text": "Refrigerate 90 minutes. The cucumbers will release a significant amount of water.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "90 minutes",
+          "seconds": 5400
+        }
+      ]
+    },
+    {
+      "text": "Drain off the released liquid and pat the coins dry. Surface moisture will dilute the oil dressing and keep it from clinging.",
+      "ingredientRefs": [],
+      "timers": []
+    },
+    {
+      "text": "Working one plate at a time: toss 14 pieces with 3 tbsp house blend oil (5:1 canola to olive), 1 1/2 tsp toasted sesame oil, and 3 tbsp clear chili oil, from the top of the jar (see notes). Toss well so every piece is coated.",
+      "ingredientRefs": [
+        4,
+        5,
+        6
+      ],
+      "timers": []
+    },
+    {
+      "text": "Stack into a pyramid — 9 on the bottom, 4 in the middle, 1 on top. Crown with 3 thin slices fresh raw garlic, for topping and 3 thin slices Fresno chili, for topping.",
+      "ingredientRefs": [
+        7,
+        8
+      ],
+      "timers": []
+    }
+  ],
+  "notes": "UNTESTED — cook straight before modifying.\n\nPrimary variables to calibrate: (1) the 90-minute brine — Farmer's timing, verify it doesn't over-salt; (2) Totole quantity — this is his stand-in for an unknown savory powder, not a confirmed ingredient; (3) the 5:1 canola/olive ratio — suspiciously precise for something you can't taste your way to.\n\nChili oil (make 1–2 days ahead). Heat 1 cup vegetable oil with 2 scallions, 4 garlic cloves, 1-inch ginger, and 1–2 star anise over low until the aromatics are golden and dried out, 10–20 min. Discard aromatics, bring oil to 300°F. Pour over ½ cup coarse chili powder plus 4–6 toasted dried red chilies (chopped) in thirds, letting it settle between pours. Cool, then stir in 1 tsp crushed green Sichuan peppercorn husks — husks only, no seeds, or it turns bitter. Steep 12–24 hours. Use only the clear red oil off the top — the sediment is not what goes on this dish. Yields far more than one batch of cucumbers.\n\nWhy no soy or vinegar: Farmer cites DTF's own allergen guide and training materials. Independent support — the Taiwanese blogger 梅子煮藝 arrived at a no-vinegar version separately. Note that DTF USA is a separate licensee from Taiwan, so this may be accurate for US locations specifically.\n\nAssembly is per-plate: 14 pieces, 1 tbsp house blend, ½ tsp sesame oil, 1 tbsp chili oil. Scale by plate, not by weight.",
+  "servings": 3,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T04:29:19.292Z",
+  "updatedAt": "2026-09-26T04:29:19.292Z"
+}
