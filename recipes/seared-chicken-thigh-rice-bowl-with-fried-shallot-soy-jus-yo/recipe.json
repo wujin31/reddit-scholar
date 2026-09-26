@@ -1,0 +1,279 @@
+{
+  "id": "seared-chicken-thigh-rice-bowl-with-fried-shallot-soy-jus-yo",
+  "name": "Seared Chicken Thigh Rice Bowl with Fried-Shallot Soy Jus (油蔥醬汁雞腿飯 / yóucōng jiàngzhī jītuǐ fàn)",
+  "nativeName": "",
+  "romanized": "",
+  "englishName": "Seared Chicken Thigh Rice Bowl with Fried-Shallot Soy Jus (油蔥醬汁雞腿飯 / yóucōng jiàngzhī jītuǐ fàn)",
+  "description": "Whole boneless thighs seared hard in stainless steel, fond deglazed into a soy-mirin jus finished with homemade fried shallots (油蔥酥 / yóucōng sū) and their oil instead of butter.",
+  "ingredients": [
+    {
+      "text": "680 g boneless skinless chicken thighs (about 6)",
+      "qty": 680,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "boneless skinless chicken thighs (about 6)"
+    },
+    {
+      "text": "9.9 ml soy sauce (marinade)",
+      "qty": 9.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "soy sauce (marinade)"
+    },
+    {
+      "text": "15 ml Taiwanese rice wine, 米酒 (mǐjiǔ), or sake",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "Taiwanese rice wine, 米酒 (mǐjiǔ), or sake"
+    },
+    {
+      "text": "1.2 ml white pepper",
+      "qty": 1.2,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "white pepper"
+    },
+    {
+      "text": "150 g shallots, sliced 2 mm thick",
+      "qty": 150,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "shallots, sliced 2 mm thick"
+    },
+    {
+      "text": "237 ml lard, 豬油 (zhūyóu), or neutral oil, for frying shallots",
+      "qty": 237,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "lard, 豬油 (zhūyóu), or neutral oil, for frying shallots"
+    },
+    {
+      "text": "473 ml short-grain Japanese rice",
+      "qty": 473,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "short-grain Japanese rice"
+    },
+    {
+      "text": "4 large eggs",
+      "qty": 4,
+      "qtyMax": null,
+      "unit": null,
+      "item": "large eggs"
+    },
+    {
+      "text": "450 g baby bok choy, 青江菜 (qīngjiāng cài), halved",
+      "qty": 450,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "baby bok choy, 青江菜 (qīngjiāng cài), halved"
+    },
+    {
+      "text": "237 ml low-sodium or homemade chicken stock",
+      "qty": 237,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "low-sodium or homemade chicken stock"
+    },
+    {
+      "text": "30 ml soy sauce (jus)",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "soy sauce (jus)"
+    },
+    {
+      "text": "30 ml hon-mirin",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "hon-mirin"
+    },
+    {
+      "text": "44 ml fried shallots, for the jus",
+      "qty": 44,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "fried shallots, for the jus"
+    },
+    {
+      "text": "15 ml shallot oil, for finishing the jus",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "shallot oil, for finishing the jus"
+    },
+    {
+      "text": "2 scallions, thinly sliced",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "scallions, thinly sliced"
+    },
+    {
+      "text": "2.5 ml kosher salt",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "kosher salt"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Trim any large fat pockets from 680 g boneless skinless chicken thighs (about 6) but keep each thigh whole. Toss with 9.9 ml soy sauce (marinade), 15 ml Taiwanese rice wine, 米酒 (mǐjiǔ), or sake and 1.2 ml white pepper. Marinate in the fridge at least 30 minutes (up to overnight). Take it out of the fridge 20 minutes before searing.",
+      "ingredientRefs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "timers": [
+        {
+          "text": "30 minutes",
+          "seconds": 1800
+        },
+        {
+          "text": "20 minutes",
+          "seconds": 1200
+        }
+      ]
+    },
+    {
+      "text": "Rinse 473 ml short-grain Japanese rice until the water runs mostly clear, then cook on the rice cooker's White setting (about 50 minutes).",
+      "ingredientRefs": [
+        6
+      ],
+      "timers": [
+        {
+          "text": "50 minutes",
+          "seconds": 3000
+        }
+      ]
+    },
+    {
+      "text": "Put 150 g shallots, sliced 2 mm thick and 237 ml lard, 豬油 (zhūyóu), or neutral oil, for frying shallots in a small stainless saucepan, starting cold. Set over medium heat and stir often until the shallots are evenly pale golden, about 10–12 minutes. Pull them at light gold, since they keep darkening off the heat.",
+      "ingredientRefs": [
+        4,
+        5
+      ],
+      "timers": [
+        {
+          "text": "10–12 minutes",
+          "seconds": 720
+        }
+      ]
+    },
+    {
+      "text": "Strain through a metal sieve set over a heatproof bowl to catch the shallot oil. Spread the shallots on paper towels, sprinkle with a pinch of 2.5 ml kosher salt, and let them cool and crisp for 10 minutes.",
+      "ingredientRefs": [
+        15
+      ],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        }
+      ]
+    },
+    {
+      "text": "Lower 4 large eggs into boiling water and cook for 6 minutes 30 seconds. Move them to an ice bath for 5 minutes, then peel.",
+      "ingredientRefs": [
+        7
+      ],
+      "timers": [
+        {
+          "text": "6 minutes 30 seconds",
+          "seconds": 390
+        },
+        {
+          "text": "5 minutes",
+          "seconds": 300
+        }
+      ]
+    },
+    {
+      "text": "Blanch 450 g baby bok choy, 青江菜 (qīngjiāng cài), halved in well-salted boiling water with 1 tsp of the shallot oil for 1 minute 30 seconds. Drain well.",
+      "ingredientRefs": [
+        8
+      ],
+      "timers": [
+        {
+          "text": "1 minute 30 seconds",
+          "seconds": 90
+        }
+      ]
+    },
+    {
+      "text": "Heat a 12-inch stainless skillet over medium-high heat for about 3 minutes, until a drop of water beads and skates (Leidenfrost test). Add 1 tbsp shallot oil and swirl.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "3 minutes",
+          "seconds": 180
+        }
+      ]
+    },
+    {
+      "text": "Pat the chicken very dry. Lay the thighs smooth side down in a single layer (work in 2 batches if they crowd), press flat, and don't move them. Sear until deeply browned and self-releasing, about 5–6 minutes.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "5–6 minutes",
+          "seconds": 360
+        }
+      ]
+    },
+    {
+      "text": "Flip and cook until the thickest part reads 175°F (80°C), about 4–5 minutes. Rest on a rack for 5 minutes.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "4–5 minutes",
+          "seconds": 300
+        },
+        {
+          "text": "5 minutes",
+          "seconds": 300
+        }
+      ]
+    },
+    {
+      "text": "Pour off all but about 1 tsp fat. Over medium heat, add 237 ml low-sodium or homemade chicken stock, 30 ml soy sauce (jus) and 30 ml hon-mirin, scraping up all the fond. Simmer until reduced by a third, about 3–4 minutes.",
+      "ingredientRefs": [
+        9,
+        10,
+        11
+      ],
+      "timers": [
+        {
+          "text": "3–4 minutes",
+          "seconds": 240
+        }
+      ]
+    },
+    {
+      "text": "Take the pan off the heat. Stir in 44 ml fried shallots, for the jus, 15 ml shallot oil, for finishing the jus and any resting juices from the chicken.",
+      "ingredientRefs": [
+        12,
+        13
+      ],
+      "timers": []
+    },
+    {
+      "text": "Slice the chicken across the grain. Build each bowl: rice, sliced chicken, bok choy, and a halved egg. Spoon the jus over the chicken and rice, then top with a fresh pinch of crisp shallots and 2 scallions, thinly sliced.",
+      "ingredientRefs": [
+        14
+      ],
+      "timers": []
+    }
+  ],
+  "notes": "Calibration variable: shallot pull color. Too pale tastes raw and too dark turns bitter, so log the time and color on the first fry. The shallots in the jus soften on purpose because they thicken and flavor it; the fresh ones on top are there for crunch. Sodium: the marinade is kept light because the jus carries most of the soy, and low-sodium stock keeps the reduction from getting too salty. Meal prep: store the jus, shallots (airtight, at room temperature), and shallot oil separately. Add fresh shallots when reheating. Leftover shallots and oil keep for weeks.",
+  "servings": 4,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T05:06:18.497Z",
+  "updatedAt": "2026-09-26T05:06:18.497Z"
+}
