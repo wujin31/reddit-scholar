@@ -207,6 +207,21 @@
       "cookCount": 0
     },
     {
+      "id": "suanxiang-jiucengta-banmian",
+      "name": "蒜香九層塔拌麵 (Suànxiāng Jiǔcéngtǎ Bànmiàn) — Taiwanese Aglio e Olio",
+      "englishName": "Taiwanese Aglio e Olio",
+      "nativeName": "蒜香九層塔拌麵",
+      "romanized": "Suànxiāng Jiǔcéngtǎ Bànmiàn",
+      "tags": [],
+      "favorite": false,
+      "servings": 2,
+      "items": "關廟麵 (Guānmiào miàn) dried knife-cut noodles, medium width · water, for boiling · kosher salt, for the water · 豬油 (zhūyóu) lard · garlic cloves, thinly sliced · fresh red chilies, thinly sliced · 米酒 (mǐjiǔ) Taiwanese rice wine · 醬油膏 (jiàngyóu gāo) soy paste · white pepper · reserved noodle water · 九層塔 (jiǔcéngtǎ) Thai basil leaves, loosely packed · 烏醋 (wūcù) Taiwanese black vinegar, e.g. Kong Yen · toasted sesame oil · 油蔥酥 (yóucōng sū) fried shallot crisps",
+      "createdAt": "2026-09-26T05:02:20.892Z",
+      "updatedAt": "2026-09-26T05:02:20.892Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "sushi-rice",
       "name": "Sumeshi 酢飯 (Sushi Rice)",
       "englishName": "Sushi Rice",
