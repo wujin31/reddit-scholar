@@ -1,0 +1,60 @@
+牛肉燥飯 (niúròu zào fàn) — Taiwanese Beef Rice, v2
+
+Rebuilt after critical review. Base: 廚房女漢子Rita's (Chúfáng Nǚ Hànzi Rita), iCook 362832; extended with garlic, shiitake, pork skin, and braised eggs from the wider Taiwanese 肉燥 (ròuzào) tradition. UNTESTED.
+
+Ingredients
+• 16 oz ground beef, 80/20 chuck
+• 3 tbsp beef tallow 牛油 (niúyóu), for frying shallots
+• 2 1/8 oz fresh shallots 紅蔥頭 (hóngcōngtóu), sliced thin
+• 4 dried shiitake 乾香菇 (gān xiānggū)
+• 1.1 cup hot water, for soaking shiitake
+• 1 pork skin 豬皮 (zhūpí), ~3×5cm piece
+• 3 eggs
+• 1/2 small onion, fine dice
+• 2/3 oz garlic, minced
+• 3/8 cup soy sauce 醬油 (jiàngyóu)
+• 1 tbsp oyster sauce 蠣油 (háoyóu)
+• 1/8 cup Taiwanese rice wine 米酒 (mǐjiǔ)
+• 1 tbsp raw brown sugar 二砂 (èrshā) or palm sugar
+• 1/4 tsp five-spice 五香粉 (wǔxiāng fěn)
+• 1 bay leaf 月桂葉 (yuèguì yè)
+• 6 black peppercorns, whole
+• 3/8 cup water (plus the shiitake soaking liquid)
+• 2 scallions, sliced thin
+• 3 cup cooked short-grain rice, to serve
+
+Steps
+1. Rinse 4 dried shiitake 乾香菇 (gān xiānggū) and cover with 1.1 cup hot water, for soaking shiitake. Soak at least 30 minutes, until fully soft. Squeeze dry, dice small, and reserve the soaking liquid.
+2. Boil 3 eggs for 7 minutes. Move to ice water for 5 minutes, then peel.
+3. Drop 1 pork skin 豬皮 (zhūpí), ~3×5cm piece into boiling water for 3 minutes. Rinse, scrape off any stray bristles, set aside.
+4. Put 3 tbsp beef tallow 牛油 (niúyóu), for frying shallots and 2 1/8 oz fresh shallots 紅蔥頭 (hóngcōngtóu), sliced thin into a cold pan, then turn to medium-low. Fry, stirring often, until light golden, about 8 minutes. Pull them slightly early since they darken off the heat. Strain and keep the oil; the shallots crisp as they cool, about 5 minutes.
+5. Return 2 tbsp of the shallot oil to the pan over medium-high. Add 16 oz ground beef, 80/20 chuck and stir-fry, breaking it into small clumps, until the color changes and the edges start to brown, about 5 minutes. This is 炒至變色 (chǎo zhì biàn sè), not a hard sear.
+6. Tip the pan and spoon off the rendered fat, leaving about 1 tbsp.
+7. Add 1/2 small onion, fine dice and stir-fry until translucent, about 3 minutes. Add 2/3 oz garlic, minced and the diced shiitake and fry until fragrant, about 1 minute.
+8. Add 3/8 cup soy sauce 醬油 (jiàngyóu) and 1 tbsp oyster sauce 蠣油 (háoyóu) and bring to a boil, about 1 minute. Then add 1/8 cup Taiwanese rice wine 米酒 (mǐjiǔ), 1 tbsp raw brown sugar 二砂 (èrshā) or palm sugar, and 1/4 tsp five-spice 五香粉 (wǔxiāng fěn) and stir-fry until the meat takes on color, about 2 minutes.
+9. Pour in the shiitake soaking liquid (leave the last bit of grit behind) and 3/8 cup water (plus the shiitake soaking liquid). Add two-thirds of the fried shallots, 1 bay leaf 月桂葉 (yuèguì yè), 6 black peppercorns, whole, and the pork skin. Bring to a gentle simmer, cover, and cook on low for 20 minutes. Keep it at a lazy bubble; a hard boil tightens the meat.
+10. Turn off the heat. Nestle in the peeled eggs and steep for 30 minutes. Turn the eggs over at the 15-minute mark so they color evenly.
+11. Remove the pork skin, bay leaf, and peppercorns. If the sauce is loose, simmer uncovered until glossy, about 5 minutes. Taste and adjust with soy or sugar. Stir in the remaining fried shallots.
+12. Spoon over 3 cup cooked short-grain rice, to serve with a halved egg and 2 scallions, sliced thin. Serve with chilled salted cucumber on the side.
+
+Notes
+UNTESTED. v2 after critical review. Serves 3 (Rita's ratio: 1kg for 6).
+
+WHAT CHANGED FROM v1
+• Browning is now the native 炒至變色 (chǎo zhì biàn sè) stir-fry, not a Western crust.
+• Braise shortened: ground chuck has no collagen, so a long simmer only dries it out.
+• Ginger removed: it came from Hong Kong adaptations, not Taiwanese sources.
+• Shallots fried fresh in tallow at real weight; the shallot oil becomes your cooking fat.
+• Five-spice raised to 1/4 tsp; v1's amount was too low to register.
+• Pork skin 豬皮 (zhūpí) replaces the cornstarch slurry as the gelatin source (per a Cookpad TW beef 肉燥). Beef tendon works too. You can mince the skin and stir it back in instead of discarding.
+• 香菇 (xiānggū) added, with the soaking liquid replacing most of the water.
+
+SOURCED vs. ADDED
+• Rita's: beef, onion, shallots, bay, peppercorn, soy, 米酒 (mǐjiǔ), 二砂 (èrshā), five-spice, the soy-then-wine order.
+• Wider tradition: garlic (浦維老師 Pǔwéi lǎoshī), shiitake, pork skin, braised eggs.
+• My substitution: oyster sauce for 醬油膏 (jiàngyóu gāo).
+
+REPORT BACK
+Salt level at 90ml soy + oyster sauce, whether the pork skin gave enough body, egg yolk texture, and whether five-spice reads as 肉燥 or drifts toward 紅燒牛肉麵 (hóngshāo niúròu miàn).
+
+STORAGE: eggs stay in the sauce (they improve overnight); rice separate.
