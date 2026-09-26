@@ -2,6 +2,21 @@
   "version": 1,
   "recipes": [
     {
+      "id": "beef-sukiyaki-bowl",
+      "name": "Gyū Suki-don 牛すき丼 — Beef Sukiyaki Bowl",
+      "englishName": "Beef Sukiyaki Bowl",
+      "nativeName": "Gyū Suki-don 牛すき丼",
+      "romanized": "",
+      "tags": [],
+      "favorite": false,
+      "servings": 4,
+      "items": "frozen thin-sliced beef · yellow onions, cut into wedges · scallions, cut on the diagonal · white shimeji (crab mushrooms), torn into clusters · fish tofu, halved or sliced · roe-filled fish balls · beef tallow · soy sauce · mirin · sake · white granulated sugar (or kibizatō きび砂糖) · MSG · hot water · Hondashi powder · ginger, finely grated · hot cooked short-grain rice · egg yolks or onsen tamago · shichimi togarashi · beni shoga (red pickled ginger)",
+      "createdAt": "2026-09-26T04:51:11.014Z",
+      "updatedAt": "2026-09-26T04:51:11.014Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "bifu-peppa-raisu",
       "name": "Beef Pepper Rice (ビーフペッパーライス / Bīfu Peppā Raisu) — Pepper Lunch Dupe",
       "englishName": "Pepper Lunch Dupe",

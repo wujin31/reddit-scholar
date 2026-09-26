@@ -1,0 +1,250 @@
+{
+  "id": "beef-sukiyaki-bowl",
+  "name": "Gyū Suki-don 牛すき丼 — Beef Sukiyaki Bowl",
+  "nativeName": "Gyū Suki-don 牛すき丼",
+  "romanized": "",
+  "englishName": "Beef Sukiyaki Bowl",
+  "description": "Sweet-savory sukiyaki beef seared in beef tallow and simmered in a from-scratch warishita (割り下) with onion, scallion, white shimeji, fish tofu, and roe-filled fish balls. Finished with off-heat ginger and a molten egg yolk.",
+  "ingredients": [
+    {
+      "text": "550 g frozen thin-sliced beef",
+      "qty": 550,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "frozen thin-sliced beef"
+    },
+    {
+      "text": "2 yellow onions, cut into wedges",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "yellow onions, cut into wedges"
+    },
+    {
+      "text": "4 scallions, cut on the diagonal",
+      "qty": 4,
+      "qtyMax": null,
+      "unit": null,
+      "item": "scallions, cut on the diagonal"
+    },
+    {
+      "text": "150 g white shimeji (crab mushrooms), torn into clusters",
+      "qty": 150,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "white shimeji (crab mushrooms), torn into clusters"
+    },
+    {
+      "text": "200 g fish tofu, halved or sliced",
+      "qty": 200,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "fish tofu, halved or sliced"
+    },
+    {
+      "text": "200 g roe-filled fish balls",
+      "qty": 200,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "roe-filled fish balls"
+    },
+    {
+      "text": "22 ml beef tallow",
+      "qty": 22,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "beef tallow"
+    },
+    {
+      "text": "90 ml soy sauce",
+      "qty": 90,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "soy sauce"
+    },
+    {
+      "text": "90 ml mirin",
+      "qty": 90,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "mirin"
+    },
+    {
+      "text": "60 ml sake",
+      "qty": 60,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "sake"
+    },
+    {
+      "text": "30 ml white granulated sugar (or kibizatō きび砂糖)",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "white granulated sugar (or kibizatō きび砂糖)"
+    },
+    {
+      "text": "1.2 ml MSG",
+      "qty": 1.2,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "MSG"
+    },
+    {
+      "text": "275 ml hot water",
+      "qty": 275,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "hot water"
+    },
+    {
+      "text": "2.5 ml Hondashi powder",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "Hondashi powder"
+    },
+    {
+      "text": "4.9 ml ginger, finely grated",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "ginger, finely grated"
+    },
+    {
+      "text": "800 g hot cooked short-grain rice",
+      "qty": 800,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "hot cooked short-grain rice"
+    },
+    {
+      "text": "4 egg yolks or onsen tamago",
+      "qty": 4,
+      "qtyMax": null,
+      "unit": null,
+      "item": "egg yolks or onsen tamago"
+    },
+    {
+      "text": "1 pinch shichimi togarashi",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": "pinch",
+      "item": "shichimi togarashi"
+    },
+    {
+      "text": "40 g beni shoga (red pickled ginger)",
+      "qty": 40,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "beni shoga (red pickled ginger)"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Seal 550 g frozen thin-sliced beef and 200 g roe-filled fish balls (if frozen) in zip bags and submerge in cold water to half-thaw, about 15 minutes. You want the beef slices to peel apart without going mushy. Blot the beef dry.",
+      "ingredientRefs": [
+        0,
+        5
+      ],
+      "timers": [
+        {
+          "text": "15 minutes",
+          "seconds": 900
+        }
+      ]
+    },
+    {
+      "text": "While that thaws, cut 2 yellow onions, cut into wedges into wedges. Cut 4 scallions, cut on the diagonal on the diagonal, keeping whites and greens separate. Trim the woody base from 150 g white shimeji (crab mushrooms), torn into clusters and tear into small clusters. Halve or slice 200 g fish tofu, halved or sliced. Grate 4.9 ml ginger, finely grated and set aside.",
+      "ingredientRefs": [
+        1,
+        2,
+        3,
+        4,
+        14
+      ],
+      "timers": []
+    },
+    {
+      "text": "Dissolve 2.5 ml Hondashi powder in 275 ml hot water, then stir in 90 ml soy sauce, 90 ml mirin, 60 ml sake, 30 ml white granulated sugar (or kibizatō きび砂糖), and 1.2 ml MSG until the sugar dissolves. This is your warishita (割り下).",
+      "ingredientRefs": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "timers": []
+    },
+    {
+      "text": "Melt 22 ml beef tallow in the stainless pan over medium-high heat (Leidenfrost test first). Char the cut faces of the scallion whites about 2 minutes, letting a few onion wedges catch color alongside. Push aside and brown the edges of a handful of beef in a single layer, about 1 minute, letting it self-release. That's 3 minutes total.",
+      "ingredientRefs": [
+        6
+      ],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        },
+        {
+          "text": "1 minute",
+          "seconds": 60
+        },
+        {
+          "text": "3 minutes",
+          "seconds": 180
+        }
+      ]
+    },
+    {
+      "text": "Pour in the warishita and add the remaining onion, 150 g white shimeji (crab mushrooms), torn into clusters, and 200 g fish tofu, halved or sliced. Bring to a gentle bubble, cover, and simmer for 10 minutes, until the onion softens, the mushrooms lose their raw bitterness, and the fish tofu has soaked up sauce.",
+      "ingredientRefs": [
+        3,
+        4
+      ],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        }
+      ]
+    },
+    {
+      "text": "Uncover. Lay in the rest of the beef, spreading the slices so they don't clump, and nestle in 200 g roe-filled fish balls. Cook at a gentle simmer for about 4 minutes, until the beef just turns color and the fish balls are heated through. A hard boil bursts the roe. Skim any foam. Taste the sauce, and if it reads too sweet, add a splash more soy.",
+      "ingredientRefs": [
+        5
+      ],
+      "timers": [
+        {
+          "text": "4 minutes",
+          "seconds": 240
+        }
+      ]
+    },
+    {
+      "text": "Turn off the heat, then stir in the grated ginger. Adding it off-heat keeps the pungency that cuts the sweetness.",
+      "ingredientRefs": [],
+      "timers": []
+    },
+    {
+      "text": "Divide 800 g hot cooked short-grain rice among bowls. Top with the beef, onion, mushrooms, fish tofu, and fish balls, then spoon over sauce generously. Make a well and drop in 4 egg yolks or onsen tamago. Scatter the scallion greens, add a real pile of 40 g beni shoga (red pickled ginger), and dust with 1 pinch shichimi togarashi. Break the yolk into the hot beef and eat.",
+      "ingredientRefs": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "timers": []
+    }
+  ],
+  "notes": "UNTESTED. Cook it, then it goes in the compendium.\n\nAFTER THE COOK, REPORT BACK ON Sweetness at 2 tbsp sugar (onion, fish tofu, and fish balls all add their own). Whether 275ml of liquid held through the covered simmer.\n\nSECRET INGREDIENTS Beef tallow: the authentic sukiyaki move, since traditional sukiyaki starts with suet in a hot pan. It restores the richness thin-sliced beef lacks. MSG plus Hondashi plus shimeji: glutamate, inosinate, and guanylate together. Hondashi already contains MSG, so the added ¼ tsp is a light top-up. Don't double it. Ginger off-heat: cuts the stacked sweetness. It loses its bite if simmered.\n\nTECHNIQUE Stainless: dry the beef hard or it steams instead of browning. Use a single uncrowded layer and let it self-release. Shimeji: tear, don't slice. They need the full 10-minute simmer to lose their bitterness. Fish tofu: fried, so it drinks sauce and holds up well through the 10-minute simmer. Fish balls: gentle heat only, and add them late so the roe pocket stays intact. Scallions: whites get charred, greens go on raw. Never simmer the greens. Running dry: top up with a mini-warishita (60ml dashi, 1 tbsp soy, 1 tbsp mirin, 1 tsp sugar), never plain water. Keep the lid on at a gentle bubble. Beef still a solid block: skip the browning and break it apart directly in the simmering sauce at step 6.\n\nBALANCE Acid comes from the beni shoga at the bowl. No vinegar in the pot, because it flattens mirin's sweetness. Sugar: white granulated is correct. Kibizatō or zarame are the Japanese upgrades. Avoid brown sugar, whose molasses muddies the profile. Raw yolk: use pasteurized eggs or onsen tamago if that's a concern.\n\nSTILL MISSING FROM THE ORIGINAL BUILD Shungiku or spinach (add in the last minute of step 6) and yaki-dofu.\n\nLUNCH PREP The beef, onion, and mushrooms deepen overnight. Fish balls are best the same day, since the roe texture suffers when reheated. Store the rice separately, and add the egg fresh.",
+  "servings": 4,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T04:51:11.014Z",
+  "updatedAt": "2026-09-26T04:51:11.014Z"
+}
