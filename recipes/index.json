@@ -47,6 +47,21 @@
       "cookCount": 0
     },
     {
+      "id": "bulgogi-100g-v2",
+      "name": "Bulgogi 100g, v2",
+      "englishName": "Bulgogi 100g, v2",
+      "nativeName": "",
+      "romanized": "",
+      "tags": [],
+      "favorite": false,
+      "servings": 1,
+      "items": "frozen thin-sliced beef rolls · Korean pear / 배 (bae), ideally 신고배 (singo-bae), peeled and finely grated with juice · soy sauce / 진간장 (jin-ganjang), e.g. Sempio 금S (geum-S) · sugar · mirin · garlic clove, minced / 다진 마늘 (dajin maneul) · scallion / 쪽파 (jjokpa), white minced, green sliced · black pepper / 후추 (huchu) · toasted sesame oil / 참기름 (chamgireum), for the marinade · yellow onion / 양파 (yangpa), thinly sliced · neutral oil · toasted sesame oil / 참기름 (chamgireum), to finish · whole toasted sesame seeds / 통깨 (tongkkae)",
+      "createdAt": "2026-09-26T05:23:43.841Z",
+      "updatedAt": "2026-09-26T05:23:43.841Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "carne-asada-nortena",
       "name": "Carne Asada Norteña — Citrus Marinade, Stainless Stovetop (v2)",
       "englishName": "Citrus Marinade, Stainless Stovetop (v2)",

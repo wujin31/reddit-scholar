@@ -1,0 +1,208 @@
+{
+  "id": "bulgogi-100g-v2",
+  "name": "Bulgogi 100g, v2",
+  "nativeName": "",
+  "romanized": "",
+  "englishName": "Bulgogi 100g, v2",
+  "description": "Pear-marinated thin-sliced beef, reviewed and corrected: onion head start, split sesame oil, stick-proofed for stainless.",
+  "ingredients": [
+    {
+      "text": "100 g frozen thin-sliced beef rolls",
+      "qty": 100,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "frozen thin-sliced beef rolls"
+    },
+    {
+      "text": "22 ml Korean pear / 배 (bae), ideally 신고배 (singo-bae), peeled and finely grated with juice",
+      "qty": 22,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "Korean pear / 배 (bae), ideally 신고배 (singo-bae), peeled and finely grated with juice"
+    },
+    {
+      "text": "12 ml soy sauce / 진간장 (jin-ganjang), e.g. Sempio 금S (geum-S)",
+      "qty": 12,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "soy sauce / 진간장 (jin-ganjang), e.g. Sempio 금S (geum-S)"
+    },
+    {
+      "text": "4.9 ml sugar",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "sugar"
+    },
+    {
+      "text": "4.9 ml mirin",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "mirin"
+    },
+    {
+      "text": "1 garlic clove, minced / 다진 마늘 (dajin maneul)",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic clove, minced / 다진 마늘 (dajin maneul)"
+    },
+    {
+      "text": "1 scallion / 쪽파 (jjokpa), white minced, green sliced",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": null,
+      "item": "scallion / 쪽파 (jjokpa), white minced, green sliced"
+    },
+    {
+      "text": "0.62 ml black pepper / 후추 (huchu)",
+      "qty": 0.62,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "black pepper / 후추 (huchu)"
+    },
+    {
+      "text": "2.5 ml toasted sesame oil / 참기름 (chamgireum), for the marinade",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "toasted sesame oil / 참기름 (chamgireum), for the marinade"
+    },
+    {
+      "text": "30 g yellow onion / 양파 (yangpa), thinly sliced",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "yellow onion / 양파 (yangpa), thinly sliced"
+    },
+    {
+      "text": "2.5 ml neutral oil",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "neutral oil"
+    },
+    {
+      "text": "2.5 ml toasted sesame oil / 참기름 (chamgireum), to finish",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "toasted sesame oil / 참기름 (chamgireum), to finish"
+    },
+    {
+      "text": "2.5 ml whole toasted sesame seeds / 통깨 (tongkkae)",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "whole toasted sesame seeds / 통깨 (tongkkae)"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Rinse short-grain rice and start it on the White setting of the rice cooker, about 50 minutes.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "50 minutes",
+          "seconds": 3000
+        }
+      ]
+    },
+    {
+      "text": "Lay out 100 g frozen thin-sliced beef rolls and let them sit at room temperature for about 10 minutes, just until the rolls separate but are still cold and firm. Blot both sides on paper towels to pull 핏물 / pitmul.",
+      "ingredientRefs": [
+        0
+      ],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        }
+      ]
+    },
+    {
+      "text": "Stir together 22 ml Korean pear / 배 (bae), ideally 신고배 (singo-bae), peeled and finely grated with juice, 12 ml soy sauce / 진간장 (jin-ganjang), e.g. Sempio 금S (geum-S), 4.9 ml sugar, 4.9 ml mirin, 1 garlic clove, minced / 다진 마늘 (dajin maneul), the minced white of 1 scallion / 쪽파 (jjokpa), white minced, green sliced, 0.62 ml black pepper / 후추 (huchu), and 2.5 ml toasted sesame oil / 참기름 (chamgireum), for the marinade until the sugar dissolves. Fold through the beef, separating every slice. Marinate for 20 minutes at room temperature. If dinner gets delayed, it can instead go up to 4 hours in the refrigerator.",
+      "ingredientRefs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "timers": [
+        {
+          "text": "20 minutes",
+          "seconds": 1200
+        },
+        {
+          "text": "4 hours",
+          "seconds": 14400
+        }
+      ]
+    },
+    {
+      "text": "Heat a stainless skillet over medium-high until a water droplet beads and skates, about 2 minutes.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "text": "Add 2.5 ml neutral oil and 30 g yellow onion / 양파 (yangpa), thinly sliced. Toss until the onion edges turn translucent and soften, about 1 minute 30 seconds.",
+      "ingredientRefs": [
+        9,
+        10
+      ],
+      "timers": [
+        {
+          "text": "1 minute 30 seconds",
+          "seconds": 90
+        }
+      ]
+    },
+    {
+      "text": "Push the onion to one side. Lift the beef out with tongs, letting the marinade drip back into the bowl, and lay it in a single layer. Leave it undisturbed for 45 seconds, until the fat starts rendering and the underside loses its raw color.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "45 seconds",
+          "seconds": 45
+        }
+      ]
+    },
+    {
+      "text": "Flip the beef, pour in the reserved marinade, and toss everything together constantly until the liquid reduces to a glossy syrup that clings to the meat, about 1 minute 30 seconds.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "1 minute 30 seconds",
+          "seconds": 90
+        }
+      ]
+    },
+    {
+      "text": "Off heat, add 2.5 ml toasted sesame oil / 참기름 (chamgireum), to finish, 2.5 ml whole toasted sesame seeds / 통깨 (tongkkae), and the sliced green of 1 scallion / 쪽파 (jjokpa), white minced, green sliced. Toss once and serve over the rice.",
+      "ingredientRefs": [
+        6,
+        11,
+        12
+      ],
+      "timers": []
+    }
+  ],
+  "notes": "Ingredient quality. \\uc2e0\\uace0\\ubc30 / singo-bae is the standard Korean pear variety; a ripe Asian pear from an H Mart-type grocer is the right substitute, not a Bartlett or Bosc, which are softer and more perfumed. Sempio \\uc9c4\\uac04\\uc7a5 \\uae08S is a clean, well-balanced Korean soy; Japanese or Chinese soy sauces shift the salt and sweetness noticeably.\n\nWhy the sesame oil is split. Half in the marinade carries the nutty base note into the meat. Half after the heat is off preserves the volatile aroma that cooking destroys.\n\nWhy the onion goes first. Added together with the marinade, it only warms through. Giving it its own time in the pan lets it soften and sweeten before the beef goes in.\n\nThe oil is insurance, not cooking fat. The slices still render most of their own fat. The small amount of oil just keeps sugar and pear pulp from bonding to stainless before that happens.\n\nCalibration variables: 1. Actual meat weight. If it's over 110g, bump soy to 3 tsp. 2. Whether the glaze reached a clinging syrup, or stayed loose (go longer) or turned sticky (pull sooner). 3. Rendered fat after laying in the beef. A visible pool means pour some off before the marinade goes in next time.",
+  "servings": 1,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T05:23:43.841Z",
+  "updatedAt": "2026-09-26T05:23:43.841Z"
+}
