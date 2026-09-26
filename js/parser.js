@@ -267,6 +267,12 @@ export function parseRecipeText(raw) {
     }
   }
 
+  // "…Serves 4." at the end of the description (the card has no servings field of its own).
+  if (!recipe.servings) {
+    const m = recipe.description.match(/\b(?:serves|servings:?|makes)\s+(\d+(?:\.\d+)?)\b/i);
+    if (m) recipe.servings = Number(m[1]);
+  }
+
   if (!recipe.ingredients.length) {
     throw new Error("Couldn't find an Ingredients list. Paste the whole recipe card, starting from its title.");
   }

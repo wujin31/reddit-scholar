@@ -53,6 +53,12 @@ A PDF printed from the card also works, since it has the same text, but plain te
 
 ### Keeping the card's timers
 
+The easiest way: give Claude the instructions in [docs/claude-instructions.md](docs/claude-instructions.md)
+once (for example as a Project's instructions). Claude then writes every timer into its step
+and ends the description with "Serves N.", so a plain copy keeps both.
+
+For a card made without those instructions:
+
 Copying a card leaves out its timer buttons, so plain copy/paste only finds times that are
 written into a step's sentence ("simmer about 20 minutes"). To keep every timer the card shows:
 

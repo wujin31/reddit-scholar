@@ -112,3 +112,11 @@ test("timer scan stays fast on huge digit runs", () => {
   parseTitle("a (".repeat(5000));
   assert.ok(Date.now() - t0 < 500);
 });
+
+test("a card written by the Claude instructions (docs/claude-instructions.md) keeps every timer and the servings", () => {
+  const r = parseRecipeInput(synthetic["31"]);
+  assert.equal(r.servings, 4);
+  assert.equal(r.englishName, "Korean Chicken Porridge");
+  assert.deepEqual(r.steps.map((s) => s.timers.map((t) => t.seconds)), [[3600], [120], [5400], [300], []]);
+  assert.ok(r.steps.every((s, i) => i === 4 || s.ingredientRefs.length), "steps link their ingredients");
+});
