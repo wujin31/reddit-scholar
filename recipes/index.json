@@ -162,6 +162,21 @@
       "cookCount": 0
     },
     {
+      "id": "sopa-de-fideo-con-pollo",
+      "name": "Sopa de Fideo con Pollo",
+      "englishName": "Sopa de Fideo con Pollo",
+      "nativeName": "",
+      "romanized": "",
+      "tags": [],
+      "favorite": false,
+      "servings": 4,
+      "items": "Costco rotisserie chicken · water · white onion, for broth · garlic cloves, for broth, smashed · very ripe roma tomatoes, cored and quartered · white onion, for base, rough-chopped · garlic cloves, for base · neutral oil · fideo (thin coiled vermicelli) · ground cumin (optional) · chicken bouillon powder (Knorr) · serrano chile, whole · kosher salt, to taste at the end · crema mexicana · queso fresco, crumbled · avocado, diced · lime, cut into wedges",
+      "createdAt": "2026-09-26T04:51:42.784Z",
+      "updatedAt": "2026-09-26T04:51:42.784Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "spicy-braised-bolognese-with-penne",
       "name": "Spicy Braised Bolognese with Penne",
       "englishName": "Spicy Braised Bolognese with Penne",

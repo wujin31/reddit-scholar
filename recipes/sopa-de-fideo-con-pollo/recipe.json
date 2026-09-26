@@ -1,0 +1,256 @@
+{
+  "id": "sopa-de-fideo-con-pollo",
+  "name": "Sopa de Fideo con Pollo",
+  "nativeName": "",
+  "romanized": "",
+  "englishName": "Sopa de Fideo con Pollo",
+  "description": "Deeply toasted fideo fried in a strained jitomate base, simmered in a broth made from the rotisserie carcass and skin. 4 portions: dinner plus next-day lunches.",
+  "ingredients": [
+    {
+      "text": "1 Costco rotisserie chicken",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": null,
+      "item": "Costco rotisserie chicken"
+    },
+    {
+      "text": "2 l water",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": "l",
+      "item": "water"
+    },
+    {
+      "text": "1/4 white onion, for broth",
+      "qty": 0.25,
+      "qtyMax": null,
+      "unit": null,
+      "item": "white onion, for broth"
+    },
+    {
+      "text": "2 garlic cloves, for broth, smashed",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic cloves, for broth, smashed"
+    },
+    {
+      "text": "500 g very ripe roma tomatoes, cored and quartered",
+      "qty": 500,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "very ripe roma tomatoes, cored and quartered"
+    },
+    {
+      "text": "100 g white onion, for base, rough-chopped",
+      "qty": 100,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "white onion, for base, rough-chopped"
+    },
+    {
+      "text": "2 garlic cloves, for base",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic cloves, for base"
+    },
+    {
+      "text": "59 ml neutral oil",
+      "qty": 59,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "neutral oil"
+    },
+    {
+      "text": "200 g fideo (thin coiled vermicelli)",
+      "qty": 200,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "fideo (thin coiled vermicelli)"
+    },
+    {
+      "text": "1.2 ml ground cumin (optional)",
+      "qty": 1.2,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "ground cumin (optional)"
+    },
+    {
+      "text": "4.9 ml chicken bouillon powder (Knorr)",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "chicken bouillon powder (Knorr)"
+    },
+    {
+      "text": "1 serrano chile, whole",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": null,
+      "item": "serrano chile, whole"
+    },
+    {
+      "text": "2.5 ml kosher salt, to taste at the end",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "kosher salt, to taste at the end"
+    },
+    {
+      "text": "60 ml crema mexicana",
+      "qty": 60,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "crema mexicana"
+    },
+    {
+      "text": "60 g queso fresco, crumbled",
+      "qty": 60,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "queso fresco, crumbled"
+    },
+    {
+      "text": "1 avocado, diced",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": null,
+      "item": "avocado, diced"
+    },
+    {
+      "text": "1 lime, cut into wedges",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": null,
+      "item": "lime, cut into wedges"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Break down 1 Costco rotisserie chicken while it's cool enough to handle. Pull each leg outward until the hip joint pops, cut through the joint, then split drum from thigh at the fat line. Twist off the wings at the shoulder. Run a knife down both sides of the breastbone and follow the ribs down to free each breast. Flip the bird and scoop out the two oysters by the spine. Shred all the meat by hand and weigh out 300 g for the soup; the rest keeps for another meal. Put the skin, bones, cartilage, and any jellied juices from the container into your stockpot, snapping the carcass to fit.",
+      "ingredientRefs": [
+        0
+      ],
+      "timers": []
+    },
+    {
+      "text": "Add 2 l water, 1/4 white onion, for broth, and 2 garlic cloves, for broth, smashed to the carcass. Bring to a boil over high heat, about 10 minutes, and skim off any foam. Reduce to a bare simmer and cook uncovered for 45 minutes; a hard boil clouds the broth.",
+      "ingredientRefs": [
+        1,
+        2,
+        3
+      ],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        },
+        {
+          "text": "45 minutes",
+          "seconds": 2700
+        }
+      ]
+    },
+    {
+      "text": "While the broth simmers, blend 500 g very ripe roma tomatoes, cored and quartered, 100 g white onion, for base, rough-chopped, and 2 garlic cloves, for base with 120 ml of the hot broth for about 1 minute, until completely smooth. Press it through a fine-mesh sieve and discard the solids.",
+      "ingredientRefs": [
+        4,
+        5,
+        6
+      ],
+      "timers": [
+        {
+          "text": "1 minute",
+          "seconds": 60
+        }
+      ]
+    },
+    {
+      "text": "Strain the finished broth and measure out 1.4 L, keeping it hot. Save any extra for loosening leftovers.",
+      "ingredientRefs": [],
+      "timers": []
+    },
+    {
+      "text": "Heat 59 ml neutral oil in a wide stainless pot over medium until it shimmers, about 2 minutes. Add 200 g fideo (thin coiled vermicelli) and stir constantly until the noodles turn deep golden-brown, like a peanut shell, about 4–5 minutes. Pull the pot off the heat briefly if any strands start going dark brown.",
+      "ingredientRefs": [
+        7,
+        8
+      ],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        },
+        {
+          "text": "4–5 minutes",
+          "seconds": 300
+        }
+      ]
+    },
+    {
+      "text": "Pour the strained base straight over the noodles; it will spit hard. Stir at medium until it darkens from bright red to brick and thickens around the noodles, about 5 minutes. Stir in 1.2 ml ground cumin (optional).",
+      "ingredientRefs": [
+        9
+      ],
+      "timers": [
+        {
+          "text": "5 minutes",
+          "seconds": 300
+        }
+      ]
+    },
+    {
+      "text": "Add the 1.4 L hot broth, 4.9 ml chicken bouillon powder (Knorr), and 1 serrano chile, whole. Return to a simmer, about 2 minutes. Simmer 6 minutes more, until the fideo is tender with a slight bite. If you're meal-prepping, stop at 4 minutes instead, because the noodles keep absorbing broth in the fridge.",
+      "ingredientRefs": [
+        10,
+        11
+      ],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        },
+        {
+          "text": "6 minutes",
+          "seconds": 360
+        },
+        {
+          "text": "4 minutes",
+          "seconds": 240
+        }
+      ]
+    },
+    {
+      "text": "Stir in the 300 g shredded chicken and heat through for 2 minutes without boiling. Remove 1 serrano chile, whole.",
+      "ingredientRefs": [
+        11
+      ],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "text": "Taste, then add 2.5 ml kosher salt, to taste at the end only as needed; the brined bird and bouillon often cover it. Serve topped with 60 ml crema mexicana, 60 g queso fresco, crumbled, 1 avocado, diced, and a squeeze of 1 lime, cut into wedges.",
+      "ingredientRefs": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "timers": []
+    }
+  ],
+  "notes": "Primary calibration variable: fideo toast color. Go darker than feels safe. Pale noodles give you tomato water with pasta in it. Log the color you stopped at.\n\nLog these two together: broth volume and noodle tenderness. They move as a pair. If the soup ends up too thick, change the broth amount, not the noodle time. Less broth takes the dish toward sopa seca.\n\nSodium. The brined bird, the skin in the broth, and the bouillon all stack. Hold back on salt until the final taste.\n\nBouillon swap. Knorr Caldo de Tomate (tomato bouillon) is extremely common in Mexican home fideo. It gives a more nostalgic, comida-corrida flavor, so try it in place of the chicken bouillon on a second cook.\n\nHeat level. A whole serrano adds aroma with very little heat. Splitting it lengthwise makes the soup noticeably hotter, so for a split-spice batch, keep it whole and serve salsa on the side.\n\nStorage. Keep the leftover broth separate, and use it to loosen portions when you reheat.",
+  "servings": 4,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T04:51:42.784Z",
+  "updatedAt": "2026-09-26T04:51:42.784Z"
+}
