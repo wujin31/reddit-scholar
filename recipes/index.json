@@ -2,6 +2,21 @@
   "version": 1,
   "recipes": [
     {
+      "id": "carne-asada-nortena",
+      "name": "Carne Asada Norteña — Citrus Marinade, Stainless Stovetop (v2)",
+      "englishName": "Citrus Marinade, Stainless Stovetop (v2)",
+      "nativeName": "",
+      "romanized": "Carne Asada Norteña",
+      "tags": [],
+      "favorite": false,
+      "servings": 4,
+      "items": "flank steak (or diezmillo / palomilla), about 1.5–2 cm thick · fresh lime juice (about 2 limes) · fresh orange juice (naranja agria / sour orange if you can find it) · garlic cloves, crushed (marinade) · kosher salt (marinade) · light Mexican lager · Jugo Maggi, optional · neutral high-smoke-point oil (grapeseed, avocado) · coarse or flaky salt (searing) · tomatillos, husked and rinsed (about 8 medium) · serrano chiles · white onion, in one chunk · garlic cloves, unpeeled (salsa) · fine sea salt (salsa, adjust to taste) · green onions (cebollitas cambray) · flour tortillas · limes, halved (to serve)",
+      "createdAt": "2026-09-26T04:38:22.888Z",
+      "updatedAt": "2026-09-26T04:38:22.888Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "dak-juk",
       "name": "닭죽 (Dak-juk) · Korean Chicken Porridge",
       "englishName": "Korean Chicken Porridge",
