@@ -2,6 +2,21 @@
   "version": 1,
   "recipes": [
     {
+      "id": "bifu-peppa-raisu",
+      "name": "Beef Pepper Rice (ビーフペッパーライス / Bīfu Peppā Raisu) — Pepper Lunch Dupe",
+      "englishName": "Pepper Lunch Dupe",
+      "nativeName": "Beef Pepper Rice",
+      "romanized": "ビーフペッパーライス / Bīfu Peppā Raisu",
+      "tags": [],
+      "favorite": false,
+      "servings": 4,
+      "items": "Japanese short-grain rice, raw (rice-cooker cups) · thin-sliced ribeye, shabu-shabu cut (~2 mm), fully thawed · fresh sweet corn ears, kernels cut off · scallions, thinly sliced · soy sauce (tare) · hon mirin (tare) · sake (tare) · honey (tare) · yellow onion, finely grated (tare) · Fuji apple, finely grated (tare) · garlic cloves, grated (tare) · ginger, grated (tare) · MSG (tare) · unsalted butter, softened (pepper butter) · black peppercorns, coarsely ground fresh (pepper butter) · garlic cloves, grated (pepper butter) · fine sea salt (pepper butter) · unsalted butter (rice crust) · neutral high-smoke-point oil · coarse black pepper, to finish",
+      "createdAt": "2026-09-26T04:40:01.796Z",
+      "updatedAt": "2026-09-26T04:40:01.796Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "carne-asada-nortena",
       "name": "Carne Asada Norteña — Citrus Marinade, Stainless Stovetop (v2)",
       "englishName": "Citrus Marinade, Stainless Stovetop (v2)",

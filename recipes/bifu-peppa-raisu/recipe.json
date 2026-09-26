@@ -1,0 +1,318 @@
+{
+  "id": "bifu-peppa-raisu",
+  "name": "Beef Pepper Rice (ビーフペッパーライス / Bīfu Peppā Raisu) — Pepper Lunch Dupe",
+  "nativeName": "Beef Pepper Rice",
+  "romanized": "ビーフペッパーライス / Bīfu Peppā Raisu",
+  "englishName": "Pepper Lunch Dupe",
+  "description": "Seared ribeye, crusted おこげ (okoge) rice, blistered corn, a one-bottle amakuchi/karakuchi tare, and a garlic pepper butter standing in for the house pepper paste.",
+  "ingredients": [
+    {
+      "text": "591 ml Japanese short-grain rice, raw (rice-cooker cups)",
+      "qty": 591,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "Japanese short-grain rice, raw (rice-cooker cups)"
+    },
+    {
+      "text": "600 g thin-sliced ribeye, shabu-shabu cut (~2 mm), fully thawed",
+      "qty": 600,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "thin-sliced ribeye, shabu-shabu cut (~2 mm), fully thawed"
+    },
+    {
+      "text": "2 fresh sweet corn ears, kernels cut off",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "fresh sweet corn ears, kernels cut off"
+    },
+    {
+      "text": "4 scallions, thinly sliced",
+      "qty": 4,
+      "qtyMax": null,
+      "unit": null,
+      "item": "scallions, thinly sliced"
+    },
+    {
+      "text": "59 ml soy sauce (tare)",
+      "qty": 59,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "soy sauce (tare)"
+    },
+    {
+      "text": "44 ml hon mirin (tare)",
+      "qty": 44,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "hon mirin (tare)"
+    },
+    {
+      "text": "30 ml sake (tare)",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "sake (tare)"
+    },
+    {
+      "text": "15 ml honey (tare)",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "honey (tare)"
+    },
+    {
+      "text": "30 ml yellow onion, finely grated (tare)",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "yellow onion, finely grated (tare)"
+    },
+    {
+      "text": "30 ml Fuji apple, finely grated (tare)",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "Fuji apple, finely grated (tare)"
+    },
+    {
+      "text": "2 garlic cloves, grated (tare)",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic cloves, grated (tare)"
+    },
+    {
+      "text": "4.9 ml ginger, grated (tare)",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "ginger, grated (tare)"
+    },
+    {
+      "text": "1.2 ml MSG (tare)",
+      "qty": 1.2,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "MSG (tare)"
+    },
+    {
+      "text": "50 g unsalted butter, softened (pepper butter)",
+      "qty": 50,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "unsalted butter, softened (pepper butter)"
+    },
+    {
+      "text": "15 ml black peppercorns, coarsely ground fresh (pepper butter)",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "black peppercorns, coarsely ground fresh (pepper butter)"
+    },
+    {
+      "text": "2 garlic cloves, grated (pepper butter)",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic cloves, grated (pepper butter)"
+    },
+    {
+      "text": "1.2 ml fine sea salt (pepper butter)",
+      "qty": 1.2,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "fine sea salt (pepper butter)"
+    },
+    {
+      "text": "20 g unsalted butter (rice crust)",
+      "qty": 20,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "unsalted butter (rice crust)"
+    },
+    {
+      "text": "44 ml neutral high-smoke-point oil",
+      "qty": 44,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "neutral high-smoke-point oil"
+    },
+    {
+      "text": "4.9 ml coarse black pepper, to finish",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "coarse black pepper, to finish"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Rinse 591 ml Japanese short-grain rice, raw (rice-cooker cups) until the water runs mostly clear. Fill to the Sushi water line so the rice cooks firm, select White/Sushi and start (about 55 minutes).",
+      "ingredientRefs": [
+        0
+      ],
+      "timers": [
+        {
+          "text": "55 minutes",
+          "seconds": 3300
+        }
+      ]
+    },
+    {
+      "text": "Spread the cooked rice on a sheet tray and cool uncovered for 15 minutes so surface moisture steams off. Day-old rice also works.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "15 minutes",
+          "seconds": 900
+        }
+      ]
+    },
+    {
+      "text": "In a small saucepan, combine 59 ml soy sauce (tare), 44 ml hon mirin (tare), 30 ml sake (tare), 15 ml honey (tare), 30 ml yellow onion, finely grated (tare), 30 ml Fuji apple, finely grated (tare), 2 garlic cloves, grated (tare), 4.9 ml ginger, grated (tare) and 1.2 ml MSG (tare). Bring to a simmer and cook for 3 minutes to burn off the alcohol and the raw garlic edge. It should reduce to about 150 ml. Cool for 10 minutes.",
+      "ingredientRefs": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "timers": [
+        {
+          "text": "3 minutes",
+          "seconds": 180
+        },
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        }
+      ]
+    },
+    {
+      "text": "Mash 50 g unsalted butter, softened (pepper butter) with 15 ml black peppercorns, coarsely ground fresh (pepper butter), 2 garlic cloves, grated (pepper butter) and 1.2 ml fine sea salt (pepper butter) until even. Set aside one-third of it for reheating portions later.",
+      "ingredientRefs": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "timers": []
+    },
+    {
+      "text": "Pat 600 g thin-sliced ribeye, shabu-shabu cut (~2 mm), fully thawed very dry and cut it into roughly 5 cm pieces. Toss with 2 tbsp of the tare and 1 tsp of the oil. Marinate for 10 minutes, and no longer, because the surface stays wet and the sugars scorch.",
+      "ingredientRefs": [
+        1
+      ],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        }
+      ]
+    },
+    {
+      "text": "Heat a 12-inch stainless skillet over high heat until a water drop skates as one bead, about 3 minutes. Add 1 tbsp of the oil.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "3 minutes",
+          "seconds": 180
+        }
+      ]
+    },
+    {
+      "text": "Shake excess marinade off the beef. Lay it in a single layer, about one-third at a time. Sear undisturbed until the edges brown, about 45 seconds, then flip and cook 15 seconds more. It should still be pink. Move to a plate and repeat with the rest, keeping the juices. Leave the fond in the pan.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "45 seconds",
+          "seconds": 45
+        },
+        {
+          "text": "15 seconds",
+          "seconds": 15
+        }
+      ]
+    },
+    {
+      "text": "Lower the heat to medium-high. Add 1 tbsp of the oil and 2 fresh sweet corn ears, kernels cut off. Cook, stirring rarely, until spotty and charred, about 3 minutes. The corn's moisture loosens the beef fond.",
+      "ingredientRefs": [
+        2
+      ],
+      "timers": [
+        {
+          "text": "3 minutes",
+          "seconds": 180
+        }
+      ]
+    },
+    {
+      "text": "Add 20 g unsalted butter (rice crust), then the rice. Press it into an even layer. Cook undisturbed until the bottom browns and releases from the steel, about 4 minutes. Flip in sections and cook 2 minutes more.",
+      "ingredientRefs": [
+        17
+      ],
+      "timers": [
+        {
+          "text": "4 minutes",
+          "seconds": 240
+        },
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "text": "Return the beef and its juices to the pan. Pour 4 tbsp of the tare around the hot edge so it sizzles and caramelizes against the metal. Add 4 scallions, thinly sliced and toss for 1 minute until the beef is just cooked through.",
+      "ingredientRefs": [
+        3
+      ],
+      "timers": [
+        {
+          "text": "1 minute",
+          "seconds": 60
+        }
+      ]
+    },
+    {
+      "text": "Take the pan off the heat. Dot in the remaining two-thirds of the pepper butter and add 4.9 ml coarse black pepper, to finish. Toss for 30 seconds until glossy. Taste, and add more tare or pepper if needed. The leftover tare is your table sauce.",
+      "ingredientRefs": [
+        19
+      ],
+      "timers": [
+        {
+          "text": "30 seconds",
+          "seconds": 30
+        }
+      ]
+    },
+    {
+      "text": "Heat 1 tsp of oil in a skillet over medium-high heat. Press in one portion and cook undisturbed for 3 minutes to re-crisp. Toss for 1 minute, then melt in a quarter of the reserved pepper butter.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "3 minutes",
+          "seconds": 180
+        },
+        {
+          "text": "1 minute",
+          "seconds": 60
+        }
+      ]
+    }
+  ],
+  "notes": "Calibration variable: log how much tare you add at step 10 (4 tbsp baseline) together with the pepper level. These two decide whether it tastes like Pepper Lunch or like generic yakiniku rice.\n\nAmakuchi (甘口 / amakuchi, the sweet version): add 1 more tbsp honey to the table portion of the tare. Karakuchi (辛口 / karakuchi, the spicy version): stir 1 tsp 豆板醤 (dòubànjiàng) into the table portion.\n\nSodium stacks here from the soy tare, the salted pepper butter and the MSG. Taste before adding table sauce.\n\nStainless steel crusts rice well only if you wait for it to release. Cast iron or carbon steel gives more okoge if you have one.",
+  "servings": 4,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T04:40:01.796Z",
+  "updatedAt": "2026-09-26T04:40:01.796Z"
+}
