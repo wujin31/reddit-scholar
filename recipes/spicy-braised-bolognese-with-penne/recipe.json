@@ -1,0 +1,327 @@
+{
+  "id": "spicy-braised-bolognese-with-penne",
+  "name": "Spicy Braised Bolognese with Penne",
+  "nativeName": "",
+  "romanized": "",
+  "englishName": "Spicy Braised Bolognese with Penne",
+  "description": "Arrabbiata-based ragù with sausage and beef, deepened with shiitake, fish sauce, and a long, low braise.",
+  "ingredients": [
+    {
+      "text": "4 dried shiitake mushrooms",
+      "qty": 4,
+      "qtyMax": null,
+      "unit": null,
+      "item": "dried shiitake mushrooms"
+    },
+    {
+      "text": "237 ml hot water",
+      "qty": 237,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "hot water"
+    },
+    {
+      "text": "30 ml olive oil",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "olive oil"
+    },
+    {
+      "text": "227 g Italian sausage, casings removed",
+      "qty": 227,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "Italian sausage, casings removed"
+    },
+    {
+      "text": "340 g ground beef (80/20)",
+      "qty": 340,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "ground beef (80/20)"
+    },
+    {
+      "text": "1 medium onion, finely diced",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": null,
+      "item": "medium onion, finely diced"
+    },
+    {
+      "text": "2 carrots, finely diced",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "carrots, finely diced"
+    },
+    {
+      "text": "2 celery stalks, finely diced",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "celery stalks, finely diced"
+    },
+    {
+      "text": "3 garlic cloves, minced",
+      "qty": 3,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic cloves, minced"
+    },
+    {
+      "text": "4.9 ml kosher salt, divided",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "kosher salt, divided"
+    },
+    {
+      "text": "30 ml tomato paste",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "tomato paste"
+    },
+    {
+      "text": "118 ml dry red wine",
+      "qty": 118,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "dry red wine"
+    },
+    {
+      "text": "177 ml whole milk",
+      "qty": 177,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "whole milk"
+    },
+    {
+      "text": "680 g arrabbiata sauce",
+      "qty": 680,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "arrabbiata sauce"
+    },
+    {
+      "text": "237 ml low-sodium chicken stock",
+      "qty": 237,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "low-sodium chicken stock"
+    },
+    {
+      "text": "9.9 ml fish sauce",
+      "qty": 9.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "fish sauce"
+    },
+    {
+      "text": "1 bay leaf",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": null,
+      "item": "bay leaf"
+    },
+    {
+      "text": "1 Parmesan rind",
+      "qty": 1,
+      "qtyMax": null,
+      "unit": null,
+      "item": "Parmesan rind"
+    },
+    {
+      "text": "2.5 ml black pepper",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "black pepper"
+    },
+    {
+      "text": "340 g penne",
+      "qty": 340,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "penne"
+    },
+    {
+      "text": "30 ml unsalted butter",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "unsalted butter"
+    },
+    {
+      "text": "118 ml Parmesan, finely grated, plus more to serve",
+      "qty": 118,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "Parmesan, finely grated, plus more to serve"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Cover 4 dried shiitake mushrooms with 237 ml hot water and soak for 30 minutes until fully soft. Squeeze dry, mince finely, and reserve the soaking liquid, leaving any grit at the bottom.",
+      "ingredientRefs": [
+        0,
+        1
+      ],
+      "timers": [
+        {
+          "text": "30 minutes",
+          "seconds": 1800
+        }
+      ]
+    },
+    {
+      "text": "Heat 30 ml olive oil in a Dutch oven over medium-high. Add 227 g Italian sausage, casings removed and 340 g ground beef (80/20), press into an even layer, and cook undisturbed for 4 minutes until a dark crust forms. Break it up and cook 4 minutes more until deeply browned all over. Transfer the meat to a bowl, leaving the fat in the pot.",
+      "ingredientRefs": [
+        2,
+        3,
+        4
+      ],
+      "timers": [
+        {
+          "text": "4 minutes",
+          "seconds": 240
+        },
+        {
+          "text": "4 minutes",
+          "seconds": 240
+        }
+      ]
+    },
+    {
+      "text": "Lower heat to medium. Add 1 medium onion, finely diced, 2 carrots, finely diced, 2 celery stalks, finely diced, the minced shiitake, and a pinch of the 4.9 ml kosher salt, divided, scraping up the fond. Cook until soft and golden, about 10 minutes. Add 3 garlic cloves, minced and cook for 1 minute until fragrant.",
+      "ingredientRefs": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        },
+        {
+          "text": "1 minute",
+          "seconds": 60
+        }
+      ]
+    },
+    {
+      "text": "Stir in 30 ml tomato paste and cook for 2 minutes until it darkens to brick red.",
+      "ingredientRefs": [
+        10
+      ],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "text": "Pour in 118 ml dry red wine and scrape the pot. Simmer until nearly evaporated, about 3 minutes.",
+      "ingredientRefs": [
+        11
+      ],
+      "timers": [
+        {
+          "text": "3 minutes",
+          "seconds": 180
+        }
+      ]
+    },
+    {
+      "text": "Return the meat and its juices to the pot. Add 177 ml whole milk and simmer gently, stirring now and then, until the milk is fully absorbed, about 10 minutes.",
+      "ingredientRefs": [
+        12
+      ],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        }
+      ]
+    },
+    {
+      "text": "Add 680 g arrabbiata sauce, the reserved shiitake liquid, 237 ml low-sodium chicken stock, 9.9 ml fish sauce, 1 bay leaf, 1 Parmesan rind, and 2.5 ml black pepper. Bring to a bare simmer, about 5 minutes. Partially cover and cook on the lowest heat for 1 hr 30 min, stirring every 20 minutes and adding a splash of water if it gets thick.",
+      "ingredientRefs": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "timers": [
+        {
+          "text": "5 minutes",
+          "seconds": 300
+        },
+        {
+          "text": "1 hr 30 min",
+          "seconds": 5400
+        },
+        {
+          "text": "20 minutes",
+          "seconds": 1200
+        }
+      ]
+    },
+    {
+      "text": "Remove the bay leaf and Parmesan rind. Taste and add the remaining 4.9 ml kosher salt, divided as needed. If the sauce is loose, simmer uncovered for 10 minutes to thicken.",
+      "ingredientRefs": [
+        9
+      ],
+      "timers": [
+        {
+          "text": "10 minutes",
+          "seconds": 600
+        }
+      ]
+    },
+    {
+      "text": "Boil 340 g penne in well-salted water for 2 minutes less than the package time, about 9 minutes. Reserve 1 cup pasta water, then drain.",
+      "ingredientRefs": [
+        19
+      ],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        },
+        {
+          "text": "9 minutes",
+          "seconds": 540
+        }
+      ]
+    },
+    {
+      "text": "Add the penne to the sauce with 30 ml unsalted butter, 118 ml Parmesan, finely grated, plus more to serve, and a splash of pasta water. Toss over medium heat for 2 minutes until glossy and clinging, adding more pasta water if needed. Serve with extra Parmesan.",
+      "ingredientRefs": [
+        20,
+        21
+      ],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        }
+      ]
+    }
+  ],
+  "notes": "Salt last: sausage, arrabbiata, fish sauce, and the rind all bring salt, so taste before adding more. For a smoky Mexican lean, add 1 minced chipotle in adobo with the tomato paste. The ragù is even better the next day and freezes well; make pasta fresh when serving.",
+  "servings": 4,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T04:50:46.380Z",
+  "updatedAt": "2026-09-26T04:50:46.380Z"
+}

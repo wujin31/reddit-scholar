@@ -147,6 +147,21 @@
       "cookCount": 0
     },
     {
+      "id": "spicy-braised-bolognese-with-penne",
+      "name": "Spicy Braised Bolognese with Penne",
+      "englishName": "Spicy Braised Bolognese with Penne",
+      "nativeName": "",
+      "romanized": "",
+      "tags": [],
+      "favorite": false,
+      "servings": 4,
+      "items": "dried shiitake mushrooms · hot water · olive oil · Italian sausage, casings removed · ground beef (80/20) · medium onion, finely diced · carrots, finely diced · celery stalks, finely diced · garlic cloves, minced · kosher salt, divided · tomato paste · dry red wine · whole milk · arrabbiata sauce · low-sodium chicken stock · fish sauce · bay leaf · Parmesan rind · black pepper · penne · unsalted butter · Parmesan, finely grated, plus more to serve",
+      "createdAt": "2026-09-26T04:50:46.380Z",
+      "updatedAt": "2026-09-26T04:50:46.380Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "sushi-rice",
       "name": "Sumeshi 酢飯 (Sushi Rice)",
       "englishName": "Sushi Rice",
