@@ -64,6 +64,21 @@
       "cookCount": 0
     },
     {
+      "id": "jay-s-sauce",
+      "name": "Jay's Sauce",
+      "englishName": "Jay's Sauce",
+      "nativeName": "",
+      "romanized": "",
+      "tags": [],
+      "favorite": false,
+      "servings": 2,
+      "items": "soy sauce · Chinkiang black vinegar 鎮江香醋 (zhènjiāng xiāngcù), or rice vinegar · oyster sauce · LKK chili garlic sauce 蒜蓉辣椒醬 (suànróng làjiāojiàng) · Lao Gan Ma chili crisp, oil and solids · garlic cloves, grated · toasted sesame oil · sugar · hot water · scallions, thinly sliced, white and green parts · 油蔥酥 (yóucōng sū) fried shallots",
+      "createdAt": "2026-09-26T04:48:44.809Z",
+      "updatedAt": "2026-09-26T04:48:44.809Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "luroufan-oven-braise-1-25-lb",
       "name": "滷肉飯 (lǔròufàn) Oven Braise, 1.25 lb",
       "englishName": "滷肉飯 (lǔròufàn) Oven Braise, 1.25 lb",

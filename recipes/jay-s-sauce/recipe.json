@@ -1,0 +1,142 @@
+{
+  "id": "jay-s-sauce",
+  "name": "Jay's Sauce",
+  "nativeName": "",
+  "romanized": "",
+  "englishName": "Jay's Sauce",
+  "description": "Thin, sharp, acid-forward dip for 水餃 (shuǐjiǎo) boiled dumplings and 鍋貼 (guōtiē) pot stickers. Two chilies, no cilantro.",
+  "ingredients": [
+    {
+      "text": "37 ml soy sauce",
+      "qty": 37,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "soy sauce"
+    },
+    {
+      "text": "30 ml Chinkiang black vinegar 鎮江香醋 (zhènjiāng xiāngcù), or rice vinegar",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "Chinkiang black vinegar 鎮江香醋 (zhènjiāng xiāngcù), or rice vinegar"
+    },
+    {
+      "text": "9.9 ml oyster sauce",
+      "qty": 9.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "oyster sauce"
+    },
+    {
+      "text": "9.9 ml LKK chili garlic sauce 蒜蓉辣椒醬 (suànróng làjiāojiàng)",
+      "qty": 9.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "LKK chili garlic sauce 蒜蓉辣椒醬 (suànróng làjiāojiàng)"
+    },
+    {
+      "text": "15 ml Lao Gan Ma chili crisp, oil and solids",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "Lao Gan Ma chili crisp, oil and solids"
+    },
+    {
+      "text": "2 garlic cloves, grated",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic cloves, grated"
+    },
+    {
+      "text": "4.9 ml toasted sesame oil",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "toasted sesame oil"
+    },
+    {
+      "text": "2.5 ml sugar",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "sugar"
+    },
+    {
+      "text": "15 ml hot water",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "hot water"
+    },
+    {
+      "text": "2 scallions, thinly sliced, white and green parts",
+      "qty": 2,
+      "qtyMax": null,
+      "unit": null,
+      "item": "scallions, thinly sliced, white and green parts"
+    },
+    {
+      "text": "30 ml 油蔥酥 (yóucōng sū) fried shallots",
+      "qty": 30,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "油蔥酥 (yóucōng sū) fried shallots"
+    }
+  ],
+  "steps": [
+    {
+      "text": "Stir 2.5 ml sugar into 15 ml hot water until dissolved.",
+      "ingredientRefs": [
+        7,
+        8
+      ],
+      "timers": []
+    },
+    {
+      "text": "Whisk in 37 ml soy sauce, 30 ml Chinkiang black vinegar 鎮江香醋 (zhènjiāng xiāngcù), or rice vinegar, 9.9 ml oyster sauce, and 9.9 ml LKK chili garlic sauce 蒜蓉辣椒醬 (suànróng làjiāojiàng) until smooth.",
+      "ingredientRefs": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "timers": []
+    },
+    {
+      "text": "Stir in 2 garlic cloves, grated, 15 ml Lao Gan Ma chili crisp, oil and solids, and 4.9 ml toasted sesame oil. Scoop the chili crisp from the bottom of the jar so you get solids, not just oil.",
+      "ingredientRefs": [
+        4,
+        5,
+        6
+      ],
+      "timers": []
+    },
+    {
+      "text": "Rest the sauce at room temperature for 15 minutes. This lets the raw garlic mellow into the acid.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "15 minutes",
+          "seconds": 900
+        }
+      ]
+    },
+    {
+      "text": "Stir in 2 scallions, thinly sliced, white and green parts right before serving, then scatter 30 ml 油蔥酥 (yóucōng sū) fried shallots over the top so they stay crisp.",
+      "ingredientRefs": [
+        9,
+        10
+      ],
+      "timers": []
+    }
+  ],
+  "notes": "UNTESTED. Primary calibration variable: vinegar. 2 tbsp against 2.5 tbsp soy is deliberately acid-forward. Too sharp → 1.5 tbsp. Flat and salty → 2.5 tbsp.\n\nPOT STICKERS vs BOILED: 鍋貼 (guōtiē) are already crisp and oily, so push vinegar to 2.5 tbsp and skip the water. 水餃 (shuǐjiǎo) are wetter and blander, so use as written.\n\nHEAT: 2 tsp LKK plus 1 tbsp Lao Gan Ma is a real amount for a thin sauce. If too hot, cut the Lao Gan Ma to 2 tsp first.\n\nNo cilantro — scallion carries the fresh note, so use the white parts too.\n\nChinkiang is the traditional dumpling vinegar (malty, faintly sweet); rice vinegar is cleaner and sharper.\n\nKeeps 3 days refrigerated, but garlic sharpens and scallion wilts by day 2. Make the base ahead; add garlic and scallion the day of.",
+  "servings": 2,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T04:48:44.809Z",
+  "updatedAt": "2026-09-26T04:48:44.809Z"
+}
