@@ -1,0 +1,221 @@
+{
+  "id": "suanrong-lajiao-spam-chaofan",
+  "name": "蒜蓉辣椒 Spam 炒飯 (Suànróng Làjiāo Spam Chǎofàn) — Chili Garlic Spam Fried Rice",
+  "nativeName": "蒜蓉辣椒 Spam 炒飯",
+  "romanized": "Suànróng Làjiāo Spam Chǎofàn",
+  "englishName": "Chili Garlic Spam Fried Rice",
+  "description": "Spam-fat fried rice seasoned with mushroom bouillon, finished off-heat with chili garlic sauce and a splash of rice vinegar.",
+  "ingredients": [
+    {
+      "text": "450 g cooked short-grain rice, day-old and cold",
+      "qty": 450,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "cooked short-grain rice, day-old and cold"
+    },
+    {
+      "text": "170 g Spam, cut into 1 cm dice",
+      "qty": 170,
+      "qtyMax": null,
+      "unit": "g",
+      "item": "Spam, cut into 1 cm dice"
+    },
+    {
+      "text": "3 large eggs, beaten",
+      "qty": 3,
+      "qtyMax": null,
+      "unit": null,
+      "item": "large eggs, beaten"
+    },
+    {
+      "text": "3 scallions, whites and greens sliced separately",
+      "qty": 3,
+      "qtyMax": null,
+      "unit": null,
+      "item": "scallions, whites and greens sliced separately"
+    },
+    {
+      "text": "3 garlic cloves, minced",
+      "qty": 3,
+      "qtyMax": null,
+      "unit": null,
+      "item": "garlic cloves, minced"
+    },
+    {
+      "text": "15 ml neutral oil",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "neutral oil"
+    },
+    {
+      "text": "2.5 ml 蘑菇精 (mógūjīng / Totole mushroom bouillon)",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "蘑菇精 (mógūjīng / Totole mushroom bouillon)"
+    },
+    {
+      "text": "1.2 ml white pepper",
+      "qty": 1.2,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "white pepper"
+    },
+    {
+      "text": "4.9 ml soy sauce",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "soy sauce"
+    },
+    {
+      "text": "15 ml 蒜蓉辣椒醬 (suànróng làjiāojiàng / Lee Kum Kee chili garlic sauce)",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "蒜蓉辣椒醬 (suànróng làjiāojiàng / Lee Kum Kee chili garlic sauce)"
+    },
+    {
+      "text": "4.9 ml rice vinegar",
+      "qty": 4.9,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "rice vinegar"
+    },
+    {
+      "text": "2.5 ml toasted sesame oil",
+      "qty": 2.5,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "toasted sesame oil"
+    },
+    {
+      "text": "15 ml 油蔥酥 (yóucōng sū / fried shallot crisps), for garnish",
+      "qty": 15,
+      "qtyMax": null,
+      "unit": "ml",
+      "item": "油蔥酥 (yóucōng sū / fried shallot crisps), for garnish"
+    }
+  ],
+  "steps": [
+    {
+      "text": "If your 450 g cooked short-grain rice, day-old and cold isn't day-old, spread it on a sheet pan and chill uncovered for at least 1 hour. Break up any clumps with wet fingers before cooking.",
+      "ingredientRefs": [
+        0
+      ],
+      "timers": [
+        {
+          "text": "1 hour",
+          "seconds": 3600
+        }
+      ]
+    },
+    {
+      "text": "Heat a large stainless skillet over medium-high until a drop of water beads and skates across the surface, about 2 minutes.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "2 minutes",
+          "seconds": 120
+        }
+      ]
+    },
+    {
+      "text": "Add 15 ml neutral oil and 170 g Spam, cut into 1 cm dice. Cook, tossing occasionally, until browned and crisp on several sides, about 5 minutes. Scoop the Spam out and leave the fat in the pan.",
+      "ingredientRefs": [
+        1,
+        5
+      ],
+      "timers": [
+        {
+          "text": "5 minutes",
+          "seconds": 300
+        }
+      ]
+    },
+    {
+      "text": "Pour 3 large eggs, beaten into the fat and scramble until just barely set, about 45 seconds. Transfer to the plate with the Spam.",
+      "ingredientRefs": [
+        2
+      ],
+      "timers": [
+        {
+          "text": "45 seconds",
+          "seconds": 45
+        }
+      ]
+    },
+    {
+      "text": "Add 3 garlic cloves, minced and the scallion whites from 3 scallions, whites and greens sliced separately. Stir until fragrant but not browned, about 30 seconds.",
+      "ingredientRefs": [
+        3,
+        4
+      ],
+      "timers": [
+        {
+          "text": "30 seconds",
+          "seconds": 30
+        }
+      ]
+    },
+    {
+      "text": "Add the rice. Press it flat, let it sit, then toss, repeating until the grains separate and some turn lightly toasty, about 4 minutes.",
+      "ingredientRefs": [],
+      "timers": [
+        {
+          "text": "4 minutes",
+          "seconds": 240
+        }
+      ]
+    },
+    {
+      "text": "Sprinkle 2.5 ml 蘑菇精 (mógūjīng / Totole mushroom bouillon) and 1.2 ml white pepper evenly over the rice and toss for 1 minute.",
+      "ingredientRefs": [
+        6,
+        7
+      ],
+      "timers": [
+        {
+          "text": "1 minute",
+          "seconds": 60
+        }
+      ]
+    },
+    {
+      "text": "Return the Spam and egg. Drizzle 4.9 ml soy sauce around the hot edge of the pan so it sizzles, then toss everything together for 1 minute.",
+      "ingredientRefs": [
+        8
+      ],
+      "timers": [
+        {
+          "text": "1 minute",
+          "seconds": 60
+        }
+      ]
+    },
+    {
+      "text": "Take the pan off the heat. Add 15 ml 蒜蓉辣椒醬 (suànróng làjiāojiàng / Lee Kum Kee chili garlic sauce), 4.9 ml rice vinegar, 2.5 ml toasted sesame oil and the scallion greens, then toss for 30 seconds. Top with 15 ml 油蔥酥 (yóucōng sū / fried shallot crisps), for garnish and serve.",
+      "ingredientRefs": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "timers": [
+        {
+          "text": "30 seconds",
+          "seconds": 30
+        }
+      ]
+    }
+  ],
+  "notes": "Taste before adding the soy sauce, since Spam plus bouillon is already salty. The chili garlic sauce goes in off heat so its raw garlic brightness survives. Frying it hard turns it muddy.",
+  "servings": 2,
+  "tags": [],
+  "chatUrl": null,
+  "favorite": false,
+  "log": [],
+  "createdAt": "2026-09-26T05:18:49.429Z",
+  "updatedAt": "2026-09-26T05:18:49.429Z"
+}

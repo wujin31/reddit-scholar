@@ -252,6 +252,21 @@
       "cookCount": 0
     },
     {
+      "id": "suanrong-lajiao-spam-chaofan",
+      "name": "蒜蓉辣椒 Spam 炒飯 (Suànróng Làjiāo Spam Chǎofàn) — Chili Garlic Spam Fried Rice",
+      "englishName": "Chili Garlic Spam Fried Rice",
+      "nativeName": "蒜蓉辣椒 Spam 炒飯",
+      "romanized": "Suànróng Làjiāo Spam Chǎofàn",
+      "tags": [],
+      "favorite": false,
+      "servings": 2,
+      "items": "cooked short-grain rice, day-old and cold · Spam, cut into 1 cm dice · large eggs, beaten · scallions, whites and greens sliced separately · garlic cloves, minced · neutral oil · 蘑菇精 (mógūjīng / Totole mushroom bouillon) · white pepper · soy sauce · 蒜蓉辣椒醬 (suànróng làjiāojiàng / Lee Kum Kee chili garlic sauce) · rice vinegar · toasted sesame oil · 油蔥酥 (yóucōng sū / fried shallot crisps), for garnish",
+      "createdAt": "2026-09-26T05:18:49.429Z",
+      "updatedAt": "2026-09-26T05:18:49.429Z",
+      "lastCooked": null,
+      "cookCount": 0
+    },
+    {
       "id": "suanxiang-jiucengta-banmian",
       "name": "蒜香九層塔拌麵 (Suànxiāng Jiǔcéngtǎ Bànmiàn) — Taiwanese Aglio e Olio",
       "englishName": "Taiwanese Aglio e Olio",
